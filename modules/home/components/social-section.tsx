@@ -68,78 +68,78 @@ export const SocialSection = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     className="relative bg-[#060606]/40 backdrop-blur-3xl rounded-[3rem] py-24 md:py-32 px-12 md:px-24 overflow-hidden shadow-[0_0_100px_-20px_rgba(0,0,0,0.5)]"
                 >
-                {/* Dynamic Drifting Glows */}
-                <motion.div
-                    animate={{
-                        x: [0, 50, 0],
-                        y: [0, -30, 0],
-                    }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#2DD4BF]/5 blur-[120px] rounded-full pointer-events-none"
-                />
-                <motion.div
-                    animate={{
-                        x: [0, -50, 0],
-                        y: [0, 30, 0],
-                    }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                    className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none"
-                />
-
-                <div className="relative z-10 flex flex-col items-center text-center max-w-7xl mx-auto">
+                    {/* Dynamic Drifting Glows */}
                     <motion.div
-                        variants={itemVariants}
-                        className="text-center w-full"
-                    >
-                        <div className="flex flex-col gap-6 items-center">
-                            <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
-                                Stay Synced
-                            </span>
-                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
-                                Join our <br />
-                                <span className="text-[#2DD4BF]">Digital Circuit</span>
-                            </h2>
-                        </div>
-                        <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto">
-                            Connect with the brightest minds in electronics and stay updated with the latest technological shifts in real-time.
-                        </p>
-                    </motion.div>
+                        animate={{
+                            x: [0, 50, 0],
+                            y: [0, -30, 0],
+                        }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-[#2DD4BF]/5 blur-[120px] rounded-full pointer-events-none"
+                    />
+                    <motion.div
+                        animate={{
+                            x: [0, -50, 0],
+                            y: [0, 30, 0],
+                        }}
+                        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                        className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none"
+                    />
 
-                    {/* Social Cards Grid - Spanning full width (4 columns) */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full mt-24">
-                        {socials.map((social) => (
-                            <motion.a
-                                key={social.name}
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                variants={itemVariants}
-                                whileHover={{
-                                    y: -12,
-                                    scale: 1.015,
-                                    transition: { duration: 0.2, ease: "easeOut" }
-                                }}
-                                className="flex flex-col items-start gap-10 p-10 bg-white/[0.02] backdrop-blur-md rounded-[3rem] group transition-all duration-500 hover:bg-white/[0.05] hover:border-[#2DD4BF]/30 hover:shadow-[0_20px_80px_-20px_rgba(45,212,191,0.3)]"
-                            >
-                                <div className="flex justify-between items-start w-full">
-                                    <div className={`w-20 h-20 rounded-3xl ${social.color} flex items-center justify-center shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 relative overflow-hidden`}>
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        {social.icon}
+                    <div className="relative z-10 flex flex-col items-center text-center max-w-7xl mx-auto">
+                        <motion.div
+                            variants={itemVariants}
+                            className="text-center w-full"
+                        >
+                            <div className="flex flex-col gap-6 items-center">
+                                <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
+                                    Stay Synced
+                                </span>
+                                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+                                    Join our <br />
+                                    <span className="text-[#2DD4BF]">Digital Circuit</span>
+                                </h2>
+                            </div>
+                            <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto">
+                                Connect with the brightest minds in electronics and stay updated with the latest technological shifts in real-time.
+                            </p>
+                        </motion.div>
+
+                        {/* Social Cards Grid - Spanning full width (4 columns) */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full mt-24">
+                            {socials.map((social) => (
+                                <motion.a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    variants={itemVariants}
+                                    whileHover={{
+                                        y: -12,
+                                        scale: 1.015,
+                                        transition: { duration: 0.2, ease: "easeOut" }
+                                    }}
+                                    className="flex flex-col items-start gap-10 p-10 bg-white/[0.02] backdrop-blur-md rounded-[3rem] group transition-all duration-500 hover:bg-white/[0.05] hover:border-[#2DD4BF]/30 hover:shadow-[0_20px_80px_-20px_rgba(45,212,191,0.3)]"
+                                >
+                                    <div className="flex justify-between items-start w-full">
+                                        <div className={`w-20 h-20 rounded-3xl ${social.color} flex items-center justify-center shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 relative overflow-hidden`}>
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                            {social.icon}
+                                        </div>
+                                        <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200 group-hover:bg-[#2DD4BF] group-hover:border-[#2DD4BF] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] group-hover:-translate-y-1 group-hover:translate-x-1">
+                                            <ArrowUpRight className="w-7 h-7" />
+                                        </div>
                                     </div>
-                                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200 group-hover:bg-[#2DD4BF] group-hover:border-[#2DD4BF] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] group-hover:-translate-y-1 group-hover:translate-x-1">
-                                        <ArrowUpRight className="w-7 h-7" />
+                                    <div className="flex flex-col items-start text-left">
+                                        <span className="text-white font-black text-2xl mb-2 group-hover:text-[#2DD4BF] transition-colors duration-200 uppercase tracking-tight">{social.name}</span>
+                                        <span className="text-neutral-500 text-sm font-bold tracking-tight overflow-hidden text-ellipsis w-full group-hover:text-neutral-300 transition-colors duration-200 font-mono">
+                                            {social.handle}
+                                        </span>
                                     </div>
-                                </div>
-                                <div className="flex flex-col items-start text-left">
-                                    <span className="text-white font-black text-2xl mb-2 group-hover:text-[#2DD4BF] transition-colors duration-200 uppercase tracking-tight">{social.name}</span>
-                                    <span className="text-neutral-500 text-sm font-bold tracking-tight overflow-hidden text-ellipsis w-full group-hover:text-neutral-300 transition-colors duration-200 font-mono">
-                                        {social.handle}
-                                    </span>
-                                </div>
-                            </motion.a>
-                        ))}
+                                </motion.a>
+                            ))}
+                        </div>
                     </div>
-                </div>
                 </motion.div>
             </div>
         </section>
