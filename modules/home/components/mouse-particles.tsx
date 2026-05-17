@@ -150,6 +150,10 @@ export function MouseParticles() {
         particle.vx += returnDx * returnForce;
         particle.vy += returnDy * returnForce;
 
+        // Ambient idle drift
+        particle.vx += (Math.random() - 0.5) * 0.08;
+        particle.vy += (Math.random() - 0.5) * 0.08;
+
         // Apply friction
         particle.vx *= friction;
         particle.vy *= friction;
@@ -160,12 +164,13 @@ export function MouseParticles() {
 
         ctx.strokeStyle = particle.color;
         ctx.lineWidth = particle.size;
-        ctx.globalAlpha = 0.5;
+        ctx.lineCap = 'round';
+        ctx.globalAlpha = 0.6;
 
         // Render as dashes pointing along velocity vector
         ctx.beginPath();
         ctx.moveTo(particle.x, particle.y);
-        ctx.lineTo(particle.x - particle.vx * 1.5, particle.y - particle.vy * 1.5);
+        ctx.lineTo(particle.x - (particle.vx * 1.5) + 0.1, particle.y - (particle.vy * 1.5));
         ctx.stroke();
       });
 

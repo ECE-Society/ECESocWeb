@@ -5,7 +5,7 @@ import { SectionReveal } from './section-reveal';
 
 export const AboutSection = () => {
     return (
-        <section className="relative py-36 px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto section-glow-bottom">
+        <section id="about" className="relative min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto section-glow-bottom">
             {/* Background Glow (Subtle) */}
             <div className="accent-glow top-1/2 left-0 -translate-y-1/2 -translate-x-1/2" />
 

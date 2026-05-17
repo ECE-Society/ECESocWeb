@@ -6,7 +6,7 @@ import { SectionReveal } from './section-reveal';
 
 export const Hero = () => {
     return (
-        <section className="relative flex flex-col items-center justify-center text-center px-4 min-h-[100vh] md:min-h-[110vh] overflow-hidden section-glow-bottom">
+        <section className="relative flex flex-col items-center justify-center text-center px-4 min-h-screen overflow-hidden section-glow-bottom">
             {/* Background interactive particles */}
             <MouseParticles />
 

@@ -59,8 +59,8 @@ export const SocialSection = () => {
     ];
 
     return (
-        <section className="py-36 bg-gradient-to-b from-[#080808] to-[#040404] overflow-hidden">
-            <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
+        <section className="py-0 bg-gradient-to-b from-[#080808] to-[#040404] overflow-hidden">
+            <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16 mt-0 mb-0">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -105,8 +105,8 @@ export const SocialSection = () => {
                             </p>
                         </motion.div>
 
-                        {/* Social Cards Grid - Spanning full width (4 columns) */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full mt-24">
+                        {/* Social Cards Grid */}
+                        <div className="grid grid-cols-2 lg:grid-cols-4 [@media(max-aspect-ratio:530/930)]:!grid-cols-1 gap-8 w-full mt-24">
                             {socials.map((social) => (
                                 <motion.a
                                     key={social.name}
@@ -119,22 +119,31 @@ export const SocialSection = () => {
                                         scale: 1.015,
                                         transition: { duration: 0.2, ease: "easeOut" }
                                     }}
-                                    className="flex flex-col items-start gap-10 p-10 bg-white/[0.02] backdrop-blur-md rounded-[3rem] group transition-all duration-500 hover:bg-white/[0.05] hover:border-[#2DD4BF]/30 hover:shadow-[0_20px_80px_-20px_rgba(45,212,191,0.3)]"
+                                    className="flex justify-between items-start [@media(max-aspect-ratio:530/930)]:!items-center w-full p-10 [@media(max-aspect-ratio:530/930)]:!p-5 bg-white/[0.02] backdrop-blur-md rounded-[3rem] [@media(max-aspect-ratio:530/930)]:!rounded-[2rem] group transition-all duration-500 hover:bg-white/[0.05] hover:border-[#2DD4BF]/30 hover:shadow-[0_20px_80px_-20px_rgba(45,212,191,0.3)]"
                                 >
-                                    <div className="flex justify-between items-start w-full">
-                                        <div className={`w-20 h-20 rounded-3xl ${social.color} flex items-center justify-center shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 relative overflow-hidden`}>
+                                    {/* Left Group */}
+                                    <div className="flex flex-col [@media(max-aspect-ratio:530/930)]:!flex-row items-start [@media(max-aspect-ratio:530/930)]:!items-center gap-10 [@media(max-aspect-ratio:530/930)]:!gap-4">
+                                        
+                                        {/* Main Icon */}
+                                        <div className={`w-20 h-20 [@media(max-aspect-ratio:530/930)]:!w-12 [@media(max-aspect-ratio:530/930)]:!h-12 rounded-3xl [@media(max-aspect-ratio:530/930)]:!rounded-xl ${social.color} flex shrink-0 items-center justify-center shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 relative overflow-hidden`}>
                                             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                            {social.icon}
+                                            <div className="flex items-center justify-center [@media(max-aspect-ratio:530/930)]:scale-75">
+                                                {social.icon}
+                                            </div>
                                         </div>
-                                        <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200 group-hover:bg-[#2DD4BF] group-hover:border-[#2DD4BF] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] group-hover:-translate-y-1 group-hover:translate-x-1">
-                                            <ArrowUpRight className="w-7 h-7" />
+
+                                        {/* Text Content */}
+                                        <div className="flex flex-col items-start text-left">
+                                            <span className="text-white font-black text-2xl [@media(max-aspect-ratio:530/930)]:!text-lg mb-2 [@media(max-aspect-ratio:530/930)]:!mb-0 group-hover:text-[#2DD4BF] transition-colors duration-200 uppercase tracking-tight">{social.name}</span>
+                                            <span className="text-neutral-500 text-sm [@media(max-aspect-ratio:530/930)]:!text-[10px] font-bold tracking-tight overflow-hidden text-ellipsis w-full group-hover:text-neutral-300 transition-colors duration-200 font-mono">
+                                                {social.handle}
+                                            </span>
                                         </div>
                                     </div>
-                                    <div className="flex flex-col items-start text-left">
-                                        <span className="text-white font-black text-2xl mb-2 group-hover:text-[#2DD4BF] transition-colors duration-200 uppercase tracking-tight">{social.name}</span>
-                                        <span className="text-neutral-500 text-sm font-bold tracking-tight overflow-hidden text-ellipsis w-full group-hover:text-neutral-300 transition-colors duration-200 font-mono">
-                                            {social.handle}
-                                        </span>
+
+                                    {/* Arrow icon */}
+                                    <div className="w-14 h-14 [@media(max-aspect-ratio:530/930)]:!w-10 [@media(max-aspect-ratio:530/930)]:!h-10 shrink-0 rounded-2xl [@media(max-aspect-ratio:530/930)]:!rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-200 group-hover:bg-[#2DD4BF] group-hover:border-[#2DD4BF] group-hover:text-black group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] group-hover:-translate-y-1 group-hover:translate-x-1 ml-4">
+                                        <ArrowUpRight className="w-7 h-7 [@media(max-aspect-ratio:530/930)]:!w-5 [@media(max-aspect-ratio:530/930)]:!h-5" />
                                     </div>
                                 </motion.a>
                             ))}

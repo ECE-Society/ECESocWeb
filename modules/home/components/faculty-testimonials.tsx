@@ -76,10 +76,10 @@ export const FacultyTestimonials = () => {
     };
 
     return (
-        <section className="py-36 px-6 relative overflow-hidden bg-[#080808] section-glow-bottom">
+        <section className="min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 relative overflow-hidden bg-[#080808] section-glow-bottom">
             <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
                 {/* Section Header - Tiered Theme */}
-                <SectionReveal className="text-center mb-24">
+                <SectionReveal className="text-center mb-12">
                     <div className="flex flex-col gap-6 items-center">
                         <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
                             Faculty Insights
@@ -95,9 +95,9 @@ export const FacultyTestimonials = () => {
                 </SectionReveal>
 
                 {/* Carousel Container */}
-                <div className="relative min-h-[500px] flex items-center justify-center">
+                <div className="relative min-h-[500px] flex items-center justify-center mb-24">
                     {/* Navigation Arrows */}
-                    <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 md:px-12 z-20 pointer-events-none">
+                    <div className="absolute -bottom-[4.5rem] left-1/2 -translate-x-1/2 w-full max-w-[320px] flex justify-between z-20 pointer-events-none items-center">
                         <button 
                             onClick={prevSlide}
                             className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md pointer-events-auto group"
@@ -114,7 +114,7 @@ export const FacultyTestimonials = () => {
 
                     {/* Testimonial Stage */}
                     <div 
-                        className="relative w-full max-w-4xl h-[450px] cursor-grab active:cursor-grabbing"
+                        className="relative w-full max-w-5xl h-[450px] cursor-grab active:cursor-grabbing"
                         onMouseEnter={() => setIsPaused(true)}
                         onMouseLeave={() => setIsPaused(false)}
                     >
@@ -139,13 +139,14 @@ export const FacultyTestimonials = () => {
                                     
                                     {/* Faculty Identity */}
                                     <div className="relative mb-8">
-                                        <div className="w-28 h-28 rounded-full border-2 border-[#2DD4BF]/50 p-1.5 bg-[#111] shadow-[0_0_30px_rgba(45,212,191,0.2)]">
+                                        <div className="w-32 h-32 rounded-full border-2 border-[#2DD4BF]/50 p-1.5 bg-[#111] shadow-[0_0_30px_rgba(45,212,191,0.2)]">
                                             <div className="w-full h-full rounded-full overflow-hidden relative">
                                                 <Image 
                                                     src={testimonials[currentIndex].image}
                                                     alt={testimonials[currentIndex].name}
                                                     fill
                                                     className="object-cover"
+                                                    sizes="(max-width: 768px) 112px, 112px"
                                                 />
                                             </div>
                                         </div>
@@ -173,7 +174,7 @@ export const FacultyTestimonials = () => {
                     </div>
 
                     {/* Pagination Dots */}
-                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-3">
+                    <div className="absolute -bottom-[3.25rem] left-1/2 -translate-x-1/2 flex gap-3 h-10 items-center">
                         {testimonials.map((_, i) => (
                             <button
                                 key={i}

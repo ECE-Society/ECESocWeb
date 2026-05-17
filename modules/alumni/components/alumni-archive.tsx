@@ -114,7 +114,7 @@ export function AlumniArchive() {
                 src={alumni.image}
                 alt={alumni.name}
                 fill
-                className="object-cover grayscale mix-blend-luminosity opacity-80 group-hover:mix-blend-normal group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover lg:grayscale lg:mix-blend-luminosity lg:opacity-80 lg:group-hover:mix-blend-normal lg:group-hover:grayscale-0 lg:group-hover:opacity-100 lg:group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>
             <div className="p-6 flex flex-col flex-grow">
@@ -128,7 +128,7 @@ export function AlumniArchive() {
                 <span className="text-sm text-neutral-500 font-medium">
                   {alumni.year}
                 </span>
-                <div className="flex items-center gap-3 px-3 py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 md:opacity-0 md:translate-y-1.5 md:scale-95 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-400 ease-out origin-right">
+                <div className="flex items-center gap-3 px-3 py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 lg:opacity-0 lg:translate-y-1.5 lg:scale-95 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 transition-all duration-400 ease-out origin-right">
                   <button className="text-neutral-400 hover:text-white transition-colors outline-none">
                     <LinkedinIcon className="w-3.5 h-3.5" />
                   </button>

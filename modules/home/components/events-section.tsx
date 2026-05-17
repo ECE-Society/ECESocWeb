@@ -1,7 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
 import { SectionReveal } from './section-reveal';
 
@@ -37,16 +36,8 @@ const events = [
 ];
 
 export const EventsSection = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end end"]
-    });
-
-    const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
     return (
-        <section ref={containerRef} className="py-36 px-6 relative overflow-hidden section-glow-bottom">
+        <section className="min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 relative overflow-hidden section-glow-bottom">
             <div className="max-w-[1800px] mx-auto">
                 {/* Section Header */}
                 <SectionReveal className="text-center mb-32">

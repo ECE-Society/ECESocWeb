@@ -1,3 +1,4 @@
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -18,7 +19,7 @@ const nextConfig: NextConfig = {
   },
   // @ts-ignore
   turbopack: {
-    root: ".",
+    root: path.resolve(__dirname),
   },
 };
 
