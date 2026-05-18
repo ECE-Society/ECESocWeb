@@ -1265,15 +1265,17 @@ export default function EventsPage() {
                         ── Flagship Events
                     </span>
                 </SectionReveal>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                    {featuredEvents.map((event, i) => (
-                        <SectionReveal key={event.id} delay={i * 0.1}>
-                            <FeaturedCard
-                                event={event}
-                                onExplore={event.id === 'techathon' ? () => setTechathonOpen(true) : undefined}
-                            />
-                        </SectionReveal>
-                    ))}
+                <div className="flex justify-center">
+                    <div className="w-full max-w-2xl">
+                        {featuredEvents.map((event, i) => (
+                            <SectionReveal key={event.id} delay={i * 0.1}>
+                                <FeaturedCard
+                                    event={event}
+                                    onExplore={event.id === 'techathon' ? () => setTechathonOpen(true) : undefined}
+                                />
+                            </SectionReveal>
+                        ))}
+                    </div>
                 </div>
             </section>
 
