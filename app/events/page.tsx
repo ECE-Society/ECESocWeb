@@ -27,7 +27,7 @@ const featuredEvents = [
         badgeIcon: Star,
         glowRgb: '167,139,250',
         purpleAccent: 'blue-600',
-        subEvents: [],
+        subEvents: [] as any[],
         image: '/events photo/tech a thon.jpeg',
     },
 ];
@@ -532,8 +532,8 @@ function BitotsavModal({ open, onClose }: { open: boolean; onClose: () => void }
                                             ))}
                                         </ul>
                                         {/* @ts-ignore */}
-                                        {phase.image && (
-                                            <img src={phase.image} alt={phase.name} className="w-full h-auto max-h-64 object-contain rounded-xl mt-5 border border-white/10" />
+                                        {(phase as any).image && (
+                                            <img src={(phase as any).image} alt={phase.name} className="w-full h-auto max-h-64 object-contain rounded-xl mt-5 border border-white/10" />
                                         )}
                                     </div>
                                 ))}
