@@ -67,7 +67,7 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             {['Study Materials', 'Lab Manuals', 'Previous Year Questions', 'Tech Blog', 'Newsletter '].map((item) => (
                                 <li key={item}>
-                                    <Link href="#" className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
+                                    <Link href={item === 'Newsletter ' ? '#' : '#'} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#2DD4BF] opacity-0 group-hover:opacity-100 transition-opacity" />
                                         {item}
                                     </Link>
