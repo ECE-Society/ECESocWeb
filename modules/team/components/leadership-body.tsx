@@ -27,7 +27,7 @@ export const LeadershipBody = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.05 }}
             >
-              <TeamMemberCard member={leader} />
+              <TeamMemberCard member={leader} priority={index < 4} />
             </motion.div>
           ))}
         </div>

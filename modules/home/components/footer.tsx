@@ -48,8 +48,8 @@ export const Footer = () => {
                                 { label: 'Blogs', href: '/blogs' },
                                 { label: 'Events', href: '/events' },
                                 { label: 'Our Team', href: '/team' },
-                                { label: 'Alumni', href: '/alumni' },
-                                { label: 'Newsletter', href: '/#newsletter' }
+                                { label: 'Alumni', href: '/alumni' }
+
                             ].map((item) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
@@ -65,7 +65,7 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-white font-bold mb-4 md:mb-6 text-xl md:text-2xl tracking-wide">Resources</h3>
                         <ul className="space-y-4">
-                            {['Study Materials', 'Lab Manuals', 'Previous Year Questions', 'Tech Blog'].map((item) => (
+                            {['Study Materials', 'Lab Manuals', 'Previous Year Questions', 'Tech Blog', 'Newsletter '].map((item) => (
                                 <li key={item}>
                                     <Link href="#" className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#2DD4BF] opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -6,36 +6,19 @@ import { useEffect, useState, useRef } from 'react';
 import { SectionReveal } from './section-reveal';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const galleryImages = [
-    '/blogs/AESA.jpeg',
-    '/blogs/CE20.jpeg',
-    '/blogs/Chipsets.jpeg',
-    '/blogs/DHRUV.jpeg',
-    '/blogs/EVM.jpeg',
-    '/blogs/Holograph.jpeg',
-    '/blogs/IOMT.jpeg',
-    '/blogs/IoT .jpeg',
-    '/blogs/Networks.jpeg',
-    '/blogs/Neuromorphic .jpeg',
-    '/blogs/Optimus.jpeg',
-    '/blogs/Paper.jpeg',
-    '/blogs/Satellite .jpeg',
-    '/blogs/Summit .jpeg',
-    '/blogs/Thermal .jpeg',
-    '/home/batch.PNG',
-];
-
-export const GallerySection = () => {
+export const GallerySection = ({ images }: { images: string[] }) => {
+    // Optional fallback if no images are passed
+    const activeGalleryImages = images && images.length > 0 ? images : ['/blogs/06_03_2026.jpg'];
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
     const nextSlide = () => {
-        setActiveIndex((prev) => (prev + 1) % galleryImages.length);
+        setActiveIndex((prev) => (prev + 1) % activeGalleryImages.length);
     };
 
     const prevSlide = () => {
-        setActiveIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+        setActiveIndex((prev) => (prev - 1 + activeGalleryImages.length) % activeGalleryImages.length);
     };
 
     useEffect(() => {
@@ -93,13 +76,13 @@ export const GallerySection = () => {
                     </motion.button>
 
                     <div className="relative w-full h-full flex items-center justify-center preserve-3d">
-                        {galleryImages.map((src, index) => {
+                        {activeGalleryImages.map((src, index) => {
                             const offset = index - activeIndex;
 
                             // Circular logic (showing items within a range)
                             let normalizedOffset = offset;
-                            if (offset > galleryImages.length / 2) normalizedOffset -= galleryImages.length;
-                            if (offset < -galleryImages.length / 2) normalizedOffset += galleryImages.length;
+                            if (offset > activeGalleryImages.length / 2) normalizedOffset -= activeGalleryImages.length;
+                            if (offset < -activeGalleryImages.length / 2) normalizedOffset += activeGalleryImages.length;
 
                             const absNormalizedOffset = Math.abs(normalizedOffset);
 

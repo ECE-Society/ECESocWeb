@@ -319,7 +319,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#a78bfa]/25"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#a78bfa]/25"
                         style={{ boxShadow: '0 40px 100px -20px rgba(167,139,250,0.25), 0 0 0 1px rgba(255,255,255,0.04)' }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -443,7 +443,7 @@ function BitotsavModal({ open, onClose }: { open: boolean; onClose: () => void }
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#2DD4BF]/25"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#2DD4BF]/25"
                         style={{ boxShadow: '0 40px 100px -20px rgba(45,212,191,0.22), 0 0 0 1px rgba(255,255,255,0.04)' }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -578,7 +578,7 @@ function InternInsightsModal({ open, onClose }: { open: boolean; onClose: () => 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#34d399]/25"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#34d399]/25"
                         style={{ boxShadow: '0 40px 100px -20px rgba(52,211,153,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -657,7 +657,7 @@ function CodeverseModal({ open, onClose }: { open: boolean; onClose: () => void 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#38bdf8]/25"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#38bdf8]/25"
                         style={{ boxShadow: '0 40px 100px -20px rgba(56,189,248,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -762,7 +762,7 @@ function ElectroquizModal({ open, onClose }: { open: boolean; onClose: () => voi
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#fb923c]/25"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#fb923c]/25"
                         style={{ boxShadow: '0 40px 100px -20px rgba(251,146,60,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -1141,7 +1141,7 @@ function GenericEventModal({ event, onClose }: { event: typeof genericEvents[0] 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d]"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d]"
                         style={{
                             border: `1px solid ${event.color}40`,
                             boxShadow: `0 40px 100px -20px ${event.color}25, 0 0 0 1px rgba(255,255,255,0.04)`

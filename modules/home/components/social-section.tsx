@@ -30,10 +30,10 @@ export const SocialSection = () => {
     const socials = [
         {
             name: 'Instagram',
-            handle: '@ecesoc_official',
+            handle: '@ecesociety',
             icon: <FiInstagram className="text-white text-2xl" />,
             color: 'bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400',
-            url: 'https://instagram.com/ecesoc_official'
+            url: 'https://www.instagram.com/ecesociety/'
         },
         {
             name: 'LinkedIn',
@@ -123,7 +123,7 @@ export const SocialSection = () => {
                                 >
                                     {/* Left Group */}
                                     <div className="flex flex-col [@media(max-aspect-ratio:530/930)]:!flex-row items-start [@media(max-aspect-ratio:530/930)]:!items-center gap-10 [@media(max-aspect-ratio:530/930)]:!gap-4">
-                                        
+
                                         {/* Main Icon */}
                                         <div className={`w-20 h-20 [@media(max-aspect-ratio:530/930)]:!w-12 [@media(max-aspect-ratio:530/930)]:!h-12 rounded-3xl [@media(max-aspect-ratio:530/930)]:!rounded-xl ${social.color} flex shrink-0 items-center justify-center shadow-[0_15px_30px_-10px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 relative overflow-hidden`}>
                                             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

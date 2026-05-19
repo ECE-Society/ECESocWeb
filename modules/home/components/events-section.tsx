@@ -3,34 +3,35 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin } from 'lucide-react';
 import { SectionReveal } from './section-reveal';
+import Link from 'next/link';
 
 const events = [
     {
-        title: "Silicon Saga",
-        date: "Oct 12-14, 2023",
-        location: "Main Auditorium",
-        description: "A deep dive into the world of semiconductors and VLSI design, featuring industry experts and hands-on workshops.",
+        title: "Tech-A-Thon",
+        date: "July-August 2025",
+        location: "Online",
+        description: "A month-long, hybrid inter-college innovation sprint that brings together students from across India to build impactful solutions.",
         side: "left"
     },
     {
-        title: "Electro-Quest",
-        date: "Nov 05, 2023",
-        location: "ECE Labs",
-        description: "The ultimate electronics scavenger hunt where participants solve circuit puzzles to find the hidden treasure.",
+        title: "Electropoly",
+        date: "Mar 14–16, 2025",
+        location: "Offline",
+        description: "Roll the Dice. Rule the Grid. Where your strategic mind meets high-voltage fun in this electronic monopoly-style board game.",
         side: "right"
     },
     {
-        title: "Signal Summit",
-        date: "Dec 20, 2023",
-        location: "Virtual Room 4",
-        description: "An international conference on signal processing and its applications in modern communication systems.",
+        title: "Intern Insights",
+        date: "Feb 14, 2025",
+        location: "Online",
+        description: "A career-forward session connecting students with industry professionals, featuring panel talks, resume critiques, and insider tips.",
         side: "left"
     },
     {
-        title: "Bot-Build 2.0",
-        date: "Jan 15-18, 2024",
-        location: "Robotics Arena",
-        description: "Build, program, and battle your own autonomous robots in this high-octane competitive event.",
+        title: "Codeverse",
+        date: "Feb 08, 2025",
+        location: "Offline",
+        description: "An intense competitive programming contest spanning multiple difficulty tiers — from DSA to system design — crafted to challenge and elevate every coder's limits.",
         side: "right"
     }
 ];
@@ -72,11 +73,12 @@ export const EventsSection = () => {
                                 <SectionReveal
                                     key={index}
                                     delay={index * 0.1}
-                                    className={`w-full ${widths[index % 4]} p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border border-white/5 relative group hover:border-[#2DD4BF]/40 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] overflow-hidden`}
+                                    className={`w-full ${widths[index % 4]} p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border border-white/5 relative group hover:border-[#2DD4BF]/40 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] overflow-hidden cursor-pointer`}
                                 >
+                                    <Link href="/events" className="absolute inset-0 z-20" />
                                     {/* Animated background glow */}
-                                    <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl" />
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[3rem]" />
+                                    <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[3rem] pointer-events-none" />
 
                                     <div className="relative z-10 text-left h-full flex flex-col">
                                         <div className="flex flex-col gap-4 mb-6">

@@ -15,12 +15,12 @@ export const BlogHero = ({ post }: { post: BlogPost }) => {
         <section className="relative w-full h-[70vh] md:h-[80vh] min-h-[600px] mb-20 md:mb-32 rounded-[3.5rem] overflow-hidden group">
             {/* Immersive Background Image */}
             <div className="absolute inset-0">
-                {post.imageUrl && (
+                {post.image && (
                     <Image
-                        src={post.imageUrl}
+                        src={post.image}
                         alt={post.title}
                         fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        className="object-cover object-[center_40%] transition-transform duration-1000 group-hover:scale-105"
                         priority
                     />
                 )}
@@ -46,11 +46,9 @@ export const BlogHero = ({ post }: { post: BlogPost }) => {
                         </span>
                     </div>
 
-                    {/* Meta Info (Date & Author) */}
+                    {/* Meta Info (Date) */}
                     <div className="flex items-center gap-4 text-on-surface-variant font-black text-xs uppercase tracking-widest bg-black/40 backdrop-blur-md w-fit px-4 py-2 rounded-lg border border-white/5">
                         <span>{post.date}</span>
-                        <span className="w-1 h-1 bg-white/20 rounded-full" />
-                        <span>{post.author}</span>
                     </div>
 
                     {/* Title */}

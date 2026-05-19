@@ -114,6 +114,7 @@ export function AlumniArchive() {
                 src={alumni.image}
                 alt={alumni.name}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                 className="object-cover lg:grayscale lg:mix-blend-luminosity lg:opacity-80 lg:group-hover:mix-blend-normal lg:group-hover:grayscale-0 lg:group-hover:opacity-100 lg:group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>

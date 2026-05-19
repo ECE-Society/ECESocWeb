@@ -1,13 +1,15 @@
 import Link from 'next/link';
-import { blogData } from '@/modules/blogs/lib/data';
+import { getBlogById } from '@/modules/blogs/lib/data';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Bookmark, Share2, Quote, Satellite, Brain } from 'lucide-react';
 import { PageAnimator } from '@/modules/blogs/components/page-animator';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
-    const post = blogData.find((p) => p.id === id);
+    const post = getBlogById(id);
 
     if (!post) {
         notFound();
@@ -33,36 +35,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                                 {post.title}
                             </h1>
                         </div>
-                        <div className="flex items-center gap-6 pt-6">
-                            <div className="h-14 w-14 rounded-full bg-surface-container-high flex items-center justify-center font-headline text-2xl text-primary font-bold overflow-hidden ring-2 ring-outline-variant/20">
-                                {post.author.charAt(0)}
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-headline font-bold text-2xl text-white">{post.author}</span>
-                                <span className="font-label text-sm text-zinc-300 uppercase tracking-wider">Published {post.date}</span>
-                            </div>
+                        <div className="pt-6">
+                            <span className="font-label text-sm text-zinc-300 uppercase tracking-wider">Published {post.date}</span>
                         </div>
                     </header>
 
-                    <section className="relative mb-24 -mx-6 lg:-mx-20">
-                        <div className="aspect-[21/9] rounded-xl overflow-hidden editorial-shadow bg-surface-container-low relative">
-                            {post.imageUrl && (
-                                <>
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    {/*<img className="w-full h-full object-cover" alt={post.title} src={post.imageUrl} />*/}
-                                    <Image
-                                        src={post.imageUrl}
-                                        alt={post.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                </>
+                    <section className="mb-20 flex justify-center">
+                        <div className="relative w-full max-w-xl aspect-square rounded-3xl overflow-hidden editorial-shadow bg-surface-container-low">
+                            {post.image && (
+                                <Image
+                                    src={post.image}
+                                    alt={post.title}
+                                    fill
+                                    priority
+                                    className="object-cover transition-transform duration-700 hover:scale-105"
+                                />
                             )}
-                        </div>
-                        <div className="absolute -bottom-6 -right-6 hidden lg:block p-8 bg-surface-container-highest/60 backdrop-blur-xl rounded-xl max-w-xs border border-white/5">
-                            <p className="text-xs italic text-on-surface-variant leading-relaxed">
-                                "The intersection of deep tech and the soil is where the next revolution begins."
-                            </p>
                         </div>
                     </section>
 
@@ -80,47 +68,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                         </aside>
 
                         <section className="flex-1 space-y-10">
-                            <p className="text-xl leading-relaxed text-on-surface font-body font-normal opacity-90 first-letter:text-7xl first-letter:font-headline first-letter:font-extrabold first-letter:mr-3 first-letter:float-left first-letter:text-primary">
-                                In the heart of Bangalore, a revolution is brewing that isn't about the latest social app or fintech disruption. It's about something far more fundamental: the soil beneath our feet and the food on our plates. Kunal Prasad, the visionary behind Cropin, saw a world where the most vital industry—agriculture—was also the most technologically neglected.
-                            </p>
-                            <p className="text-lg leading-relaxed text-on-surface-variant">
-                                For centuries, farming has relied on intuition, tradition, and the unpredictable whims of weather. But as global populations soar and climate change destabilizes once-reliable seasonal patterns, intuition is no longer enough. Cropin is turning every acre of farmland into a data point, using satellite imagery and artificial intelligence to predict yields with surgical precision.
-                            </p>
-
-                            <div className="relative py-12 my-16">
-                                <div className="absolute inset-0 bg-surface-container-low rounded-[3rem] -rotate-1"></div>
-                                <div className="relative px-12 text-center">
-                                    <Quote className="text-tertiary-fixed w-10 h-10 mb-4 mx-auto fill-current" />
-                                    <blockquote className="font-headline text-3xl font-bold text-on-surface italic leading-snug">
-                                        Lesson: In agriculture, data is not an advantage. It is survival.
-                                    </blockquote>
-                                    <cite className="block mt-6 font-label text-xs uppercase tracking-widest text-on-surface-variant">
-                                        — Kunal Prasad, Founder of Cropin
-                                    </cite>
-                                </div>
+                            <div className="prose prose-invert prose-lg max-w-none prose-headings:font-headline prose-headings:text-white prose-a:text-tertiary-fixed prose-strong:text-white prose-p:text-on-surface-variant prose-p:leading-relaxed prose-th:text-white prose-table:border-outline-variant/10">
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
                             </div>
 
-                            <h2 className="font-headline text-3xl font-bold text-primary pt-6">The Power of Intelligence</h2>
-                            <p className="text-lg leading-relaxed text-on-surface-variant">
-                                The challenge wasn't just building the technology; it was the adoption. Farmers in remote regions needed a platform that was accessible yet powerful. Cropin’s "SmartFarm" platform acts as a digital twin of the farm, tracking everything from seed health to soil moisture levels in real-time.
-                            </p>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
-                                <div className="p-8 bg-surface-container rounded-xl space-y-4 hover:bg-surface-container-high transition-colors">
-                                    <Satellite className="text-tertiary-fixed w-8 h-8" />
-                                    <h3 className="font-headline font-bold text-xl text-on-surface">Satellite Insights</h3>
-                                    <p className="text-sm text-on-surface-variant">Real-time monitoring of crop health across millions of hectares globally.</p>
+                            {post.contributors && post.contributors.length > 0 && (
+                                <div className="pt-10 border-t border-outline-variant/10">
+                                    <h3 className="font-headline text-lg font-bold text-white mb-6">Contributors</h3>
+                                    <div className="flex flex-wrap gap-6">
+                                        {post.contributors.map(contributor => (
+                                            <div key={contributor} className="flex items-center gap-3">
+                                                <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-sm font-bold text-tertiary-fixed ring-1 ring-outline-variant/30">
+                                                    {contributor.charAt(0)}
+                                                </div>
+                                                <span className="text-sm text-on-surface-variant font-medium">{contributor}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="p-8 bg-surface-container rounded-xl space-y-4 hover:bg-surface-container-high transition-colors">
-                                    <Brain className="text-tertiary-fixed w-8 h-8" />
-                                    <h3 className="font-headline font-bold text-xl text-on-surface">Predictive AI</h3>
-                                    <p className="text-sm text-on-surface-variant">Forecasting harvest windows and yield volume to optimize the supply chain.</p>
-                                </div>
-                            </div>
-
-                            <p className="text-lg leading-relaxed text-on-surface-variant">
-                                By digitizing the farming process, Cropin has created a transparent ecosystem where banks can lend with more confidence, insurance companies can assess risk more accurately, and most importantly, farmers can secure their livelihoods against an increasingly volatile environment. The future of food isn't just organic; it's intelligent.
-                            </p>
+                            )}
 
                             <div className="flex flex-wrap gap-3 pt-12 border-t border-outline-variant/10">
                                 {post.tags.map(tag => (
