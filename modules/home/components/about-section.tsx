@@ -5,13 +5,13 @@ import { SectionReveal } from './section-reveal';
 
 export const AboutSection = () => {
     return (
-        <section id="about" className="relative min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto section-glow-bottom">
+        <section id="about" className="relative py-10 lg:py-16 px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto section-glow-bottom">
             {/* Background Glow (Subtle) */}
             <div className="accent-glow top-1/2 left-0 -translate-y-1/2 -translate-x-1/2" />
 
             <SectionReveal className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 {/* Left Content */}
-                <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-8">
                     <div className="flex flex-col gap-6">
                         <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
                             Our Identity
@@ -36,13 +36,13 @@ export const AboutSection = () => {
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 gap-8 pt-6 border-t border-white/5">
                         <div className="flex flex-col gap-2">
-                            <span className="text-5xl font-black text-white tracking-tighter">
+                            <span className="flex items-center text-5xl font-black text-white tracking-tighter">
                                 500<span className="text-[#2DD4BF] text-3xl">+</span>
                             </span>
                             <span className="text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">Active Members</span>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <span className="text-5xl font-black text-white tracking-tighter">
+                            <span className="flex items-center text-5xl font-black text-white tracking-tighter">
                                 40<span className="text-[#2DD4BF] text-3xl">+</span>
                             </span>
                             <span className="text-[10px] text-neutral-500 font-bold uppercase tracking-[0.2em]">Annual Events</span>

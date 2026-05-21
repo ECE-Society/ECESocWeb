@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
 
@@ -50,12 +51,16 @@ export const Hero = () => {
                     transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
                     className="flex flex-wrap justify-center gap-8"
                 >
-                    <button className="px-12 py-6 bg-white text-black font-black uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] hover:text-black hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] transition-all duration-500 transform hover:-translate-y-1 text-xs">
-                        Discover Innovation
-                    </button>
-                    <button className="px-12 py-6 border-2 border-white/10 text-white font-black uppercase tracking-widest rounded-full hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 transition-all duration-500 transform hover:-translate-y-1 text-xs backdrop-blur-sm">
-                        Past Archive
-                    </button>
+                    <Link href="/events">
+                        <button className="px-12 py-6 bg-white text-black font-black uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] hover:text-black hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] transition-all duration-500 transform hover:-translate-y-1 text-xs">
+                            Explore Our Events
+                        </button>
+                    </Link>
+                    <Link href="/alumni">
+                        <button className="px-12 py-6 border-2 border-white/10 text-white font-black uppercase tracking-widest rounded-full hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 transition-all duration-500 transform hover:-translate-y-1 text-xs backdrop-blur-sm">
+                            Meet Our Alumni
+                        </button>
+                    </Link>
                 </motion.div>
             </SectionReveal>
 

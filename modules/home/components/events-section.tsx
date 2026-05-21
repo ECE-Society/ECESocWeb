@@ -9,7 +9,7 @@ const events = [
     {
         title: "Tech-A-Thon",
         date: "July-August 2025",
-        location: "Online",
+        location: "Hybrid",
         description: "A month-long, hybrid inter-college innovation sprint that brings together students from across India to build impactful solutions.",
         side: "left"
     },
@@ -22,7 +22,7 @@ const events = [
     },
     {
         title: "Intern Insights",
-        date: "Feb 14, 2025",
+        date: "May 13-15, 2025",
         location: "Online",
         description: "A career-forward session connecting students with industry professionals, featuring panel talks, resume critiques, and insider tips.",
         side: "left"
@@ -38,24 +38,22 @@ const events = [
 
 export const EventsSection = () => {
     return (
-        <section className="min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 relative overflow-hidden section-glow-bottom">
+        <section className="relative py-10 lg:py-16 px-6 overflow-hidden section-glow-bottom">
             <div className="max-w-[1800px] mx-auto">
                 {/* Section Header */}
-                <SectionReveal className="text-center mb-32">
-                    <div className="flex flex-col gap-6 items-center w-full">
-                        <div className="flex flex-col gap-6 items-center">
-                            <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
-                                Chronology
-                            </span>
-                            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
-                                The <br />
-                                <span className="text-[#2DD4BF]">Tech Pulse</span>
-                            </h2>
-                        </div>
-                        <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto">
-                            A detailed journey documenting our workshops, hackathons, and high-tech symposia.
-                        </p>
+                <SectionReveal className="text-center mb-12">
+                    <div className="flex flex-col gap-6 items-center">
+                        <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
+                            Chronology
+                        </span>
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight">
+                            The <br />
+                            <span className="text-[#2DD4BF]">Tech Pulse</span>
+                        </h2>
                     </div>
+                    <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto">
+                        A detailed journey documenting our workshops, hackathons, and high-tech symposia.
+                    </p>
                 </SectionReveal>
 
                 <div className="relative">
@@ -68,7 +66,7 @@ export const EventsSection = () => {
                                 "md:flex-[1_1_35%]",
                                 "md:flex-[1_1_58%]"
                             ];
-                            
+
                             return (
                                 <SectionReveal
                                     key={index}

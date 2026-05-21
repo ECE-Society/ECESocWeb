@@ -29,7 +29,7 @@ export const BlogSection = ({ posts = [] }: { posts?: BlogPost[] }) => {
     };
 
     return (
-        <section className="min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 bg-[#000] overflow-hidden section-glow-bottom">
+        <section className="relative py-10 lg:py-16 px-6 bg-[#000] overflow-hidden section-glow-bottom">
             <div className="max-w-[1800px] mx-auto text-center">
                 {/* Header */}
                 <SectionReveal className="text-center mb-10">

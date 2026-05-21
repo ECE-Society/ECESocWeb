@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import { getBlogById } from '@/modules/blogs/lib/data';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Bookmark, Share2, Quote, Satellite, Brain } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { PageAnimator } from '@/modules/blogs/components/page-animator';
 import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { BlogProse } from '@/modules/blogs/components/blog-prose';
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -16,9 +15,52 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     }
 
     return (
-        <main className="min-h-screen pt-12 pb-32 bg-surface text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+        <main className="min-h-screen pt-32 pb-32 bg-[#080808] text-on-surface font-body selection:bg-tertiary-fixed selection:text-on-tertiary-fixed relative overflow-hidden">
+            {/* SVG Vector Background */}
+            <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <defs>
+                    {/* Dot grid pattern */}
+                    <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+                        <circle cx="1" cy="1" r="1" fill="rgba(45,212,191,0.25)" />
+                    </pattern>
+                    {/* Circuit line pattern */}
+                    <pattern id="circuit" x="0" y="0" width="160" height="160" patternUnits="userSpaceOnUse">
+                        <path d="M20 0 L20 40 L60 40 L60 20 L140 20" stroke="rgba(45,212,191,0.18)" strokeWidth="1" fill="none"/>
+                        <path d="M0 80 L40 80 L40 120 L100 120 L100 80 L160 80" stroke="rgba(45,212,191,0.18)" strokeWidth="1" fill="none"/>
+                        <path d="M80 0 L80 60 L120 60 L120 40" stroke="rgba(45,212,191,0.14)" strokeWidth="1" fill="none"/>
+                        <path d="M0 140 L60 140 L60 160" stroke="rgba(45,212,191,0.14)" strokeWidth="1" fill="none"/>
+                        <circle cx="20" cy="40" r="2.5" fill="none" stroke="rgba(45,212,191,0.3)" strokeWidth="1"/>
+                        <circle cx="60" cy="20" r="2.5" fill="none" stroke="rgba(45,212,191,0.3)" strokeWidth="1"/>
+                        <circle cx="100" cy="120" r="2.5" fill="none" stroke="rgba(45,212,191,0.3)" strokeWidth="1"/>
+                        <circle cx="40" cy="80" r="2.5" fill="none" stroke="rgba(45,212,191,0.25)" strokeWidth="1"/>
+                        <circle cx="80" cy="60" r="2.5" fill="none" stroke="rgba(45,212,191,0.25)" strokeWidth="1"/>
+                    </pattern>
+                    {/* Radial gradient mask to fade towards center */}
+                    <radialGradient id="vignette" cx="50%" cy="50%" r="60%">
+                        <stop offset="0%" stopColor="#080808" stopOpacity="0.75" />
+                        <stop offset="100%" stopColor="#080808" stopOpacity="0" />
+                    </radialGradient>
+                </defs>
+
+                {/* Dot grid layer */}
+                <rect width="100%" height="100%" fill="url(#dots)" />
+                {/* Circuit lines layer */}
+                <rect width="100%" height="100%" fill="url(#circuit)" />
+                {/* Vignette mask so centre stays clean for reading */}
+                <rect width="100%" height="100%" fill="url(#vignette)" />
+            </svg>
+
+            {/* Ambient glow blobs */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-[#2DD4BF]/[0.06] blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-600/[0.06] blur-[140px] rounded-full pointer-events-none" />
+
+            <div className="relative z-10">
             <PageAnimator>
-                <article className="max-w-4xl mx-auto px-6 lg:px-0">
+                <article className="max-w-5xl mx-auto px-6 lg:px-4">
                     <nav className="mb-16">
                         <Link href="/blogs" className="inline-flex items-center gap-2 text-zinc-300 hover:text-white transition-colors group">
                             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
@@ -48,29 +90,15 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                                     alt={post.title}
                                     fill
                                     priority
-                                    className="object-cover transition-transform duration-700 hover:scale-105"
+                                    className="object-cover"
                                 />
                             )}
                         </div>
                     </section>
 
-                    <div className="flex flex-col lg:flex-row gap-16">
-                        <aside className="hidden lg:flex flex-col gap-8 w-12 sticky top-12 h-fit">
-                            <button className="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant hover:text-primary">
-                                <Bookmark className="w-5 h-5" />
-                            </button>
-                            <button className="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container hover:bg-surface-container-high transition-all text-on-surface-variant hover:text-primary">
-                                <Share2 className="w-5 h-5" />
-                            </button>
-                            <div className="h-24 w-[2px] bg-surface-container mx-auto rounded-full overflow-hidden">
-                                <div className="h-1/3 w-full bg-tertiary-fixed"></div>
-                            </div>
-                        </aside>
-
-                        <section className="flex-1 space-y-10">
-                            <div className="prose prose-invert prose-lg max-w-none prose-headings:font-headline prose-headings:text-white prose-a:text-tertiary-fixed prose-strong:text-white prose-p:text-on-surface-variant prose-p:leading-relaxed prose-th:text-white prose-table:border-outline-variant/10">
-                                <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
-                            </div>
+                    <div className="w-full max-w-4xl mx-auto">
+                        <section className="w-full space-y-2">
+                            <BlogProse content={post!.content} />
 
                             {post.contributors && post.contributors.length > 0 && (
                                 <div className="pt-10 border-t border-outline-variant/10">
@@ -99,6 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     </div>
                 </article>
             </PageAnimator>
+            </div>
         </main>
     );
 }

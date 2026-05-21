@@ -18,7 +18,7 @@ const testimonials = [
         id: 2,
         name: "Prof. Jane Smith",
         designation: "Faculty Advisor, ECE SOC",
-        quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
+        quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class. Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
         image: "https://api.dicebear.com/7.x/avataaars/png?seed=Jane&backgroundColor=ffdfbf"
     },
     {
@@ -76,7 +76,7 @@ export const FacultyTestimonials = () => {
     };
 
     return (
-        <section className="min-h-[100vh] flex flex-col justify-center py-10 lg:py-0 px-6 relative overflow-hidden bg-[#080808] section-glow-bottom">
+        <section className="relative py-10 lg:py-16 px-6 overflow-hidden bg-[#080808] section-glow-bottom">
             <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
                 {/* Section Header - Tiered Theme */}
                 <SectionReveal className="text-center mb-12">
@@ -95,29 +95,14 @@ export const FacultyTestimonials = () => {
                 </SectionReveal>
 
                 {/* Carousel Container */}
-                <div className="relative min-h-[500px] flex items-center justify-center mb-24">
-                    {/* Navigation Arrows */}
-                    <div className="absolute -bottom-[4.5rem] left-1/2 -translate-x-1/2 w-full max-w-[320px] flex justify-between z-20 pointer-events-none items-center">
-                        <button 
-                            onClick={prevSlide}
-                            className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md pointer-events-auto group"
-                        >
-                            <ChevronLeft className="w-8 h-8 group-hover:-translate-x-1 transition-transform" />
-                        </button>
-                        <button 
-                            onClick={nextSlide}
-                            className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md pointer-events-auto group"
-                        >
-                            <ChevronRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </div>
-
+                <div className="relative min-h-[500px] flex items-center justify-center mb-0">
                     {/* Testimonial Stage */}
-                    <div 
+                    <div
                         className="relative w-full max-w-5xl h-[450px] cursor-grab active:cursor-grabbing"
                         onMouseEnter={() => setIsPaused(true)}
                         onMouseLeave={() => setIsPaused(false)}
                     >
+
                         <AnimatePresence initial={false} custom={direction}>
                             <motion.div
                                 key={currentIndex}
@@ -133,64 +118,76 @@ export const FacultyTestimonials = () => {
                                 }}
                                 className="absolute inset-0"
                             >
-                                <div className="h-full w-full bg-[#0A0A0A]/50 backdrop-blur-3xl rounded-[3rem] border border-white/10 p-8 md:p-16 flex flex-col items-center text-center relative overflow-hidden group">
+                                <div className="h-full w-full bg-[#0A0A0A]/50 backdrop-blur-3xl rounded-[3rem] border border-white/10 p-8 md:p-16 pb-4 md:pb-8 flex flex-col items-center text-center relative overflow-hidden group">
                                     {/* Decorative Quote Icon */}
                                     <Quote className="absolute -top-10 -left-10 w-48 h-48 text-[#2DD4BF]/5 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" />
-                                    
-                                    {/* Faculty Identity */}
-                                    <div className="relative mb-8">
-                                        <div className="w-32 h-32 rounded-full border-2 border-[#2DD4BF]/50 p-1.5 bg-[#111] shadow-[0_0_30px_rgba(45,212,191,0.2)]">
-                                            <div className="w-full h-full rounded-full overflow-hidden relative">
-                                                <Image 
-                                                    src={testimonials[currentIndex].image}
-                                                    alt={testimonials[currentIndex].name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="(max-width: 768px) 112px, 112px"
-                                                />
-                                            </div>
-                                        </div>
-                                        {/* Glow Effect */}
-                                        <div className="absolute -inset-4 bg-[#2DD4BF]/20 blur-2xl rounded-full -z-10" />
-                                    </div>
+
 
                                     {/* Quote Text */}
-                                    <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed italic mb-10 max-w-3xl relative">
+                                    <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed italic my-auto max-w-3xl relative">
                                         "{testimonials[currentIndex].quote}"
                                     </p>
 
-                                    {/* Metadata */}
-                                    <div className="mt-auto">
-                                        <h4 className="text-[#2DD4BF] font-black text-2xl uppercase tracking-tight mb-1">
-                                            {testimonials[currentIndex].name}
-                                        </h4>
-                                        <span className="text-neutral-500 font-bold uppercase text-xs tracking-[0.2em]">
-                                            {testimonials[currentIndex].designation}
-                                        </span>
+                                    {/* Metadata & Navigation */}
+                                    <div className="flex flex-col items-center gap-6 w-full">
+                                        <div className="flex items-center justify-between w-full max-w-[28rem] pointer-events-auto">
+                                            {/* Left Arrow */}
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    prevSlide();
+                                                }}
+                                                className="w-12 h-12 md:w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group shrink-0"
+                                            >
+                                                <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
+                                            </button>
+
+                                            {/* Faculty Info */}
+                                            <div className="text-center px-4 flex-grow">
+                                                <h4 className="text-[#2DD4BF] font-black text-xl md:text-2xl uppercase tracking-tight mb-1">
+                                                    {testimonials[currentIndex].name}
+                                                </h4>
+                                                <span className="text-neutral-500 font-bold uppercase text-[10px] md:text-xs tracking-[0.2em]">
+                                                    {testimonials[currentIndex].designation}
+                                                </span>
+                                            </div>
+
+                                            {/* Right Arrow */}
+                                            <button
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    nextSlide();
+                                                }}
+                                                className="w-12 h-12 md:w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group shrink-0"
+                                            >
+                                                <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
+                                            </button>
+                                        </div>
+                                        {/* Pagination Dots */}
+                                        <div className="flex gap-3 h-4 items-center justify-center pointer-events-auto">
+                                            {testimonials.map((_, i) => (
+                                                <button
+                                                    key={i}
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        setDirection(i > currentIndex ? 1 : -1);
+                                                        setCurrentIndex(i);
+                                                    }}
+                                                    className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? 'w-10 bg-[#2DD4BF]' : 'w-2 bg-white/10 hover:bg-white/30'
+                                                        }`}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Pagination Dots */}
-                    <div className="absolute -bottom-[3.25rem] left-1/2 -translate-x-1/2 flex gap-3 h-10 items-center">
-                        {testimonials.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => {
-                                    setDirection(i > currentIndex ? 1 : -1);
-                                    setCurrentIndex(i);
-                                }}
-                                className={`h-1.5 transition-all duration-500 rounded-full ${
-                                    i === currentIndex ? 'w-10 bg-[#2DD4BF]' : 'w-2 bg-white/10 hover:bg-white/30'
-                                }`}
-                            />
-                        ))}
-                    </div>
+
                 </div>
             </div>
-            
+
             {/* Background Accents */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[30%] h-full bg-[#2DD4BF]/5 blur-[150px] rounded-full pointer-events-none" />
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[30%] h-full bg-[#2DD4BF]/5 blur-[150px] rounded-full pointer-events-none" />

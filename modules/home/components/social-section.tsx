@@ -66,7 +66,7 @@ export const SocialSection = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="relative bg-[#060606]/40 backdrop-blur-3xl rounded-[3rem] py-24 md:py-32 px-12 md:px-24 overflow-hidden shadow-[0_0_100px_-20px_rgba(0,0,0,0.5)]"
+                    className="relative bg-[#060606]/40 backdrop-blur-3xl rounded-[3rem] py-10 lg:py-16 px-12 md:px-24 overflow-hidden shadow-[0_0_100px_-20px_rgba(0,0,0,0.5)]"
                 >
                     {/* Dynamic Drifting Glows */}
                     <motion.div

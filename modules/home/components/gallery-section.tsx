@@ -33,9 +33,9 @@ export const GallerySection = ({ images }: { images: string[] }) => {
     }, [isPaused]);
 
     return (
-        <section className="min-h-[70vh] flex flex-col justify-center pt-20 pb-0 bg-gradient-to-b from-[#0e0e0e] to-[#080808] overflow-hidden">
+        <section className="relative pt-10 lg:pt-16 pb-0 px-6 bg-gradient-to-b from-[#0e0e0e] to-[#080808] overflow-hidden">
             <div className="w-full">
-                <SectionReveal className="mb-12 flex flex-col items-center text-center px-6 max-w-[1800px] mx-auto">
+                <SectionReveal className="mb-0 flex flex-col items-center text-center px-6 max-w-[1800px] mx-auto">
                     <div className="flex flex-col gap-6 items-center">
                         <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
                             Visual Synthesis

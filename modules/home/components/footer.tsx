@@ -27,13 +27,13 @@ export const Footer = () => {
                             The official departmental society of Electronics and Communication Engineering at BIT Mesra.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
+                            <Link href="https://www.instagram.com/ecesociety/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
                                 <FaInstagram size={28} />
                             </Link>
-                            <Link href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
+                            <Link href="https://linkedin.com/company/ece-society-bit-mesra" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
                                 <FaLinkedin size={28} />
                             </Link>
-                            <Link href="#" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
+                            <Link href="https://github.com/ecesoc-mesra" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
                                 <FaGithub size={28} />
                             </Link>
                         </div>
@@ -94,10 +94,7 @@ export const Footer = () => {
                                     ecesoc@bitmesra.ac.in
                                 </a>
                             </li>
-                            <li className="flex items-center gap-4">
-                                <Phone className="text-[#2DD4BF] shrink-0" size={24} />
-                                <span className="text-neutral-400 text-base md:text-lg">+91 XXXXX XXXXX</span>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
