@@ -21,7 +21,7 @@ export const Executives = () => {
         <div className="grid grid-cols-2 min-[530px]:grid-cols-3 min-[930px]:grid-cols-4 gap-3 min-[530px]:gap-6 min-[930px]:gap-8 xl:gap-14 px-2 sm:px-0">
           {executives.map((exec, index) => (
             <motion.div
-              key={exec.name}
+              key={`${exec.name}-${exec.role}-${index}`}
               className="w-full max-w-70 mx-auto"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

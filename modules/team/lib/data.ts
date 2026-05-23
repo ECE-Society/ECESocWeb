@@ -329,6 +329,16 @@ export const executives: TeamMember[] = [
     },
   },
   {
+    name: "Shristy Shreya",
+    role: "Events Coordinator",
+    photo: "/teams/Shristy Shreya.jpg",
+    social: {
+      gmail: "btech10202.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/shristy_sh26?igsh=emM0OHkwc3ZjZDN6",
+      linkedin: "https://www.linkedin.com/in/shristy-shreya-542695316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    },
+  },
+  {
     name: "Arnav Srivastava",
     role: "Executive Member",
     photo: "/teams/Arnav Srivastava.jpg",
@@ -404,7 +414,7 @@ export const contributors: TeamMember[] = [
   {
     name: "Anooz Kumar Burnwal",
     role: "Member",
-    photo: "/teams/Anooz_kumar.jpeg",
+    photo: "/teams/Anooz_Kumar.jpeg",
     social: {
       gmail: "anoozburnwal1921@gmail.com",
       linkedin: "https://www.linkedin.com/in/anooz-burnwal-7aa082368/"
