@@ -34,7 +34,7 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
     >
       <div className="relative h-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#090909]/90 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_35px_90px_-20px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30">
         <div className="relative h-full overflow-hidden">
-          <div className="relative aspect-[4/5] overflow-hidden">
+          <div className="relative aspect-4/5 overflow-hidden">
             <Image
               src={member.photo}
               alt={member.name}
@@ -43,7 +43,7 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent" />
             
             {/* Year Badge */}
             <div className="absolute top-5 left-5 z-10 transition-transform duration-500 group-hover:-translate-y-1">
@@ -144,7 +144,7 @@ export const HallOfFame = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 right-0 mt-2 p-2 bg-[#090909]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-3xl"
                     >
-                      <div className="max-h-[250px] overflow-y-auto custom-scrollbar flex flex-col gap-1">
+                      <div className="max-h-62.5 overflow-y-auto custom-scrollbar flex flex-col gap-1">
                         {years.map(year => (
                           <button
                             key={year}
@@ -180,7 +180,7 @@ export const HallOfFame = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-15% 0px -15% 0px' }}
                       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                      className="relative z-10 w-full max-w-[280px]"
+                      className="relative z-10 w-full max-w-70"
                     >
                       <HallOfFameCard member={member} />
                     </motion.div>

@@ -34,9 +34,9 @@ const timelineData = [
     role: 'President',
     title: 'Former President',
     description: 'Championed the society vision and strengthened partnerships across campus communities.',
-    photo: '/teams/default.jpg',
+    photo: '/teams/Harsh_Verma.jpg',
     social: {
-      linkedin: 'https://linkedin.com/in/amitkumar',
+      linkedin: 'https://www.linkedin.com/in/harsh-verma2025/',
       github: 'https://github.com/amitkumar',
     },
   },
@@ -197,7 +197,7 @@ export default function Timeline() {
 
                   <div className={`mt-3 w-full max-w-md lg:max-w-none lg:w-[46%] ${isLeft ? 'lg:text-right' : 'lg:text-left'}`}>
                     <div className={`flex flex-col sm:flex-row ${isLeft ? 'sm:flex-row-reverse' : ''} rounded-[1.75rem] border border-white/10 bg-[#090909]/90 shadow-[0_18px_50px_-20px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_24px_60px_-18px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30`}>
-                      <div className={`relative sm:w-40 sm:shrink-0 overflow-hidden rounded-t-[1.75rem] sm:rounded-none aspect-[4/3] sm:aspect-auto ${isLeft ? 'sm:rounded-r-[1.75rem] sm:border-l sm:border-white/5' : 'sm:rounded-l-[1.75rem] sm:border-r sm:border-white/5'}`}>
+                      <div className={`relative sm:w-40 sm:shrink-0 overflow-hidden rounded-t-[1.75rem] sm:rounded-none aspect-4/3 sm:aspect-auto ${isLeft ? 'sm:rounded-r-[1.75rem] sm:border-l sm:border-white/5' : 'sm:rounded-l-[1.75rem] sm:border-r sm:border-white/5'}`}>
                         <Image
                           src={item.photo}
                           alt={`${item.role} ${item.year}`}

@@ -282,13 +282,30 @@ export const executives: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/baishnavi-prasad-bab90233b"
     },
   },
-
+  {
+    name: "Dev Khunger",
+    role: "ML Coordinator",
+    photo: "/teams/Dev khunger .jpg",
+    social: {
+      gmail: "Btech10709.24@bitmesra.ac.in",
+    },
+  },
   {
     name: "Akriti Agarwal",
     role: "Content Coordinator",
     photo: "/teams/Akriti Agarwal .jpg",
     social: {
       gmail: "btech10899.24@bitmesra.ac.in"
+    },
+  },
+  {
+    name: "Stuti Garg",
+    role: "Social Media Coordinator",
+    photo: "/teams/Stuti_Garg.png",
+    social: {
+      gmail: "btech10888.24@bitmesra.ac.in",
+      linkedin: "https://www.linkedin.com/in/stuti-garg-635850248/",
+      instagram: "https://www.instagram.com/stuti__garg_/?__pwa=1",
     },
   },
   {
@@ -299,6 +316,16 @@ export const executives: TeamMember[] = [
       gmail: "btech10295.24@bitmesra.ac.in",
       instagram: "https://www.instagram.com/gurpreet_kek/",
       linkedin: "https://www.linkedin.com/in/gurpreet-singh-sarmotta-402a6a304/"
+    },
+  },
+  {
+    name: "Shanvi Vats",
+    role: "Design Coordinator",
+    photo: "/teams/Shanvi_Vats.png",
+    social: {
+      gmail: "btech10315.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/shanvi_2765?igsh=NnkwZjFid3lvcHZs",
+      linkedin: "https://www.linkedin.com/in/shanvi-vats?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     },
   },
   {
@@ -373,14 +400,16 @@ export const contributors: TeamMember[] = [
       gmail: "btech10434.24@bitmesra.ac.in",
       linkedin: "https://www.linkedin.com/in/sidhant-anweshi-077422390"
     },
+  },
+  {
+    name: "Anooz Kumar Burnwal",
+    role: "Member",
+    photo: "/teams/Anooz_kumar.jpeg",
+    social: {
+      gmail: "anoozburnwal1921@gmail.com",
+      linkedin: "https://www.linkedin.com/in/anooz-burnwal-7aa082368/"
+    },
   }
-  // ,
-  // {
-  //   name: "Contributor 5",
-  //   role: "Support",
-  //   photo: "/teams/default.jpg",
-  //   social: {}
-  // }
 ];
 
 export const hallOfFame: HallOfFameMember[] = [
@@ -408,11 +437,23 @@ export const hallOfFame: HallOfFameMember[] = [
   },
   {
     year: "2021",
-    name: "Hall of Fame Member",
-    pastPosition: "Position",
+    name: "Harsh Verma",
+    pastPosition: "Former President",
     tenure: "2021",
-    photo: "/teams/default.jpg",
-    social: {}
+    photo: "/teams/Harsh_Verma.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/harsh-verma2025/"
+    }
+  },
+  {
+    year: "2021",
+    name: "Shreyansh Kumar",
+    pastPosition: "Former Vice President",
+    tenure: "2021",
+    photo: "/teams/Shreyansh_Kumar.jpg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/shreyansh-kumar-49911b232/"
+    }
   },
   {
     year: "2020",

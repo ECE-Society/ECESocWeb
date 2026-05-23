@@ -22,7 +22,7 @@ export const Executives = () => {
           {executives.map((exec, index) => (
             <motion.div
               key={exec.name}
-              className="w-full max-w-[280px] mx-auto"
+              className="w-full max-w-70 mx-auto"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.08 }}
