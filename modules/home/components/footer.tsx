@@ -65,11 +65,17 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-white font-bold mb-4 md:mb-6 text-xl md:text-2xl tracking-wide">Resources</h3>
                         <ul className="space-y-4">
-                            {['Study Materials', 'Lab Manuals', 'Previous Year Questions', 'Tech Blog', 'Newsletter '].map((item) => (
-                                <li key={item}>
-                                    <Link href={item === 'Newsletter ' ? '#' : '#'} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
+                            {[
+                                { label: 'Study Materials', href: 'https://bitmesra.ac.in/Other-Department-Pages/content/1/258/449' },
+                                { label: 'Lab Manuals', href: 'https://bitmesra.ac.in/edudepartment/content/1/72/106' },
+                                { label: 'Previous Year Questions', href: 'https://bitmesra.ac.in/Other-Department-Pages/content/1/258/449' },
+                                { label: 'Tech Blog', href: 'https://www.linkedin.com/company/ece-society-bit-mesra/posts/?feedView=all' },
+                                { label: 'Newsletter', href: 'https://www.linkedin.com/posts/richa-mishra-5ab12266_ece-dept-newsletter-activity-7433122222111674369-ZPPa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKoowoB0EUXnLQYmISh_qPguTgAxSMcFLQ' },
+                            ].map((item) => (
+                                <li key={item.label}>
+                                    <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#2DD4BF] opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {item}
+                                        {item.label}
                                     </Link>
                                 </li>
                             ))}
