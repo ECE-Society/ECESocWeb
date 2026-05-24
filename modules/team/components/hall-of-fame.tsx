@@ -90,7 +90,10 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
 
 export const HallOfFame = () => {
   const years = useMemo(
-    () => Array.from(new Set(hallOfFame.map((member) => member.year))).sort((a, b) => Number(b) - Number(a)),
+    () =>
+      Array.from(new Set(hallOfFame.map((member) => member.year)))
+        .filter((year) => year === '2022' || year === '2021')
+        .sort((a, b) => Number(b) - Number(a)),
     []
   );
   const [selectedYear, setSelectedYear] = useState(years[0] ?? '');
@@ -99,7 +102,7 @@ export const HallOfFame = () => {
   const selectedMembers = hallOfFame.filter((member) => member.year === selectedYear);
 
   return (
-    <section className="relative py-24 px-6 md:px-12 lg:px-16 bg-[#0a0a0a]">
+    <section className="relative py-20 px-4 sm:px-6 md:py-24 md:px-12 lg:px-16 bg-[#0a0a0a]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.05),transparent_70%)] pointer-events-none" />
 
       <SectionReveal className="relative z-10 max-w-7xl mx-auto">
@@ -121,9 +124,9 @@ export const HallOfFame = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-[200px_minmax(0,1fr)]">
+        <div className="grid gap-8 lg:grid-cols-[200px_minmax(0,1fr)] lg:items-start">
           <div className="relative">
-            <div className="sticky top-32 rounded-3xl border border-white/10 bg-[#070707]/90 p-4 shadow-[0_30px_90px_-40px_rgba(0,0,0,0.6)] backdrop-blur-xl flex flex-col items-center">
+            <div className="lg:sticky lg:top-32 rounded-3xl border border-white/10 bg-[#070707]/90 p-4 sm:p-5 shadow-[0_30px_90px_-40px_rgba(0,0,0,0.6)] backdrop-blur-xl flex flex-col items-center max-w-md mx-auto lg:max-w-none lg:mx-0">
               <p className="text-[10px] uppercase tracking-[0.3em] text-[#2DD4BF] mb-4 font-black">Timeline</p>
               
               <div className="relative w-full z-50">
@@ -132,7 +135,7 @@ export const HallOfFame = () => {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="group w-full px-4 py-3 rounded-2xl border border-white/20 bg-[#0f0f0f]/90 text-white font-bold flex items-center justify-between shadow-[0_5px_15px_-5px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/60 hover:bg-[#2DD4BF]/5 hover:text-[#2DD4BF] transition-all duration-300"
                 >
-                  <span className="tracking-widest text-sm uppercase">{selectedYear}</span>
+                  <span className="tracking-widest text-xs sm:text-sm uppercase">{selectedYear}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? "rotate-180 text-[#2DD4BF]" : "text-white/50 group-hover:text-[#2DD4BF]"}`} />
                 </button>
                 <AnimatePresence>
@@ -142,7 +145,7 @@ export const HallOfFame = () => {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 right-0 mt-2 p-2 bg-[#090909]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-3xl"
+                      className="relative mt-2 p-2 bg-[#090909]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-3xl z-50 lg:absolute lg:top-full lg:left-0 lg:right-0"
                     >
                       <div className="max-h-62.5 overflow-y-auto custom-scrollbar flex flex-col gap-1">
                         {years.map(year => (
@@ -163,7 +166,7 @@ export const HallOfFame = () => {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 min-w-0">
             <motion.div
               key={selectedYear}
               initial={{ opacity: 0, y: 20 }}
@@ -171,7 +174,7 @@ export const HallOfFame = () => {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="space-y-6"
             >
-              <div className="relative mt-6 flex flex-wrap gap-6 sm:gap-8 justify-center sm:justify-start">
+              <div className="relative mt-6 flex flex-col items-center gap-6 sm:flex-row sm:flex-wrap sm:gap-8 sm:items-start sm:justify-start">
                 {selectedMembers.map((member, index) => {
                   return (
                     <motion.div
@@ -180,7 +183,7 @@ export const HallOfFame = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: '-15% 0px -15% 0px' }}
                       transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                      className="relative z-10 w-full max-w-70"
+                      className="relative z-10 w-full max-w-[min(100%,20rem)] sm:max-w-70"
                     >
                       <HallOfFameCard member={member} />
                     </motion.div>

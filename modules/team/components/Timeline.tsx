@@ -40,39 +40,6 @@ const timelineData = [
       github: 'https://github.com/amitkumar',
     },
   },
-  {
-    year: '2020',
-    role: 'President',
-    title: 'Former President',
-    description: 'Delivered remote events and ensured continuity through an adaptive digital-first approach.',
-    photo: '/teams/default.jpg',
-    social: {
-      linkedin: 'https://linkedin.com/in/snehareddy',
-      instagram: 'https://instagram.com/sneha.reddy',
-    },
-  },
-  {
-    year: '2019',
-    role: 'President',
-    title: 'Former President',
-    description: 'Built an energized community and launched the society’s signature outreach programs.',
-    photo: '/teams/default.jpg',
-    social: {
-      linkedin: 'https://linkedin.com/in/vikramsingh',
-      gmail: 'vikram.singh@college.edu',
-    },
-  },
-  {
-    year: '2018',
-    role: 'President',
-    title: 'Former President',
-    description: 'Laid the foundation for the modern society with a bold culture of innovation and collaboration.',
-    photo: '/teams/default.jpg',
-    social: {
-      linkedin: 'https://linkedin.com/in/anjaliimehta',
-      github: 'https://github.com/anjaliimehta',
-    },
-  },
 ];
 
 const iconForRole = (role: string) => {
