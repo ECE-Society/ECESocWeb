@@ -21,13 +21,13 @@ export default function Home() {
   const latestBlogs = allBlogs.slice(0, 7);
   const galleryImages = shuffleArray([
     '/forgallery/IMG_9815.jpg',
-    '/forgallery/IMG_9825.jpg',
     '/forgallery/IMG_9827.jpg',
     '/forgallery/IMG_9831.jpg',
-    '/forgallery/IMG_9859.jpg',
+    '/forgallery/IMG_9904.jpg',
     '/forgallery/IMG_9980.jpg',
     '/forgallery/IMG_9984.jpg',
     '/forgallery/_MG_9611.JPG',
+    '/forgallery/_MG_9787.JPG',
     '/forgallery/_MG_9834.JPG',
     '/forgallery/_MG_9846.JPG',
   ]);
