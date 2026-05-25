@@ -144,6 +144,15 @@ export const leadershipBody: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/abhi1264"
     },
   },
+  {
+    name: "Aayush Singh Shekhawat",
+    role: "Executive Member",
+    photo: "/teams/Aayush_Singh_Shekhawat.jpg",
+    social: {
+      gmail: "btech10070.23@bitmesra.ac.in",
+      linkedin: "https://www.linkedin.com/in/aayush-singh-shekhawat-749722325/"
+    },
+  },
   // {
   //   name: "Sahil Kumar",
   //   role: "Vice President",
@@ -170,17 +179,6 @@ export const executives: TeamMember[] = [
     },
   },
   {
-    name: "Aanyaa Sinha",
-    role: "Joint Secretary",
-    photo: "/teams/Aanyaa Sinha.jpg",
-    zoom: 1.5,
-    social: {
-      gmail: "btech10789.24@bitmesra.ac.in",
-      instagram: "https://www.instagram.com/aanyaasinha_1676",
-      linkedin: "https://www.linkedin.com/in/aanyaa-sinha-426524326"
-    },
-  },
-  {
     name: "Kartik Saxena",
     role: "Joint Secretary",
     photo: "/teams/Kartik.jpg",
@@ -189,6 +187,17 @@ export const executives: TeamMember[] = [
       gmail: "btech10231.24@bitmesra.ac.in",
       instagram: "https://www.instagram.com/kartik____saxena?igsh=eDBleXJ5ajM0bnNh",
       linkedin: "https://www.linkedin.com/in/kartik-saxena-785b452a9/"
+    },
+  },
+  {
+    name: "Aanyaa Sinha",
+    role: "Joint Secretary",
+    photo: "/teams/Aanyaa Sinha.jpg",
+    zoom: 1.5,
+    social: {
+      gmail: "btech10789.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/aanyaasinha_1676",
+      linkedin: "https://www.linkedin.com/in/aanyaa-sinha-426524326"
     },
   },
   {
@@ -235,7 +244,11 @@ export const executives: TeamMember[] = [
     name: "Hitesh Bajaj",
     role: "Tech Coordinator",
     photo: "/teams/Hitesh Bajaj.webp",
-    social: { instagram: "https://www.instagram.com/hiteshbajajcp10/?hl=en", linkedin: "https://www.linkedin.com/in/hitesh-bajaj-8b6520328/" },
+    social: {
+      gmail: "btech10691.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/hiteshbajajcp10/?hl=en",
+      linkedin: "https://www.linkedin.com/in/hitesh-bajaj-8b6520328/"
+    },
   },
   {
     name: "Priyanshu Srivastava",
@@ -300,14 +313,14 @@ export const executives: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/shristy-shreya-542695316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
   },
-   {
-    name: "Sadique Ahmad Khan",
-    role: "Video Coordinator",
-    photo: "/teams/Sadique Khan.jpg",
+  {
+    name: "Shanvi Vats",
+    role: "Design Coordinator",
+    photo: "/teams/Shanvi_Vats.png",
     social: {
-      gmail: "btech10720.24@bitmesra.ac.in",
-      instagram: "https://www.instagram.com/sadique.khan.01/",
-      linkedin: "https://www.linkedin.com/in/sadique-ahmad-khan-1a185137b/"
+      gmail: "btech10315.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/shanvi_2765?igsh=NnkwZjFid3lvcHZs",
+      linkedin: "https://www.linkedin.com/in/shanvi-vats?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     },
   },
   {
@@ -321,13 +334,13 @@ export const executives: TeamMember[] = [
     },
   },
   {
-    name: "Shanvi Vats",
-    role: "Design Coordinator",
-    photo: "/teams/Shanvi_Vats.png",
+    name: "Sadique Ahmad Khan",
+    role: "Video Coordinator",
+    photo: "/teams/Sadique Khan.jpg",
     social: {
-      gmail: "btech10315.24@bitmesra.ac.in",
-      instagram: "https://www.instagram.com/shanvi_2765?igsh=NnkwZjFid3lvcHZs",
-      linkedin: "https://www.linkedin.com/in/shanvi-vats?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      gmail: "btech10720.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/sadique.khan.01/",
+      linkedin: "https://www.linkedin.com/in/sadique-ahmad-khan-1a185137b/"
     },
   },
   {
@@ -349,16 +362,6 @@ export const executives: TeamMember[] = [
     },
   },
   {
-    name: "Gurpreet Singh",
-    role: "Tech Executive Member",
-    photo: "/teams/GS.png",
-    social: {
-      gmail: "btech10295.24@bitmesra.ac.in",
-      instagram: "https://www.instagram.com/gurpreet_kek/",
-      linkedin: "https://www.linkedin.com/in/gurpreet-singh-sarmotta-402a6a304/"
-    },
-  },
-  {
     name: "Arnav Srivastava",
     role: "Executive Member",
     photo: "/teams/Arnav Srivastava.jpg",
@@ -371,12 +374,41 @@ export const executives: TeamMember[] = [
     },
   },
   {
+    name: "Gurpreet Singh",
+    role: "Tech Executive Member",
+    photo: "/teams/GS.png",
+    social: {
+      gmail: "btech10295.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/gurpreet_kek/",
+      linkedin: "https://www.linkedin.com/in/gurpreet-singh-sarmotta-402a6a304/"
+    },
+  },
+  {
     name: "Sidhant Anweshi",
     role: "Executive Member",
     photo: "/teams/Sidhant Anweshi.jpg",
     social: {
       gmail: "btech10434.24@bitmesra.ac.in",
       linkedin: "https://www.linkedin.com/in/sidhant-anweshi-077422390"
+    },
+  },
+  {
+    name: "Keshav Raj",
+    role: "Executive Member",
+    photo: "/teams/Keshav Raj.jpg",
+    social: {
+      gmail: "btech10038.24@bitmesra.ac.in",
+      linkedin: "https://www.linkedin.com/in/keshav-raj-984722336"
+    },
+  },
+  {
+    name: "Vidit Jain",
+    role: "Executive Member",
+    photo: "/teams/Vidit_Jain.png",
+    social: {
+      gmail: "btech10439.24@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/vidit_jain_26?igsh=MTBxc3BiODI1ZWNibg==",
+      linkedin: "https://www.linkedin.com/in/vidit-jain-3062b3324"
     },
   }
 ];
@@ -436,7 +468,7 @@ export const contributors: TeamMember[] = [
     role: "Member",
     photo: "/teams/Anooz_Kumar.jpeg",
     social: {
-      instagram : "https://www.instagram.com/kr_anooz/",
+      instagram: "https://www.instagram.com/kr_anooz/",
       gmail: "anoozburnwal1921@gmail.com",
       linkedin: "https://www.linkedin.com/in/anooz-burnwal-7aa082368/"
     },
