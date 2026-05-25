@@ -281,12 +281,12 @@ const workshopEvents = [
         date: 'Apr 02, 2025',
         location: 'ECE Lab C, BIT Mesra',
         description:
-            'A structured workshop on digital design fundamentals — Boolean algebra, combinational and sequential circuits, flip-flops, multiplexers, and an introduction to FPGA programming with Verilog.',
+            'A structured workshop on digital design fundamentals — Boolean algebra, combinational and sequential circuits, flip-flops, multiplexers, and practical logic-design workflow insights.',
         icon: Code2,
         color: '#c084fc',
         gradientFrom: 'from-purple-500/20',
         gradientTo: 'to-pink-500/10',
-        tags: ['Digital', 'FPGA', 'Logic Design'],
+        tags: ['Digital', 'Logic Design'],
         image: '/events photo/intro to digital.jpeg',
     },
 ];
@@ -400,11 +400,11 @@ function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                                                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                     onClick={() => setSelectedPhoto(photo.src)}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                         <img
                                                             src={photo.src}
                                                             alt={photo.alt}
-                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Hover Overlay */}
                                                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -623,11 +623,11 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                                                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                     onClick={() => setSelectedPhoto(photo.src)}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                         <img
                                                             src={photo.src}
                                                             alt={photo.alt}
-                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Hover Overlay */}
                                                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -840,11 +840,11 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                                                 className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                 onClick={() => setSelectedPhoto(photo.src)}
                                             >
-                                                <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                     <img
                                                         src={photo.src}
                                                         alt={photo.alt}
-                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                     />
                                                     {/* Hover Overlay */}
                                                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -1005,11 +1005,11 @@ function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                                                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                     onClick={() => setSelectedPhoto(photo.src)}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                         <img
                                                             src={photo.src}
                                                             alt={photo.alt}
-                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Hover Overlay */}
                                                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -1197,11 +1197,11 @@ function ElectroquizModal({ open, mode, onClose }: { open: boolean; mode: 'highl
                                                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                     onClick={() => setSelectedPhoto(photo.src)}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                         <img
                                                             src={photo.src}
                                                             alt={photo.alt}
-                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Hover Overlay */}
                                                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -1353,11 +1353,11 @@ function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highli
                                                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                                                     onClick={() => setSelectedPhoto(photo.src)}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden">
+                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
                                                         <img
                                                             src={photo.src}
                                                             alt={photo.alt}
-                                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                         />
                                                         {/* Hover Overlay */}
                                                         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -1545,13 +1545,13 @@ function FeaturedCard({
 
             {/* Full-width Landscape Image */}
             {event.image && (
-                <div className="relative z-10 w-full overflow-hidden">
+                <div className="relative z-10 w-full overflow-hidden bg-neutral-950/80 p-2">
                     {/* @ts-ignore */}
                     <img 
                          src={event.image} 
                          alt={event.title} 
                          loading="eager" 
-                         className="w-full h-auto object-cover" 
+                         className="w-full h-auto object-contain rounded-lg" 
                     />
                 </div>
             )}
@@ -1673,7 +1673,9 @@ function EventCard({
                         {/* @ts-ignore - image is optional */}
                         {event.image && (
                             // @ts-ignore
-                            <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-cover object-center mt-4 rounded-xl group-hover:scale-[1.02] transition-transform duration-500" />
+                            <div className="mt-4 rounded-xl bg-neutral-950/80 p-2">
+                                <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-contain object-center rounded-lg group-hover:scale-[1.02] transition-transform duration-500" />
+                            </div>
                         )}
                     </div>
 
