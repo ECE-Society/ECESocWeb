@@ -1552,6 +1552,7 @@ function FeaturedCard({
                          alt={event.title} 
                          loading="eager" 
                          className="w-full h-auto object-contain rounded-lg" 
+                         onClick={(e) => e.stopPropagation()}
                     />
                 </div>
             )}
@@ -1674,7 +1675,7 @@ function EventCard({
                         {event.image && (
                             // @ts-ignore
                             <div className="mt-4 rounded-xl bg-neutral-950/80 p-2">
-                                <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-contain object-center rounded-lg group-hover:scale-[1.02] transition-transform duration-500" />
+                                <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-contain object-center rounded-lg group-hover:scale-[1.02] transition-transform duration-500" onClick={(e) => e.stopPropagation()} />
                             </div>
                         )}
                     </div>
@@ -1775,10 +1776,12 @@ function GenericEventModal({ event, onClose }: { event: typeof genericEvents[0] 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d]"
+                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[2.5rem] bg-[#0d0d0d] [&::-webkit-scrollbar]:hidden"
                         style={{
                             border: `1px solid ${event.color}40`,
-                            boxShadow: `0 40px 100px -20px ${event.color}25, 0 0 0 1px rgba(255,255,255,0.04)`
+                            boxShadow: `0 40px 100px -20px ${event.color}25, 0 0 0 1px rgba(255,255,255,0.04)`,
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none',
                         }}
                         onClick={(e) => e.stopPropagation()}
                     >
@@ -1896,10 +1899,16 @@ export default function EventsPage() {
 
             {/* ── Featured Events (2-col) ── */}
             <section className="relative px-6 md:px-12 lg:px-20 pb-16 max-w-[1600px] mx-auto">
-                <div className="mb-8">
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-600">
-                        ── Flagship Events
-                    </span>
+                <div className="mb-8 max-w-3xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.45em] text-neutral-500">
+                        Featured
+                    </p>
+                    <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-white">
+                        Flagship events that define our year.
+                    </h2>
+                    <p className="mt-4 text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                        Discover the signature festivals, competitions, and meetups that bring the ECE community together.
+                    </p>
                 </div>
                 <div className="flex justify-center">
                     <div className="w-full">
@@ -1931,10 +1940,16 @@ export default function EventsPage() {
 
             {/* ── Generic Events (3-col) ── */}
             <section className="relative px-6 md:px-12 lg:px-20 pb-40 max-w-[1600px] mx-auto">
-                <SectionReveal className="mb-8">
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-600">
-                        ── All Events
-                    </span>
+                <SectionReveal className="mb-8 max-w-3xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.45em] text-neutral-500">
+                        Events
+                    </p>
+                    <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-white">
+                        Explore every event across our calendar.
+                    </h2>
+                    <p className="mt-4 text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                        From competitions to community gatherings, these are the experiences you can join throughout the year.
+                    </p>
                 </SectionReveal>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
                     {genericEvents.map((event, i) => (
@@ -1994,10 +2009,16 @@ export default function EventsPage() {
             </section>
             {/* ── Workshops (3-col) ── */}
             <section className="relative px-6 md:px-12 lg:px-20 pb-40 max-w-[1600px] mx-auto">
-                <SectionReveal className="mb-8">
-                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-neutral-600">
-                        ── Workshops
-                    </span>
+                <SectionReveal className="mb-8 max-w-3xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.45em] text-neutral-500">
+                        Workshops
+                    </p>
+                    <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight text-white">
+                        Learn by doing in our hands-on sessions.
+                    </h2>
+                    <p className="mt-4 text-neutral-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                        Practical workshops designed to sharpen your skills with real tools, guided projects, and expert support.
+                    </p>
                 </SectionReveal>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                     {workshopEvents.map((event, i) => (
