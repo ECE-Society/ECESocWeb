@@ -9,25 +9,18 @@ import { SectionReveal } from './section-reveal';
 const testimonials = [
     {
         id: 1,
-        name: "Dr. John Doe",
+        name: "Dr. Sanjay Kumar",
         designation: "Head of ECE Department",
         quote: "The ECE Society has consistently been at the forefront of technical excellence. Our students aren't just learning electronics; they are architecting the future of silicon and signal processing with unparalleled passion.",
         image: "https://api.dicebear.com/7.x/avataaars/png?seed=John&backgroundColor=b6e3f4"
     },
     {
         id: 2,
-        name: "Prof. Jane Smith",
+        name: "Dr. Sanjaya Shankar Tripathy",
         designation: "Faculty Advisor, ECE SOC",
-        quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class. Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
+        quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
         image: "https://api.dicebear.com/7.x/avataaars/png?seed=Jane&backgroundColor=ffdfbf"
     },
-    {
-        id: 3,
-        name: "Dr. Alan Turing",
-        designation: "Senior Professor",
-        quote: "Innovation is the heartbeat of ECE. The projects coming out of this community reflect a deep understanding of core engineering principles combined with a bold vision for the AI-integrated electronics of tomorrow.",
-        image: "https://api.dicebear.com/7.x/avataaars/png?seed=Alan&backgroundColor=d1d4f9"
-    }
 ];
 
 export const FacultyTestimonials = () => {

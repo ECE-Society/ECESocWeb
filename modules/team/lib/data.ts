@@ -13,18 +13,18 @@ export interface TeamMember {
 
 export const facultyAdvisors: TeamMember[] = [
   {
-    name: "Sanjay Kumar",
+    name: "Dr. Sanjay Kumar",
     role: "HOD-ECE",
-    photo: "/teams/hod.jpg",
+    photo: "/teams/HOD.png",
     social: {
       gmail: "skumar@bitmesra.ac.in",
       linkedin: "https://linkedin.com/",
     },
   },
   {
-    name: "Sanjaya Shankar Tripathy",
+    name: "Dr. Sanjaya Shankar Tripathy",
     role: "Faculty Advisor",
-    photo: "/teams/SST.jpeg",
+    photo: "/teams/SST.png",
     social: {
       gmail: "sstripathy@bitmesra.ac.in",
       linkedin: "https://linkedin.com/",
@@ -58,7 +58,7 @@ export const leadershipBody: TeamMember[] = [
   {
     name: "Vibhor Jain",
     role: "Vice President",
-    photo: "/teams/Vibhor_Jain.jpg",
+    photo: "/teams/Vibhor Jain.jpeg",
     social: {
       gmail: "btech10732.23@bitmesra.ac.in",
       instagram: "https://www.instagram.com/jnvibhor_1108",
@@ -316,7 +316,9 @@ export const executives: TeamMember[] = [
   {
     name: "Shanvi Vats",
     role: "Design Coordinator",
-    photo: "/teams/Shanvi_Vats.png",
+    photo: "/teams/Shanvi_Vats.jpeg",
+    zoom: 1.2,    
+    objectPosition: "right center",    
     social: {
       gmail: "btech10315.24@bitmesra.ac.in",
       instagram: "https://www.instagram.com/shanvi_2765?igsh=NnkwZjFid3lvcHZs",
@@ -375,7 +377,7 @@ export const executives: TeamMember[] = [
   },
   {
     name: "Gurpreet Singh",
-    role: "Tech Executive Member",
+    role: "Executive Member",
     photo: "/teams/GS.png",
     social: {
       gmail: "btech10295.24@bitmesra.ac.in",
@@ -471,6 +473,16 @@ export const contributors: TeamMember[] = [
       instagram: "https://www.instagram.com/kr_anooz/",
       gmail: "anoozburnwal1921@gmail.com",
       linkedin: "https://www.linkedin.com/in/anooz-burnwal-7aa082368/"
+    },
+  },
+  {
+    name: "Keshav Raj",
+    role: "Tech Executive Member",
+    photo: "/teams/Keshav Raj.jpg",
+    zoom: 1.3,
+    social: {
+      gmail: "btech10038.24@bitmesra.ac.in",
+      linkedin: "https://www.linkedin.com/in/keshav-raj-984722336"
     },
   }
 ];

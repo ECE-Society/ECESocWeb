@@ -138,27 +138,27 @@ const codeverseFeatures = [
 const genericEvents = [
     {
         id: 'bitotsav',
-        title: 'Bitotsav',
-        tagline: 'The Grand Tech Fest',
+        title: 'Electropoly',
+        tagline: 'The Strategic Electronics Game',
         date: 'Mar 14–16, 2025',
         location: 'Main Campus, BIT Mesra',
         description:
-            'The flagship annual techno-cultural festival of BIT Mesra. Three days of innovation, competitions, workshops, and performances uniting the brightest minds from across the nation.',
+            'Roll the Dice. Rule the Grid. Electropoly is a high-voltage strategic board game where circuits meet commerce — buy, sell, and trade your way through an electronics-themed Monopoly board at Bitotsav, the grand annual techfest of BIT Mesra.',
         icon: Trophy,
         color: '#2DD4BF',
         gradientFrom: 'from-[#2DD4BF]/20',
         gradientTo: 'to-purple-500/10',
-        tags: ['Tech Fest', 'Multi-Day', 'BIT Mesra'],
+        tags: ['Strategy', 'Bitotsav', 'BIT Mesra'],
         image: '/events photo/Screenshot 2026-05-23 160748.png',
     },
     {
         id: 'interninsights',
         title: 'Intern Insights',
         tagline: 'Industry Connect Series',
-        date: 'Feb 14, 2025',
+        date: 'May 13-15, 2025',
         location: 'Seminar Hall, BIT Mesra',
         description:
-            'A career-forward session connecting students with industry professionals, featuring panel talks, resume critiques, and insider tips on cracking top internships.',
+            "We interview students who landed internships at top companies and ask them everything — how they prepared, what the interviews were like, and what it's really like on the inside. A raw, honest, peer-to-peer series that turns real experiences into your roadmap.",
         icon: Briefcase,
         color: '#34d399',
         gradientFrom: 'from-emerald-500/20',
@@ -197,34 +197,19 @@ const genericEvents = [
         image: '/events photo/electroquiz.jpeg',
     },
     {
-        id: 'pantheon',
-        title: 'Pantheon',
+        id: 'bytebattles',
+        title: 'Byte Battles',
         tagline: 'The Ultimate Techfest',
         date: 'Apr 05, 2025',
         location: 'Main Auditorium, BIT Mesra',
         description:
-            'Pantheon is the grand techfest of BIT Mesra — a convergence of the brightest engineering minds across India. Packed with technical competitions, hackathons, workshops, and culturals, it celebrates innovation, creativity, and the spirit of engineering at its finest.',
+            'Byte Battles is an AI-focused hackathon with two challenging rounds. First, craft creative prompts to make ChatGPT say things it won\'t usually—testing your prompt engineering. Then, leverage AI in a development round to build innovative solutions. Combine creativity, technical expertise, and AI knowledge to dominate competition and claim victory.',
         icon: Shield,
         color: '#f472b6',
         gradientFrom: 'from-pink-500/20',
         gradientTo: 'to-purple-500/10',
         tags: ['Techfest', 'BIT Mesra', 'Annual'],
         image: '/events photo/pantheon.jpeg',
-    },
-    {
-        id: 'fridayfact',
-        title: 'Friday Fact',
-        tagline: 'Weekly Tech Trivia',
-        date: 'Every Friday',
-        location: 'Social Media / ECE Society Hub',
-        description:
-            'A weekly initiative by the ECE Society sharing fascinating facts and trivia about electronics, hardware, software, and engineering history to spark interest and knowledge.',
-        icon: Terminal,
-        color: '#22d3ee',
-        gradientFrom: 'from-cyan-500/20',
-        gradientTo: 'to-sky-500/10',
-        tags: ['Weekly', 'Trivia', 'ECE Domain'],
-        image: '/events photo/friday_fact.png',
     },
 ];
 
@@ -236,7 +221,7 @@ const workshopEvents = [
         date: 'Feb 10, 2025',
         location: 'ECE Lab A, BIT Mesra',
         description:
-            'A beginner-friendly workshop introducing the core foundations of electronics — resistors, capacitors, diodes, transistors, and basic circuit analysis. Perfect for freshers stepping into the world of ECE.',
+            'Join us for a comprehensive beginner-friendly workshop on the core foundations of electronics. Learn about resistors, capacitors, diodes, and transistors through hands-on demonstrations and practical circuit analysis. This workshop is designed for freshers stepping into the world of ECE, providing essential knowledge and confidence to excel in your academic journey.',
         icon: Zap,
         color: '#facc15',
         gradientFrom: 'from-yellow-500/20',
@@ -251,7 +236,7 @@ const workshopEvents = [
         date: 'Mar 05, 2025',
         location: 'Computing Lab, BIT Mesra',
         description:
-            'An introductory workshop on Artificial Intelligence and Machine Learning — covering supervised learning, neural networks, model training, and real-world ECE applications of AI.',
+            'Explore Artificial Intelligence and Machine Learning with our comprehensive workshop. Learn supervised learning algorithms, neural networks, and model training techniques with real-world ECE applications. Gain hands-on experience and knowledge. Whether you are a beginner or have prior AI experience, this workshop provides valuable insights and foundational understanding essential for advancing your skills in artificial intelligence.',
         icon: Terminal,
         color: '#22d3ee',
         gradientFrom: 'from-cyan-500/20',
@@ -266,7 +251,7 @@ const workshopEvents = [
         date: 'Mar 20, 2025',
         location: 'Seminar Hall, ECE Dept.',
         description:
-            'A hands-on introduction to VLSI design — from CMOS logic gates and digital circuits to RTL coding in Verilog, simulation, and an overview of the chip fabrication pipeline.',
+            'Dive into VLSI design fundamentals with our hands-on workshop covering CMOS logic gates, digital circuits, and RTL coding in Verilog. Understand simulation and gain insights into the chip fabrication pipeline. Learn industry-standard practices used in semiconductor design. This workshop is perfect for engineers interested in hardware design and advancing their skills in chip development.',
         icon: Cpu,
         color: '#a3e635',
         gradientFrom: 'from-lime-500/20',
@@ -281,7 +266,7 @@ const workshopEvents = [
         date: 'Apr 02, 2025',
         location: 'ECE Lab C, BIT Mesra',
         description:
-            'A structured workshop on digital design fundamentals — Boolean algebra, combinational and sequential circuits, flip-flops, multiplexers, and practical logic-design workflow insights.',
+            'Master digital design fundamentals with our workshop covering Boolean algebra, combinational circuits, sequential circuits, flip-flops, and multiplexers. Gain practical insights into logic design workflow used in industry. Learn how to design, simulate, and verify circuits effectively. Whether you are new to digital electronics or strengthening your foundation, this workshop equips you with essential skills and knowledge.',
         icon: Code2,
         color: '#c084fc',
         gradientFrom: 'from-purple-500/20',
@@ -321,7 +306,7 @@ const techathonPhotos = [
     { src: '/events photo/techathon inside 5.jpg', alt: 'Session view and presentation' },
 ];
 
-function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
@@ -345,7 +330,7 @@ function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#a78bfa]/25`}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#a78bfa]/25"
                             style={{ boxShadow: '0 40px 100px -20px rgba(167,139,250,0.25), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -357,19 +342,15 @@ function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                             <div className="absolute -inset-4 rounded-[3rem] opacity-30 blur-3xl pointer-events-none"
                                 style={{ background: 'radial-gradient(ellipse at 50% 0%, #a78bfa22, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
                                     <div className="flex flex-col gap-1">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#a78bfa]/70">
-                                            {mode === 'highlights' ? 'Tech-A-Thon · Highlights' : 'Tech-A-Thon · Round Guide'}
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#a78bfa]/70">
+                                            Tech-A-Thon · Flagship Event
                                         </span>
-                                        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                            {mode === 'highlights' ? (
-                                                <>Tech-A-Thon <span style={{ color: '#a78bfa' }}>Glimpses</span></>
-                                            ) : (
-                                                <>How It <span style={{ color: '#a78bfa' }}>Works</span></>
-                                            )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Tech-A-Thon <span style={{ color: '#a78bfa' }}>2025</span>
                                         </h2>
                                     </div>
                                     <button
@@ -381,103 +362,188 @@ function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                                     </button>
                                 </div>
 
-                                {/* Glimpses Photo Section */}
-                                {mode === 'highlights' && (
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a78bfa]/90">
-                                                Event Highlights
-                                            </span>
-                                            <span className="text-sm text-neutral-400 font-medium">
-                                                Click any image to enlarge and view session highlights
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {techathonPhotos.map((photo, index) => (
-                                                <motion.div
-                                                    key={index}
-                                                    whileHover={{ scale: 1.025, y: -2 }}
-                                                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
-                                                    onClick={() => setSelectedPhoto(photo.src)}
+                                {/* Stat Boxes */}
+                                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                                    {/* Participants */}
+                                    <div
+                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        style={{ backgroundColor: '#a78bfa0d', borderColor: '#a78bfa30' }}
+                                    >
+                                        <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
+                                            style={{ background: 'radial-gradient(ellipse at 50% 50%, #a78bfa, transparent 70%)' }} />
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#a78bfa]/70 relative z-10">
+                                            Participants
+                                        </span>
+                                        <span className="text-4xl lg:text-5xl font-black text-white leading-none relative z-10">
+                                            4K<span style={{ color: '#a78bfa' }}>+</span>
+                                        </span>
+                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
+                                            Registered teams
+                                        </span>
+                                    </div>
+
+                                    {/* Prize Pool */}
+                                    <div
+                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        style={{ backgroundColor: '#2DD4BF0d', borderColor: '#2DD4BF30' }}
+                                    >
+                                        <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
+                                            style={{ background: 'radial-gradient(ellipse at 50% 50%, #2DD4BF, transparent 70%)' }} />
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#2DD4BF]/70 relative z-10">
+                                            Prizes Worth
+                                        </span>
+                                        <span className="text-4xl lg:text-5xl font-black text-white leading-none relative z-10">
+                                            ₹<span style={{ color: '#2DD4BF' }}>25K</span>
+                                        </span>
+                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
+                                            Total prize pool
+                                        </span>
+                                    </div>
+
+                                    {/* Hosted on Unstop */}
+                                    <div
+                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        style={{ backgroundColor: '#fb923c0d', borderColor: '#fb923c30' }}
+                                    >
+                                        <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
+                                            style={{ background: 'radial-gradient(ellipse at 50% 50%, #fb923c, transparent 70%)' }} />
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#fb923c]/70 relative z-10">
+                                            Platform
+                                        </span>
+                                        <span className="text-2xl lg:text-3xl font-black text-white leading-none relative z-10" style={{ color: '#fb923c' }}>
+                                            Unstop
+                                        </span>
+                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
+                                            Hosted on India's platform
+                                        </span>
+                                    </div>
+
+                                    {/* Categories */}
+                                    <div
+                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        style={{ backgroundColor: '#06b6d40d', borderColor: '#06b6d430' }}
+                                    >
+                                        <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
+                                            style={{ background: 'radial-gradient(ellipse at 50% 50%, #06b6d4, transparent 70%)' }} />
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#06b6d4]/70 relative z-10">
+                                            Categories
+                                        </span>
+                                        <span className="text-sm lg:text-base font-black text-white leading-snug relative z-10 text-center">
+                                            Core Electronics<br />Web Dev · AI/ML
+                                        </span>
+                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
+                                            Multiple problem tracks
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Event Description */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#a78bfa]/90">
+                                        About
+                                    </span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        ECE Society, BIT Mesra proudly presents its flagship event – Tech-A-Thon. This is a month-long, hybrid inter-college innovation sprint that brings together students from across India to build impactful solutions in Artificial Intelligence/Machine Learning, Core Electronics, Embedded Systems, Automation, and Web Development.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> July–August 2025
+                                        </span>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> ECE Block, BIT Mesra
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Rounds Guide */}
+                                <div className="flex flex-col gap-4">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a78bfa]/90">
+                                        How It Works · Round Guide
+                                    </span>
+                                    <div className="flex flex-col gap-6">
+                                        {techathonRounds.map((round) => {
+                                            const RoundIcon = round.icon;
+                                            return (
+                                                <div
+                                                    key={round.number}
+                                                    className="relative rounded-2xl p-6 border"
+                                                    style={{
+                                                        backgroundColor: `${round.color}08`,
+                                                        borderColor: `${round.color}25`,
+                                                    }}
                                                 >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                                                        <img
-                                                            src={photo.src}
-                                                            alt={photo.alt}
-                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Hover Overlay */}
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                            <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
-                                                                View Photo
+                                                    <div className="flex items-center gap-3 mb-4">
+                                                        <div
+                                                            className="flex items-center justify-center w-10 h-10 rounded-xl border flex-shrink-0"
+                                                            style={{ backgroundColor: `${round.color}15`, borderColor: `${round.color}30` }}
+                                                        >
+                                                            <RoundIcon className="w-5 h-5" style={{ color: round.color }} />
+                                                        </div>
+                                                        <div className="flex flex-col gap-0.5">
+                                                            <span
+                                                                className="text-[9px] font-black uppercase tracking-[0.3em]"
+                                                                style={{ color: `${round.color}90` }}
+                                                            >
+                                                                Round {round.number}
+                                                            </span>
+                                                            <span className="text-base font-black uppercase tracking-wide text-white">
+                                                                {round.name}
                                                             </span>
                                                         </div>
                                                     </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {/* Rounds Guide */}
-                                {mode === 'rounds' && (
-                                    <div className="flex flex-col gap-4">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a78bfa]/90 mb-2">
-                                            How It Works · Round Guide
-                                        </span>
-                                        <div className="flex flex-col gap-6">
-                                            {techathonRounds.map((round) => {
-                                                const RoundIcon = round.icon;
-                                                return (
-                                                    <div
-                                                        key={round.number}
-                                                        className="relative rounded-2xl p-6 border"
-                                                        style={{
-                                                            backgroundColor: `${round.color}08`,
-                                                            borderColor: `${round.color}25`,
-                                                        }}
-                                                    >
-                                                        {/* Round label */}
-                                                        <div className="flex items-center gap-3 mb-4">
-                                                            <div
-                                                                className="flex items-center justify-center w-10 h-10 rounded-xl border flex-shrink-0"
-                                                                style={{ backgroundColor: `${round.color}15`, borderColor: `${round.color}30` }}
-                                                            >
-                                                                <RoundIcon className="w-5 h-5" style={{ color: round.color }} />
-                                                            </div>
-                                                            <div className="flex flex-col gap-0.5">
+                                                    <ul className="flex flex-col gap-2">
+                                                        {round.points.map((point, pi) => (
+                                                            <li key={pi} className="flex items-start gap-3">
                                                                 <span
-                                                                    className="text-[9px] font-black uppercase tracking-[0.3em]"
-                                                                    style={{ color: `${round.color}90` }}
-                                                                >
-                                                                    Round {round.number}
+                                                                    className="mt-[5px] flex-shrink-0 w-1.5 h-1.5 rounded-full"
+                                                                    style={{ backgroundColor: round.color }}
+                                                                />
+                                                                <span className="text-sm text-neutral-300 leading-relaxed">
+                                                                    {point}
                                                                 </span>
-                                                                <span className="text-base font-black uppercase tracking-wide text-white">
-                                                                    {round.name}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-
-                                                        {/* Points */}
-                                                        <ul className="flex flex-col gap-2">
-                                                            {round.points.map((point, pi) => (
-                                                                <li key={pi} className="flex items-start gap-3">
-                                                                    <span
-                                                                        className="mt-[5px] flex-shrink-0 w-1.5 h-1.5 rounded-full"
-                                                                        style={{ backgroundColor: round.color }}
-                                                                    />
-                                                                    <span className="text-sm text-neutral-300 leading-relaxed">
-                                                                        {point}
-                                                                    </span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                );
-                                            })}
-                                        </div>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            );
+                                        })}
                                     </div>
-                                )}
+                                </div>
+
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a78bfa]/90">
+                                            Event Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge and view session highlights
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {techathonPhotos.map((photo, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.025, y: -2 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
+                                                onClick={() => setSelectedPhoto(photo.src)}
+                                            >
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
+                                                    <img
+                                                        src={photo.src}
+                                                        alt={photo.alt}
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
+                                                            View Photo
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
 
                                 {/* Footer note */}
                                 <p className="text-[11px] text-neutral-600 font-medium text-center">
@@ -489,7 +555,7 @@ function TechathonModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                 )}
             </AnimatePresence>
 
-            {/* Lightbox for viewing photos at full resolution */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {selectedPhoto && (
                     <motion.div
@@ -536,7 +602,7 @@ const bitotsavPhotos = [
     { src: '/events photo/bitotsav inside.jpeg', alt: 'Event presentation and evaluation' },
 ];
 
-function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function BitotsavModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
@@ -560,7 +626,7 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#2DD4BF]/25`}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#2DD4BF]/25"
                             style={{ boxShadow: '0 40px 100px -20px rgba(45,212,191,0.22), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -572,28 +638,16 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                             <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
                                 style={{ background: 'radial-gradient(ellipse at 50% 0%, #2DD4BF22, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#2DD4BF]/70">
-                                            {mode === 'highlights' ? 'Bitotsav · Highlights' : 'Bitotsav · Sub-Event'}
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#2DD4BF]/70">
+                                            Electropoly · Bitotsav 2025
                                         </span>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-2xl">⚡🎲</span>
-                                            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                                {mode === 'highlights' ? (
-                                                    <>Bitotsav <span style={{ color: '#2DD4BF' }}>Glimpses</span></>
-                                                ) : (
-                                                    <>Electro<span style={{ color: '#2DD4BF' }}>poly</span></>
-                                                )}
-                                            </h2>
-                                        </div>
-                                        {mode === 'rounds' && (
-                                            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md">
-                                                Roll the Dice. Rule the Grid. Where your strategic mind meets high-voltage fun.
-                                            </p>
-                                        )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Electro<span style={{ color: '#2DD4BF' }}>poly</span>
+                                        </h2>
                                     </div>
                                     <button
                                         onClick={onClose}
@@ -604,103 +658,59 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                                     </button>
                                 </div>
 
-                                {/* Glimpses Photo Section */}
-                                {mode === 'highlights' && (
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#2DD4BF]/90">
-                                                Event Highlights
-                                            </span>
-                                            <span className="text-sm text-neutral-400 font-medium">
-                                                Click any image to enlarge and view session highlights
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {bitotsavPhotos.map((photo, index) => (
-                                                <motion.div
-                                                    key={index}
-                                                    whileHover={{ scale: 1.025, y: -2 }}
-                                                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
-                                                    onClick={() => setSelectedPhoto(photo.src)}
-                                                >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                                                        <img
-                                                            src={photo.src}
-                                                            alt={photo.alt}
-                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Hover Overlay */}
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                            <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
-                                                                View Photo
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+                                {/* About */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#2DD4BF]/90">About</span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        Roll the Dice. Rule the Grid. Electropoly is a high-voltage strategic board game where circuits meet commerce — buy, sell, and trade your way through an electronics-themed Monopoly board at Bitotsav, the grand annual techfest of BIT Mesra.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> Mar 14–16, 2025
+                                        </span>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> Main Campus, BIT Mesra
+                                        </span>
                                     </div>
-                                )}
+                                </div>
 
-                                {/* Phases */}
-                                {mode === 'rounds' && (
-                                    <div className="flex flex-col gap-6">
-                                        {bitotsavPhases.map((phase) => (
-                                            <div
-                                                key={phase.number}
-                                                className="relative rounded-2xl p-6 border"
-                                                style={{
-                                                    backgroundColor: `${phase.color}08`,
-                                                    borderColor: `${phase.color}25`,
-                                                }}
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#2DD4BF]/90">
+                                            Event Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {bitotsavPhotos.map((photo, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.025, y: -2 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
+                                                onClick={() => setSelectedPhoto(photo.src)}
                                             >
-                                                {/* Phase label */}
-                                                <div className="flex items-center gap-3 mb-3">
-                                                    <div
-                                                        className="flex items-center justify-center w-10 h-10 rounded-xl border flex-shrink-0 text-lg"
-                                                        style={{ backgroundColor: `${phase.color}15`, borderColor: `${phase.color}30` }}
-                                                    >
-                                                        {phase.emoji}
-                                                    </div>
-                                                    <div className="flex flex-col gap-0.5">
-                                                        <span
-                                                            className="text-[9px] font-black uppercase tracking-[0.3em]"
-                                                            style={{ color: `${phase.color}90` }}
-                                                        >
-                                                            Phase {phase.number}
-                                                        </span>
-                                                        <span className="text-sm font-black uppercase tracking-wide text-white">
-                                                            {phase.name}
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
+                                                    <img
+                                                        src={photo.src}
+                                                        alt={photo.alt}
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
+                                                            View Photo
                                                         </span>
                                                     </div>
                                                 </div>
-
-                                                <p className="text-sm text-neutral-400 leading-relaxed mb-3">
-                                                    {phase.intro}
-                                                </p>
-
-                                                <ul className="flex flex-col gap-2">
-                                                    {phase.points.map((point, pi) => (
-                                                        <li key={pi} className="flex items-start gap-3">
-                                                            <span
-                                                                className="mt-[5px] flex-shrink-0 w-1.5 h-1.5 rounded-full"
-                                                                style={{ backgroundColor: phase.color }}
-                                                            />
-                                                            <span className="text-sm text-neutral-300 leading-relaxed">
-                                                                {point}
-                                                            </span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-
-                                            </div>
+                                            </motion.div>
                                         ))}
                                     </div>
-                                )}
+                                </div>
 
-                                {/* Footer rally */}
-                                <p className="text-center text-sm text-neutral-500 font-medium">
-                                    💥 Get ready to spark your strategy, light up the leaderboard, and{' '}
+                                <p className="text-[11px] text-neutral-600 font-medium text-center">
+                                    💥 Get ready to spark your strategy and{' '}
                                     <span style={{ color: '#2DD4BF' }}>Electrify the Game!</span>
                                 </p>
                             </div>
@@ -709,7 +719,7 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                 )}
             </AnimatePresence>
 
-            {/* Lightbox for viewing photos at full resolution */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {selectedPhoto && (
                     <motion.div
@@ -734,7 +744,7 @@ function BitotsavModal({ open, mode, onClose }: { open: boolean; mode: 'highligh
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             src={selectedPhoto}
-                            alt="Bitotsav session highlight"
+                            alt="Electropoly session highlight"
                             className="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
@@ -756,11 +766,10 @@ const internInsightsRounds = [
     { src: '/events photo/intern insight inside 4.jpeg', alt: 'Day 3 Speaker Info - Kunal & Subham' },
 ];
 
-function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function InternInsightsModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
-
-    const activePhotos = mode === 'highlights' ? internInsightsHighlights : internInsightsRounds;
+    const allPhotos = [...internInsightsHighlights, ...internInsightsRounds];
 
     return (
         <>
@@ -782,7 +791,7 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#34d399]/25`}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#34d399]/25"
                             style={{ boxShadow: '0 40px 100px -20px rgba(52,211,153,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
@@ -793,25 +802,16 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                             <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
                                 style={{ background: 'radial-gradient(ellipse at 50% 0%, #34d39920, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#34d399]/70">
-                                            {mode === 'highlights' ? 'Intern Insights · Highlights' : 'ECE Society · 3-Day Series'}
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#34d399]/70">
+                                            Intern Insights · ECE Society
                                         </span>
-                                        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                            {mode === 'highlights' ? (
-                                                <>Intern Insights <span style={{ color: '#34d399' }}>Glimpses</span></>
-                                            ) : (
-                                                <>Intern <span style={{ color: '#34d399' }}>Insights</span></>
-                                            )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Intern <span style={{ color: '#34d399' }}>Insights</span>
                                         </h2>
-                                        {mode === 'rounds' && (
-                                            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md">
-                                                Talks That Guide — Real experiences from peers who’ve made their mark in core, tech, and research.
-                                            </p>
-                                        )}
                                     </div>
                                     <button
                                         onClick={onClose}
@@ -822,18 +822,34 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                                     </button>
                                 </div>
 
-                                {/* Photo Grid */}
-                                <div className="flex flex-col gap-4">
-                                    <div className="flex flex-col gap-0.5">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#34d399]/90">
-                                            {mode === 'highlights' ? 'Session Highlights' : 'Speaker Details & Profiles'}
+                                {/* About */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#34d399]/90">About</span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        We interview students who landed internships at top companies and ask them everything — how they prepared, what the interviews were like, and what it&apos;s really like on the inside. A raw, honest, peer-to-peer series that turns real experiences into your roadmap.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> May 13–15, 2025
                                         </span>
-                                        <span className="text-sm text-neutral-400 font-medium">
-                                            Click any image to enlarge and view details
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> Seminar Hall, BIT Mesra
                                         </span>
                                     </div>
-                                    <div className={`grid ${mode === 'highlights' ? 'grid-cols-2 sm:grid-cols-3' : 'grid-cols-2'} gap-4`}>
-                                        {activePhotos.map((photo, index) => (
+                                </div>
+
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#34d399]/90">
+                                            Session Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {allPhotos.map((photo, index) => (
                                             <motion.div
                                                 key={index}
                                                 whileHover={{ scale: 1.025, y: -2 }}
@@ -846,7 +862,6 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                                                         alt={photo.alt}
                                                         className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                                                     />
-                                                    {/* Hover Overlay */}
                                                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                                         <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
                                                             View Photo
@@ -858,9 +873,8 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                                     </div>
                                 </div>
 
-                                {/* Footer */}
-                                <p className="text-center text-sm text-neutral-500 font-medium">
-                                    Whether you’re aiming for core, software, or research —{' '}
+                                <p className="text-[11px] text-neutral-600 font-medium text-center">
+                                    Whether you&apos;re aiming for core, software, or research —{' '}
                                     <span style={{ color: '#34d399' }}>this series is crafted to inspire, inform, and guide you.</span>
                                 </p>
                             </div>
@@ -869,7 +883,7 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                 )}
             </AnimatePresence>
 
-            {/* Lightbox for viewing photos at full resolution */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {selectedPhoto && (
                     <motion.div
@@ -894,7 +908,7 @@ function InternInsightsModal({ open, mode, onClose }: { open: boolean; mode: 'hi
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             src={selectedPhoto}
-                            alt="Intern Insights session detail"
+                            alt="Intern Insights session highlight"
                             className="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
@@ -918,7 +932,7 @@ const codeversePhotos = [
     { src: '/events photo/codeverse inside 1.jpg', alt: 'Codeverse Group Session' },
 ];
 
-function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function CodeverseModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
@@ -942,40 +956,28 @@ function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#38bdf8]/25`}
-                            style={{ boxShadow: '0 40px 100px -20px rgba(56,189,248,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#38bdf8]/25"
+                            style={{ boxShadow: '0 40px 100px -20px rgba(56,189,248,0.22), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Top shimmer */}
                             <div className="absolute top-0 left-16 right-16 h-[1px] pointer-events-none"
                                 style={{ background: 'linear-gradient(90deg, transparent, #38bdf870, transparent)' }} />
+
                             {/* Glow blob */}
                             <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
                                 style={{ background: 'radial-gradient(ellipse at 50% 0%, #38bdf820, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#38bdf8]/70">
-                                            {mode === 'highlights' ? 'Codeverse · Highlights' : 'The Solo Showdown'}
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#38bdf8]/70">
+                                            Codeverse · Competitive Programming
                                         </span>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-2xl">🚀</span>
-                                            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                                {mode === 'highlights' ? (
-                                                    <>Code <span style={{ color: '#38bdf8' }}>Verse Glimpses</span></>
-                                                ) : (
-                                                    <>Code <span style={{ color: '#38bdf8' }}>Verse</span></>
-                                                )}
-                                            </h2>
-                                        </div>
-                                        {mode === 'rounds' && (
-                                            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md">
-                                                Ready to go head-to-head with the best and prove your dominance in the world of algorithms and logic? 
-                                                Code Verse is not just a coding contest — it’s a battlefield where only the sharpest minds survive.
-                                            </p>
-                                        )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Code<span style={{ color: '#38bdf8' }}>verse</span>
+                                        </h2>
                                     </div>
                                     <button
                                         onClick={onClose}
@@ -986,75 +988,83 @@ function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                                     </button>
                                 </div>
 
-                                {/* Glimpses Photo Section */}
-                                {mode === 'highlights' && (
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#38bdf8]/90">
-                                                Event Highlights
-                                            </span>
-                                            <span className="text-sm text-neutral-400 font-medium">
-                                                Click any image to enlarge and view session highlights
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {codeversePhotos.map((photo, index) => (
-                                                <motion.div
-                                                    key={index}
-                                                    whileHover={{ scale: 1.025, y: -2 }}
-                                                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
-                                                    onClick={() => setSelectedPhoto(photo.src)}
-                                                >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                                                        <img
-                                                            src={photo.src}
-                                                            alt={photo.alt}
-                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Hover Overlay */}
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                            <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
-                                                                View Photo
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+                                {/* About */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#38bdf8]/90">About</span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        An intense competitive programming contest spanning multiple difficulty tiers — from DSA to system design — crafted to challenge and elevate every coder's limits.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> Feb 08, 2025
+                                        </span>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> Computing Labs, BIT Mesra
+                                        </span>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* Features */}
-                                {mode === 'rounds' && (
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-neutral-600 mb-2">
-                                            🧠 What’s in Store?
-                                        </span>
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            {codeverseFeatures.map((feat) => (
-                                                <div
-                                                    key={feat.title}
-                                                    className="rounded-2xl p-5 border"
-                                                    style={{ backgroundColor: `${feat.color}08`, borderColor: `${feat.color}25` }}
-                                                >
-                                                    <div className="flex items-center gap-3 mb-2">
-                                                        <div
-                                                            className="flex items-center justify-center w-8 h-8 rounded-xl border flex-shrink-0 text-base"
-                                                            style={{ backgroundColor: `${feat.color}15`, borderColor: `${feat.color}30` }}
-                                                        >
-                                                            {feat.emoji}
-                                                        </div>
-                                                        <span className="text-sm font-bold text-white">{feat.title}</span>
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#38bdf8]/90">What's in Store?</span>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        {codeverseFeatures.map((feat) => (
+                                            <div
+                                                key={feat.title}
+                                                className="rounded-2xl p-5 border"
+                                                style={{ backgroundColor: `${feat.color}08`, borderColor: `${feat.color}25` }}
+                                            >
+                                                <div className="flex items-center gap-3 mb-2">
+                                                    <div
+                                                        className="flex items-center justify-center w-8 h-8 rounded-xl border flex-shrink-0 text-base"
+                                                        style={{ backgroundColor: `${feat.color}15`, borderColor: `${feat.color}30` }}
+                                                    >
+                                                        {feat.emoji}
                                                     </div>
-                                                    <p className="text-xs text-neutral-400 leading-relaxed">{feat.desc}</p>
+                                                    <span className="text-sm font-bold text-white">{feat.title}</span>
                                                 </div>
-                                            ))}
-                                        </div>
+                                                <p className="text-xs text-neutral-400 leading-relaxed">{feat.desc}</p>
+                                            </div>
+                                        ))}
                                     </div>
-                                )}
+                                </div>
 
-                                {/* Footer */}
-                                <p className="text-center text-sm text-neutral-500 font-medium">
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#38bdf8]/90">
+                                            Event Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {codeversePhotos.map((photo, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.025, y: -2 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
+                                                onClick={() => setSelectedPhoto(photo.src)}
+                                            >
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
+                                                    <img
+                                                        src={photo.src}
+                                                        alt={photo.alt}
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
+                                                            View Photo
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <p className="text-[11px] text-neutral-600 font-medium text-center">
                                     Whether you're a code ninja, an algorithm junkie, or someone who lives for the thrill of the scoreboard,{' '}
                                     <span style={{ color: '#38bdf8' }}>Code Verse is where you belong.</span>
                                 </p>
@@ -1064,7 +1074,7 @@ function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                 )}
             </AnimatePresence>
 
-            {/* Lightbox for viewing photos at full resolution */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {selectedPhoto && (
                     <motion.div
@@ -1089,7 +1099,7 @@ function CodeverseModal({ open, mode, onClose }: { open: boolean; mode: 'highlig
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             src={selectedPhoto}
-                            alt="Codeverse session highlight"
+                            alt="Electropoly session highlight"
                             className="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
@@ -1111,7 +1121,7 @@ const electroquizPhotos = [
     { src: '/events photo/electro inside 4.jpeg', alt: 'Quiz competition in progress' },
 ];
 
-function ElectroquizModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function ElectroquizModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
@@ -1135,39 +1145,28 @@ function ElectroquizModal({ open, mode, onClose }: { open: boolean; mode: 'highl
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#fb923c]/25`}
-                            style={{ boxShadow: '0 40px 100px -20px rgba(251,146,60,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#fb923c]/25"
+                            style={{ boxShadow: '0 40px 100px -20px rgba(251,146,60,0.22), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Top shimmer */}
                             <div className="absolute top-0 left-16 right-16 h-[1px] pointer-events-none"
                                 style={{ background: 'linear-gradient(90deg, transparent, #fb923c70, transparent)' }} />
+
                             {/* Glow blob */}
                             <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
                                 style={{ background: 'radial-gradient(ellipse at 50% 0%, #fb923c20, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#fb923c]/70">
-                                            {mode === 'highlights' ? 'Electroquiz · Highlights' : 'Electronics Quiz Championship'}
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#fb923c]/70">
+                                            Electroquiz · Electronics Quiz Championship
                                         </span>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-2xl">🧠</span>
-                                            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                                {mode === 'highlights' ? (
-                                                    <>Electro<span style={{ color: '#fb923c' }}>quiz Highlights</span></>
-                                                ) : (
-                                                    <>Electro<span style={{ color: '#fb923c' }}>quiz</span></>
-                                                )}
-                                            </h2>
-                                        </div>
-                                        {mode === 'rounds' && (
-                                            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md">
-                                                A rigorous electronics and communication engineering quiz that pushes participants on circuit theory, signal processing, microcontrollers, and beyond.
-                                            </p>
-                                        )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Electro<span style={{ color: '#fb923c' }}>quiz</span>
+                                        </h2>
                                     </div>
                                     <button
                                         onClick={onClose}
@@ -1178,44 +1177,61 @@ function ElectroquizModal({ open, mode, onClose }: { open: boolean; mode: 'highl
                                     </button>
                                 </div>
 
-                                {/* Glimpses Photo Section */}
-                                {mode === 'highlights' && (
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#fb923c]/90">
-                                                Event Highlights
-                                            </span>
-                                            <span className="text-sm text-neutral-400 font-medium">
-                                                Click any image to enlarge and view session highlights
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {electroquizPhotos.map((photo, index) => (
-                                                <motion.div
-                                                    key={index}
-                                                    whileHover={{ scale: 1.025, y: -2 }}
-                                                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
-                                                    onClick={() => setSelectedPhoto(photo.src)}
-                                                >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                                                        <img
-                                                            src={photo.src}
-                                                            alt={photo.alt}
-                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Hover Overlay */}
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                            <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
-                                                                View Photo
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+                                {/* About */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#fb923c]/90">About</span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        A rigorous electronics and communication engineering quiz that pushes participants on circuit theory, signal processing, microcontrollers, and beyond.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> Mar 01, 2025
+                                        </span>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> Seminar Hall, ECE Dept.
+                                        </span>
                                     </div>
-                                )}
+                                </div>
 
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#fb923c]/90">
+                                            Event Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {electroquizPhotos.map((photo, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.025, y: -2 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
+                                                onClick={() => setSelectedPhoto(photo.src)}
+                                            >
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
+                                                    <img
+                                                        src={photo.src}
+                                                        alt={photo.alt}
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
+                                                            View Photo
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <p className="text-[11px] text-neutral-600 font-medium text-center">
+                                    Test your electronics knowledge and{' '}
+                                    <span style={{ color: '#fb923c' }}>Rise as the Quiz Champion!</span>
+                                </p>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -1259,24 +1275,24 @@ function ElectroquizModal({ open, mode, onClose }: { open: boolean; mode: 'highl
 }
 
 /* ══════════════════════════════════════════
-   FRIDAY FACT MODAL
+   BYTE BATTLES MODAL
 ══════════════════════════════════════════ */
 
-const fridayFactPhotos = [
-    { src: '/events photo/friday_fact_1.png', alt: 'The first computer bug was a real moth' },
-    { src: '/events photo/friday_fact_2.png', alt: 'A single microchip holds billions of transistors' },
+const byteBattlesPhotos = [
+    { src: '/events photo/pantheon.jpeg', alt: 'Byte Battles event overview' },
 ];
 
-function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highlights' | 'rounds'; onClose: () => void }) {
+function ByteBattlesModal({ open, onClose }: { open: boolean; onClose: () => void }) {
     useModalKeys(open, onClose);
     const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
 
     return (
+
         <>
             <AnimatePresence>
                 {open && (
                     <motion.div
-                        key="fridayfact-backdrop"
+                        key="bytebattles-backdrop"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -1286,44 +1302,33 @@ function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highli
                         onClick={onClose}
                     >
                         <motion.div
-                            key="fridayfact-panel"
+                            key="bytebattles-panel"
                             initial={{ opacity: 0, scale: 0.93, y: 32 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.93, y: 32 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                            className={`relative w-full ${mode === 'highlights' ? 'max-w-4xl' : 'max-w-2xl'} max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#22d3ee]/25`}
-                            style={{ boxShadow: '0 40px 100px -20px rgba(34,211,238,0.2), 0 0 0 1px rgba(255,255,255,0.04)' }}
+                            className="relative w-full max-w-4xl lg:max-w-6xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-[#0d0d0d] border border-[#f472b6]/25"
+                            style={{ boxShadow: '0 40px 100px -20px rgba(244,114,182,0.22), 0 0 0 1px rgba(255,255,255,0.04)' }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             {/* Top shimmer */}
                             <div className="absolute top-0 left-16 right-16 h-[1px] pointer-events-none"
-                                style={{ background: 'linear-gradient(90deg, transparent, #22d3ee70, transparent)' }} />
+                                style={{ background: 'linear-gradient(90deg, transparent, #f472b670, transparent)' }} />
+
                             {/* Glow blob */}
                             <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
-                                style={{ background: 'radial-gradient(ellipse at 50% 0%, #22d3ee20, transparent 70%)' }} />
+                                style={{ background: 'radial-gradient(ellipse at 50% 0%, #f472b620, transparent 70%)' }} />
 
-                            <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                            <div className="relative z-10 p-8 sm:p-10 lg:p-14 flex flex-col gap-8 lg:gap-10">
                                 {/* Header */}
                                 <div className="flex items-start justify-between gap-4">
-                                    <div className="flex flex-col gap-2">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.35em] text-[#22d3ee]/70">
-                                            {mode === 'highlights' ? 'Friday Fact · Highlights' : 'Weekly Tech Trivia'}
+                                    <div className="flex flex-col gap-1">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#f472b6]/70">
+                                            Byte Battles · The Ultimate Techfest
                                         </span>
-                                        <div className="flex items-center gap-2">
-                                            <span className="text-2xl">💡</span>
-                                            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
-                                                {mode === 'highlights' ? (
-                                                    <>Friday <span style={{ color: '#22d3ee' }}>Fact Highlights</span></>
-                                                ) : (
-                                                    <>Friday <span style={{ color: '#22d3ee' }}>Fact</span></>
-                                                )}
-                                            </h2>
-                                        </div>
-                                        {mode === 'rounds' && (
-                                            <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md">
-                                                A weekly initiative by the ECE Society sharing fascinating facts and trivia about electronics, hardware, software, and engineering history to spark interest and knowledge.
-                                            </p>
-                                        )}
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                                            Byte<span style={{ color: '#f472b6' }}>Battles</span>
+                                        </h2>
                                     </div>
                                     <button
                                         onClick={onClose}
@@ -1334,51 +1339,68 @@ function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highli
                                     </button>
                                 </div>
 
-                                {/* Glimpses Photo Section */}
-                                {mode === 'highlights' && (
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex flex-col gap-0.5">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#22d3ee]/90">
-                                                Weekly Slides
-                                            </span>
-                                            <span className="text-sm text-neutral-400 font-medium">
-                                                Click any slide to enlarge and view details
-                                            </span>
-                                        </div>
-                                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                                            {fridayFactPhotos.map((photo, index) => (
-                                                <motion.div
-                                                    key={index}
-                                                    whileHover={{ scale: 1.025, y: -2 }}
-                                                    className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
-                                                    onClick={() => setSelectedPhoto(photo.src)}
-                                                >
-                                                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                                                        <img
-                                                            src={photo.src}
-                                                            alt={photo.alt}
-                                                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                                                        />
-                                                        {/* Hover Overlay */}
-                                                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                            <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
-                                                                View Fact
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </motion.div>
-                                            ))}
-                                        </div>
+                                {/* About */}
+                                <div className="flex flex-col gap-3">
+                                    <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#f472b6]/90">About</span>
+                                    <p className="text-base lg:text-lg text-neutral-300 leading-relaxed">
+                                        Byte Battles is the grand techfest of BIT Mesra — a convergence of the brightest engineering minds across India. Packed with technical competitions, hackathons, workshops, and culturals, it celebrates innovation, creativity, and the spirit of engineering at its finest.
+                                    </p>
+                                    <div className="flex flex-wrap gap-3 mt-1">
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <Calendar className="w-3 h-3" /> Apr 05, 2025
+                                        </span>
+                                        <span className="flex items-center gap-1.5 text-xs font-semibold text-neutral-400 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                                            <MapPin className="w-3 h-3" /> Main Auditorium, BIT Mesra
+                                        </span>
                                     </div>
-                                )}
+                                </div>
 
+                                {/* Gallery */}
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex flex-col gap-0.5">
+                                        <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] text-[#f472b6]/90">
+                                            Event Highlights
+                                        </span>
+                                        <span className="text-sm text-neutral-400 font-medium">
+                                            Click any image to enlarge
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                        {byteBattlesPhotos.map((photo, index) => (
+                                            <motion.div
+                                                key={index}
+                                                whileHover={{ scale: 1.025, y: -2 }}
+                                                className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
+                                                onClick={() => setSelectedPhoto(photo.src)}
+                                            >
+                                                <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
+                                                    <img
+                                                        src={photo.src}
+                                                        alt={photo.alt}
+                                                        className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                                        <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
+                                                            View Photo
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <p className="text-[11px] text-neutral-600 font-medium text-center">
+                                    Join the ultimate engineering convergence and{' '}
+                                    <span style={{ color: '#f472b6' }}>Battle with the Best!</span>
+                                </p>
                             </div>
                         </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            {/* Lightbox for viewing photos at full resolution */}
+            {/* Lightbox */}
             <AnimatePresence>
                 {selectedPhoto && (
                     <motion.div
@@ -1403,7 +1425,7 @@ function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highli
                             exit={{ scale: 0.95, opacity: 0 }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
                             src={selectedPhoto}
-                            alt="Friday Fact highlight"
+                            alt="Byte Battles session highlight"
                             className="max-w-full max-h-[85vh] object-contain rounded-xl border border-white/10 shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         />
@@ -1414,8 +1436,7 @@ function FridayFactModal({ open, mode, onClose }: { open: boolean; mode: 'highli
     );
 }
 
-/* ══════════════════════════════════════════
-   SUB-EVENT BOX
+/*   SUB-EVENT BOX
 ══════════════════════════════════════════ */
 
 type SubEventBoxProps = {
@@ -1484,7 +1505,7 @@ function FeaturedCard({
     return (
         <motion.div
             onClick={onCardClick}
-            className="group relative bg-[#0d0d0d]/90 backdrop-blur-xl rounded-[3rem] overflow-hidden cursor-pointer transition-all duration-500 flex flex-col"
+            className="group relative bg-[#0d0d0d]/90 backdrop-blur-xl rounded-[3rem] overflow-hidden cursor-pointer transition-all duration-500 flex flex-col h-screen"
             style={{
                 border: `1px solid ${event.color}30`,
                 boxShadow: `0 24px 80px -20px rgba(0,0,0,0.9)`,
@@ -1545,14 +1566,13 @@ function FeaturedCard({
 
             {/* Full-width Landscape Image */}
             {event.image && (
-                <div className="relative z-10 w-full overflow-hidden bg-neutral-950/80 p-2">
+                <div className="relative z-10 w-full flex-1 min-h-0 overflow-hidden bg-neutral-950/80 p-2">
                     {/* @ts-ignore */}
-                    <img 
-                         src={event.image} 
-                         alt={event.title} 
-                         loading="eager" 
-                         className="w-full h-auto object-contain rounded-lg" 
-                         onClick={(e) => e.stopPropagation()}
+                    <img
+                        src={event.image}
+                        alt={event.title}
+                        loading="eager"
+                        className="w-full h-full object-cover object-center rounded-lg"
                     />
                 </div>
             )}
@@ -1675,7 +1695,7 @@ function EventCard({
                         {event.image && (
                             // @ts-ignore
                             <div className="mt-4 rounded-xl bg-neutral-950/80 p-2">
-                                <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-contain object-center rounded-lg group-hover:scale-[1.02] transition-transform duration-500" onClick={(e) => e.stopPropagation()} />
+                                <img src={event.image} alt={event.title} className="w-full h-64 md:h-80 object-contain object-center rounded-lg group-hover:scale-[1.02] transition-transform duration-500" />
                             </div>
                         )}
                     </div>
@@ -1776,7 +1796,7 @@ function GenericEventModal({ event, onClose }: { event: typeof genericEvents[0] 
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.93, y: 32 }}
                         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[2.5rem] bg-[#0d0d0d] [&::-webkit-scrollbar]:hidden"
+                        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-[2.5rem] bg-[#0d0d0d] [&::-webkit-scrollbar]:hidden"
                         style={{
                             border: `1px solid ${event.color}40`,
                             boxShadow: `0 40px 100px -20px ${event.color}25, 0 0 0 1px rgba(255,255,255,0.04)`,
@@ -1792,32 +1812,32 @@ function GenericEventModal({ event, onClose }: { event: typeof genericEvents[0] 
                         <div className="absolute -inset-4 rounded-[3rem] opacity-25 blur-3xl pointer-events-none"
                             style={{ background: `radial-gradient(ellipse at 50% 0%, ${event.color}20, transparent 70%)` }} />
 
-                        <div className="relative z-10 p-8 sm:p-10 flex flex-col gap-8">
+                        <div className="relative z-10 p-10 sm:p-14 flex flex-col gap-8">
                             {/* Header */}
                             <div className="flex items-start justify-between gap-4">
                                 <div className="flex flex-col gap-2">
-                                    <span className="text-[10px] font-black uppercase tracking-[0.35em]" style={{ color: `${event.color}90` }}>
+                                    <span className="text-xs font-black uppercase tracking-[0.35em]" style={{ color: `${event.color}90` }}>
                                         {event.tagline}
                                     </span>
                                     <div className="flex items-center gap-3">
                                         <event.icon className="w-8 h-8" style={{ color: event.color }} />
-                                        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+                                        <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
                                             {event.title}
                                         </h2>
                                     </div>
-                                    <p className="text-sm text-neutral-400 font-medium leading-relaxed max-w-md mt-2">
+                                    <p className="text-base text-neutral-400 font-medium leading-relaxed max-w-md mt-2">
                                         {event.description}
                                     </p>
                                 </div>
                                 <button
                                     onClick={onClose}
-                                    className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
+                                    className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-200"
                                     aria-label="Close"
                                 >
-                                    <X className="w-4 h-4" />
+                                    <X className="w-5 h-5" />
                                 </button>
                             </div>
-                            
+
 
                         </div>
                     </motion.div>
@@ -1833,27 +1853,21 @@ function GenericEventModal({ event, onClose }: { event: typeof genericEvents[0] 
 
 export default function EventsPage() {
     const [techathonOpen, setTechathonOpen] = useState(false);
-    const [techathonMode, setTechathonMode] = useState<'highlights' | 'rounds'>('highlights');
     const [bitotsavOpen, setBitotsavOpen] = useState(false);
-    const [bitotsavMode, setBitotsavMode] = useState<'highlights' | 'rounds'>('highlights');
     const [internInsightsOpen, setInternInsightsOpen] = useState(false);
-    const [internInsightsMode, setInternInsightsMode] = useState<'highlights' | 'rounds'>('highlights');
     const [codeverseOpen, setCodeverseOpen] = useState(false);
-    const [codeverseMode, setCodeverseMode] = useState<'highlights' | 'rounds'>('highlights');
     const [electroquizOpen, setElectroquizOpen] = useState(false);
-    const [electroquizMode, setElectroquizMode] = useState<'highlights' | 'rounds'>('highlights');
-    const [fridayfactOpen, setFridayfactOpen] = useState(false);
-    const [fridayfactMode, setFridayfactMode] = useState<'highlights' | 'rounds'>('highlights');
+    const [bytebattlesOpen, setBytebattlesOpen] = useState(false);
     const [selectedGenericEvent, setSelectedGenericEvent] = useState<typeof genericEvents[0] | null>(null);
 
     return (
         <main className="min-h-screen bg-[#080808] text-white overflow-x-hidden">
-            <TechathonModal open={techathonOpen} mode={techathonMode} onClose={() => setTechathonOpen(false)} />
-            <BitotsavModal open={bitotsavOpen} mode={bitotsavMode} onClose={() => setBitotsavOpen(false)} />
-            <InternInsightsModal open={internInsightsOpen} mode={internInsightsMode} onClose={() => setInternInsightsOpen(false)} />
-            <CodeverseModal open={codeverseOpen} mode={codeverseMode} onClose={() => setCodeverseOpen(false)} />
-            <ElectroquizModal open={electroquizOpen} mode={electroquizMode} onClose={() => setElectroquizOpen(false)} />
-            <FridayFactModal open={fridayfactOpen} mode={fridayfactMode} onClose={() => setFridayfactOpen(false)} />
+            <TechathonModal open={techathonOpen} onClose={() => setTechathonOpen(false)} />
+            <BitotsavModal open={bitotsavOpen} onClose={() => setBitotsavOpen(false)} />
+            <InternInsightsModal open={internInsightsOpen} onClose={() => setInternInsightsOpen(false)} />
+            <CodeverseModal open={codeverseOpen} onClose={() => setCodeverseOpen(false)} />
+            <ElectroquizModal open={electroquizOpen} onClose={() => setElectroquizOpen(false)} />
+            <ByteBattlesModal open={bytebattlesOpen} onClose={() => setBytebattlesOpen(false)} />
             <GenericEventModal event={selectedGenericEvent} onClose={() => setSelectedGenericEvent(null)} />
             {/* Ambient glows */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -1918,18 +1932,12 @@ export default function EventsPage() {
                                 event={event}
                                 onExplore={
                                     event.id === 'techathon'
-                                        ? () => {
-                                              setTechathonMode('rounds');
-                                              setTechathonOpen(true);
-                                          }
+                                        ? () => setTechathonOpen(true)
                                         : undefined
                                 }
                                 onCardClick={
                                     event.id === 'techathon'
-                                        ? () => {
-                                              setTechathonMode('highlights');
-                                              setTechathonOpen(true);
-                                          }
+                                        ? () => setTechathonOpen(true)
                                         : undefined
                                 }
                             />
@@ -1958,50 +1966,32 @@ export default function EventsPage() {
                             event={event}
                             delay={i * 0.1}
                             onExplore={
-                                event.id === 'bitotsav' ? () => {
-                                    setBitotsavMode('rounds');
-                                    setBitotsavOpen(true);
-                                }
-                                : event.id === 'interninsights' ? () => {
-                                    setInternInsightsMode('rounds');
-                                    setInternInsightsOpen(true);
-                                }
-                                : event.id === 'codeverse' ? () => {
-                                    setCodeverseMode('rounds');
-                                    setCodeverseOpen(true);
-                                }
-                                : event.id === 'electroquiz' ? () => {
-                                    setElectroquizMode('rounds');
-                                    setElectroquizOpen(true);
-                                }
-                                : event.id === 'fridayfact' ? () => {
-                                    setFridayfactMode('rounds');
-                                    setFridayfactOpen(true);
-                                }
-                                : () => setSelectedGenericEvent(event)
+                                event.id === 'bitotsav' ? () => setBitotsavOpen(true)
+                                    : event.id === 'interninsights' ? () => setInternInsightsOpen(true)
+                                        : event.id === 'codeverse' ? () => {
+                                            setCodeverseOpen(true);
+                                        }
+                                            : event.id === 'electroquiz' ? () => {
+                                                setElectroquizOpen(true);
+                                            }
+                                                : event.id === 'bytebattles' ? () => {
+                                                    setBytebattlesOpen(true);
+                                                }
+                                                    : () => setSelectedGenericEvent(event)
                             }
                             onCardClick={
-                                event.id === 'bitotsav' ? () => {
-                                    setBitotsavMode('highlights');
-                                    setBitotsavOpen(true);
-                                }
-                                : event.id === 'interninsights' ? () => {
-                                    setInternInsightsMode('highlights');
-                                    setInternInsightsOpen(true);
-                                }
-                                : event.id === 'codeverse' ? () => {
-                                    setCodeverseMode('highlights');
-                                    setCodeverseOpen(true);
-                                }
-                                : event.id === 'electroquiz' ? () => {
-                                    setElectroquizMode('highlights');
-                                    setElectroquizOpen(true);
-                                }
-                                : event.id === 'fridayfact' ? () => {
-                                    setFridayfactMode('highlights');
-                                    setFridayfactOpen(true);
-                                }
-                                : undefined
+                                event.id === 'bitotsav' ? () => setBitotsavOpen(true)
+                                    : event.id === 'interninsights' ? () => setInternInsightsOpen(true)
+                                        : event.id === 'codeverse' ? () => {
+                                            setCodeverseOpen(true);
+                                        }
+                                            : event.id === 'electroquiz' ? () => {
+                                                setElectroquizOpen(true);
+                                            }
+                                                : event.id === 'bytebattles' ? () => {
+                                                    setBytebattlesOpen(true);
+                                                }
+                                                    : undefined
                             }
                         />
                     ))}
