@@ -40,12 +40,12 @@ const techathonRounds = [
         icon: Award,
         color: '#a78bfa',
         points: [
-            'Multiple-choice questions (Aptitude/Technical and Core Knowledge/General Trivia) in 1 hour.',
-            'Any one member from each team must participate — their score counts as the team\u2019s total for Round 1.',
-            'Click the assessment link and attempt it. Each team is allowed only one attempt.',
-            'The challenge must be completed in one sitting before the timer runs out.',
-            'No negative marking; each question is worth 2 marks.',
-            'Tiebreaker: test duration first, then team accuracy.',
+            'Participants completed a multiple-choice quiz with aptitude, technical, and general trivia questions.',
+            '1 hour time limit: Teams had to submit their answers within the stipulated time frame.',
+            'One representative from each team participated — their score counted as the team\'s total for Round 1.',
+            'No negative marking was applied; each question was worth 2 marks.',
+            'Final scoring considered test duration and accuracy — faster solvers with higher accuracy ranked higher.',
+            'Top 50 teams advanced to Round 2 based on their performance.',
         ],
     },
     {
@@ -54,13 +54,12 @@ const techathonRounds = [
         icon: GitBranch,
         color: '#38bdf8',
         points: [
-            'All shortlisted teams gain access to the detailed problem statement once the round goes live.',
-            'The document clearly outlines the challenge, steps to follow, and the evaluation process.',
-            'Team leaders submit solutions as per instructions (private GitHub repo link + assets/documentation).',
-            'Further submission instructions and access credentials will be shared closer to the round launch.',
-            'Teams can change submissions until 11:50 PM on Friday, August 15, 2025.',
-            'Only the team leader can make the submission.',
-            'Participants can choose a topic from the provided list or propose their own ideas based on the theme.',
+            '48-hour development round where shortlisted teams built innovative solutions from multiple problem tracks.',
+            'Teams chose from: Core Electronics, Web Development, and AI/ML categories.',
+            'Participants submitted solutions as private GitHub repositories with complete documentation and assets.',
+            'Teams were allowed to make updates and refinements up until the submission deadline.',
+            'Judging criteria: code quality, innovation, feasibility, and presentation of the solution.',
+            'Top 12 teams qualified for the Grand Finale presentation round.',
         ],
     },
     {
@@ -69,9 +68,12 @@ const techathonRounds = [
         icon: Users,
         color: '#2DD4BF',
         points: [
-            'Top teams will present their solution to Team ECESoc.',
-            'Presentations can be in both online and offline modes as per team availability.',
-            'Schedule details will be shared with shortlisted teams accordingly.',
+            'Finalists presented their 15-minute project presentations to the ECE Society judging panel.',
+            'Presentations included live demo, problem statement overview, and technical implementation details.',
+            'Q&A session allowed judges to evaluate depth of understanding and problem-solving approach.',
+            'Winners were selected based on innovation, technical depth, execution quality, and presentation skills.',
+            'Prize distribution ceremony recognized the top 3 teams and special achievement awards.',
+            'Event concluded with networking and feedback session between participants and judges.',
         ],
     },
 ];
@@ -366,7 +368,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                                 <div className="grid grid-cols-2 gap-4 lg:gap-6">
                                     {/* Participants */}
                                     <div
-                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        className="relative flex flex-col items-center justify-center gap-3 rounded-2xl border p-6 lg:p-8 overflow-hidden"
                                         style={{ backgroundColor: '#a78bfa0d', borderColor: '#a78bfa30' }}
                                     >
                                         <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
@@ -374,8 +376,8 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#a78bfa]/70 relative z-10">
                                             Participants
                                         </span>
-                                        <span className="text-4xl lg:text-5xl font-black text-white leading-none relative z-10">
-                                            4K<span style={{ color: '#a78bfa' }}>+</span>
+                                        <span className="text-3xl lg:text-4xl font-black text-white leading-none relative z-10">
+                                            500<span style={{ color: '#a78bfa' }}>+</span>
                                         </span>
                                         <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
                                             Registered teams
@@ -384,7 +386,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
 
                                     {/* Prize Pool */}
                                     <div
-                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        className="relative flex flex-col items-center justify-center gap-3 rounded-2xl border p-6 lg:p-8 overflow-hidden"
                                         style={{ backgroundColor: '#2DD4BF0d', borderColor: '#2DD4BF30' }}
                                     >
                                         <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
@@ -392,8 +394,8 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#2DD4BF]/70 relative z-10">
                                             Prizes Worth
                                         </span>
-                                        <span className="text-4xl lg:text-5xl font-black text-white leading-none relative z-10">
-                                            ₹<span style={{ color: '#2DD4BF' }}>25K</span>
+                                        <span className="text-3xl lg:text-4xl font-black text-white leading-none relative z-10">
+                                            ₹<span style={{ color: '#2DD4BF' }}>15K</span>
                                         </span>
                                         <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
                                             Total prize pool
@@ -402,7 +404,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
 
                                     {/* Hosted on Unstop */}
                                     <div
-                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        className="relative flex flex-col items-center justify-center gap-3 rounded-2xl border p-6 lg:p-8 overflow-hidden"
                                         style={{ backgroundColor: '#fb923c0d', borderColor: '#fb923c30' }}
                                     >
                                         <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
@@ -410,7 +412,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#fb923c]/70 relative z-10">
                                             Platform
                                         </span>
-                                        <span className="text-2xl lg:text-3xl font-black text-white leading-none relative z-10" style={{ color: '#fb923c' }}>
+                                        <span className="text-3xl lg:text-4xl font-black text-white leading-none relative z-10" style={{ color: '#fb923c' }}>
                                             Unstop
                                         </span>
                                         <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
@@ -420,7 +422,7 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
 
                                     {/* Categories */}
                                     <div
-                                        className="relative flex flex-col items-center justify-center gap-2 rounded-2xl border p-6 lg:p-8 overflow-hidden"
+                                        className="relative flex flex-col items-center justify-center gap-3 rounded-2xl border p-6 lg:p-8 overflow-hidden"
                                         style={{ backgroundColor: '#06b6d40d', borderColor: '#06b6d430' }}
                                     >
                                         <div className="absolute -inset-2 blur-2xl opacity-20 pointer-events-none rounded-2xl"
@@ -428,11 +430,11 @@ function TechathonModal({ open, onClose }: { open: boolean; onClose: () => void 
                                         <span className="text-[10px] lg:text-xs font-black uppercase tracking-[0.35em] text-[#06b6d4]/70 relative z-10">
                                             Categories
                                         </span>
-                                        <span className="text-sm lg:text-base font-black text-white leading-snug relative z-10 text-center">
-                                            Core Electronics<br />Web Dev · AI/ML
+                                        <span className="text-3xl lg:text-4xl font-black text-white leading-none relative z-10 text-center">
+                                            Track Variety
                                         </span>
-                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10">
-                                            Multiple problem tracks
+                                        <span className="text-xs lg:text-sm text-neutral-400 font-medium relative z-10 text-center">
+                                            Core Electronics · Web Dev · AI/ML
                                         </span>
                                     </div>
                                 </div>
