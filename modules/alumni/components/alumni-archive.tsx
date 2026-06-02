@@ -31,46 +31,446 @@ const staggerChildren = {
 };
 
 export const alumniList = [
+
+  // K21 Batch
   {
-    name: "Arjun Mehta",
-    image: "/images/alumni/marcus.png",
-    role: "Lead Systems Architect",
-    description: "Specializing in redundant power grids for low-earth orbit satellite constellations.",
-    year: "K18 batch"
+    name: "Honey Pradhan",
+    image: "/images/alumni/Honey Pradhan_K21.jpg",
+    role: "SWE",
+    company: "Google",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/honey-pradhan-806678236"
   },
   {
-    name: "Ishita Sharma",
-    image: "/images/alumni/sarah.png",
-    role: "AI Safety Researcher",
-    description: "Developing ethical alignment protocols for large-scale generative models at OpenAI.",
-    year: "K20 batch"
+    name: "Devansh Shukla",
+    image: "/images/alumni/Devansh Shukla_K21.png",
+    role: "Product Analytics",
+    company: "Swiggy",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/devanshshukla"
   },
   {
-    name: "Kabir Malhotra",
-    image: "/images/alumni/julian.png",
-    role: "Creative Director",
-    description: "Bridging the gap between industrial hardware design and spatial computing interfaces.",
-    year: "K16 Batch"
+    name: "Ankit Mishra",
+    image: "/images/alumni/Ankit Mishra_K21.jpg",
+    role: "ASE",
+    company: "Qualcomm",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/ankit-mishra-904182229"
   },
   {
-    name: "Priyanka Das",
-    image: "/images/alumni/elena.png",
-    role: "Hardware Lead",
-    description: "Developing the next generation of wearable bio-sensors for extreme environmental tracking.",
-    year: "K19 Batch"
+    name: "Gautam Bhaskar",
+    image: "/images/alumni/Gautam Bhaskar_K21.jpg",
+    role: "Flow & Methodology Engineer",
+    company: "Infineon Technologies",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/gautam-bhaskar-47467a164"
+  },
+  {
+    name: "Shreyansh Kumar",
+    image: "/images/alumni/Shreyansh Kumar_K21.jpg",
+    role: "Associate",
+    company: "PwC India",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/shreyansh-kumar-49911b232"
+  },
+  {
+    name: "Akshar Dubey",
+    image: "/images/alumni/Akshar Dubey_K21.jpg",
+    role: "Decision Analytics Associate",
+    company: "ZS",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/akshar-dubey"
+  },
+  {
+    name: "Shovic Dhar",
+    image: "/images/alumni/Shovic Dhar_K21.jpg",
+    role: "Associate",
+    company: "ZS",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/shovic-dhar-992b66292"
+  },
+  {
+    name: "Jhil Kumari",
+    image: "/images/alumni/Jhil Kumari_K21.jpg",
+    role: "SWE",
+    company: "Grid Dynamics",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/jhil-kumari-347b0722b"
+  },
+  {
+    name: "Reyanul Abdin",
+    image: "/images/alumni/Reyanul Abdin_K21.jpg",
+    role: "Dev Ops",
+    company: "Grid Dynamics",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/reyanul-abdin-832160231"
+  },
+  {
+    name: "Harsh Verma",
+    image: "/images/alumni/Harsh Verma_K21.jpg",
+    role: "SDE",
+    company: "Fastenel India",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/harsh-verma2025"
+  },
+  {
+    name: "Anant Bharti",
+    image: "/images/alumni/Anant Bharti_K21.png",
+    role: "RnD Engineer",
+    company: "Logic Fruit Technologies",
+    year: "K21 Batch",
+    linkedin: "https://linkedin.com/in/anant-bharti"
+  },
+  // K20 Batch
+  {
+    name: "Kajal Kiran",
+    image: "/images/alumni/Kajal Kiran_K20.jpg",
+    role: "SWE",
+    company: "Intuit",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/kajal-kiran-4a82b5217"
+  },
+  {
+    name: "Souhardya Chatterjee",
+    image: "/images/alumni/Souhardya Chatterjee_K20.jpg",
+    role: "SMTS",
+    company: "SiemensEDA",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/souhardya-chatterjee-b2648b205"
+  },
+  {
+    name: "Abhinav Anand",
+    image: "/images/alumni/Abhinav Anand_K20.png",
+    role: "Software Engineer",
+    company: "TCS",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/abhianand54"
+  },
+  {
+    name: "Anshu Gaurav",
+    image: "/images/alumni/Anshu Gaurav_K20.jpg",
+    role: "Associate",
+    company: "PwC India",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/anshu-gaurav"
+  },
+  {
+    name: "Nishant Biyani",
+    image: "/images/alumni/Nishant Biyani_K20.jpg",
+    role: "PhD Candidate",
+    company: "Northeastern University",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/nishant-biyani20"
+  },
+  {
+    name: "Aryan Goel",
+    image: "/images/alumni/Aryan Goel_K20.png",
+    role: "Masters in Data Science",
+    company: "UTS",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/16aryan"
+  },
+  {
+    name: "Soumak Nandi",
+    image: "/images/alumni/Soumak Nandi_K20.jpg",
+    role: "Research Assistant",
+    company: "Holonyak Micro and Nanotechnology Lab",
+    year: "K20 Batch",
+    linkedin: "https://linkedin.com/in/soumak-nandi"
+  },
+
+  // K22 Batch
+  {
+    name: "Abhyuday Pandey",
+    image: "/images/alumni/k22/Abhyuday Pandey_k22.jpg",
+    role: "R&D Intern",
+    company: "Logic Fruit Technologies",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/abhyuday-pandey-2302ad"
+  },
+  {
+    name: "Keshav Agarwal",
+    image: "/images/alumni/k22/Keshav Agarwal_k22.jpg",
+    role: "SWE",
+    company: "MightyBot",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/keshavagarwal0927"
+  },
+  {
+    name: "Khushi Choudhary",
+    image: "/images/alumni/k22/Khushi Choudhary_k22.png",
+    role: "Software Engineer Intern",
+    company: "MSCI Inc.",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/khushi-choudhary-a45078260"
+  },
+  {
+    name: "Prashant Gautam",
+    image: "/images/alumni/k22/Prashant Gautam-k22.jpg",
+    role: "Frontend Developer Intern",
+    company: "Vetty",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/prashant-gautam-b84532291"
+  },
+  {
+    name: "Prem Kumar Lohani",
+    image: "/images/alumni/k22/Prem Kumar Lohani_k22.png",
+    role: "Intern",
+    company: "Paytm",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/prem-kumar-lohani"
+  },
+  {
+    name: "Ritik Raj",
+    image: "/images/alumni/k22/Ritik Raj_k22.jpg",
+    role: "SDE Intern",
+    company: "Oracle",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/ritik-raj1875"
+  },
+  {
+    name: "Sagun Patwari",
+    image: "/images/alumni/k22/Sagun Patwari_k22.jpg",
+    role: "SDE Intern",
+    company: "Razorpay",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/sagun-patwari"
+  },
+  {
+    name: "Sushant Gupta",
+    image: "/images/alumni/k22/Sushant Gupta_k22.jpg",
+    role: "Analyst (Intern)",
+    company: "Miebach",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/sushant-gupta-0aab48255"
+  },
+  {
+    name: "Ansh Aryan",
+    image: "/images/alumni/k22/Ansh Aryan_k22.jpg",
+    role: "Full Stack Developer",
+    company: "Navodita Infotech",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/ansh--aryan"
+  },
+  {
+    name: "Harsh Ranjan",
+    image: "/images/alumni/k22/Harsh Ranjan_k22.jpg",
+    role: "Intern",
+    company: "Truemeds",
+    year: "K22 Batch",
+    linkedin: "https://linkedin.com/in/harsh-ranjan-34a5531b7"
+  },
+
+
+  // K19 Batch
+  {
+    name: "Mahavadi Sri Shashank",
+    image: "/images/alumni/k19/Mahavadi Sri Shashank_k19.jpg",
+    role: "Senior Member of Technical Staff",
+    company: "Siemens EDA",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/mahavadi-sri-shashank-a82ab3207"
+  },
+  {
+    name: "Abhinav Pratap Singh",
+    image: "/images/alumni/k19/Abhinav Pratap Singh_k19.png",
+    role: "Software Engineer",
+    company: "DP World",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/abhinav-pratap-singh-2357871b3"
+  },
+  {
+    name: "Akshat Jain",
+    image: "/images/alumni/k19/Akshat Jain_k19.png",
+    role: "Senior Marketing Manager",
+    company: "Star Union Dai-ichi Life Insurance",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/akshat-jain-0520"
+  },
+  {
+    name: "Harshvardhan Agrawal",
+    image: "/images/alumni/k19/Harshvardhan Agrawal_k19.jpg",
+    role: "Salesforce Software Engineer",
+    company: "OSI Digital",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/harshvardhanagrawal007"
+  },
+  {
+    name: "Hemanshu Sogra",
+    image: "/images/alumni/k19/Hemanshu Sogra_k19.jpg",
+    role: "Senior Design Engineer",
+    company: "NXP Semiconductors",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/hemanshu-sogra-111b551a2"
+  },
+  {
+    name: "Kshitij Sharma",
+    image: "/images/alumni/k19/Kshitij Sharma_k19.jpg",
+    role: "SDE",
+    company: "Amazon",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/kshitijsharma19"
+  },
+  {
+    name: "Kumar Utkarsh",
+    image: "/images/alumni/k19/kumar utkarsh_k19.jpg",
+    role: "SDE-2",
+    company: "Fastenal",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/kumar-utkarsh-02"
+  },
+  {
+    name: "Pinki Kumari Munda",
+    image: "/images/alumni/k19/PINKY KUMARI  MUNDA_k19.jpg",
+    role: "SoC DFT Engineer",
+    company: "NXP Semiconductors",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/pinky-kumari-munda-008741209"
+  },
+  {
+    name: "Pranav Prakhar",
+    image: "/images/alumni/k19/Pranav Prakhar_k19.jpg",
+    role: "Applied Scientist",
+    company: "Amazon",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/pranav-prakhar"
+  },
+  {
+    name: "Rohan Sahana",
+    image: "/images/alumni/k19/ROHAN SAHANA_k19.jpg",
+    role: "IND Associate",
+    company: "PwC India",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/rohan-sahana-10120"
+  },
+  {
+    name: "Saket Mishra",
+    image: "/images/alumni/k19/Saket Mishra_k19.jpg",
+    role: "SDE",
+    company: "Enquero",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/saketmishra21"
+  },
+  {
+    name: "Subham Surana",
+    image: "/images/alumni/k19/Subham Surana_k19.jpg",
+    role: "Tech Consultant - Lead Software Engineer",
+    company: "PwC India",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/subham-surana"
+  },
+  // {
+  //   name: "Swapnil Goyal",
+  //   image: "/images/alumni/k19/Swapnil Goyal_k19.jpg",
+  //   role: "SDE III",
+  //   company: "Walmart",
+  //   year: "K19 Batch",
+  //   linkedin: "https://linkedin.com/in/swapnil-goyal-1010"
+  // },
+  {
+    name: "Vaibhav Mishra",
+    image: "/images/alumni/k19/vaibhav mishra_k19.jpg",
+    role: "Production Manager",
+    company: "Britannia Industries Ltd",
+    year: "K19 Batch",
+    linkedin: "https://linkedin.com/in/vaibhav-mishra-"
+  },
+  // K17 Batch
+  {
+    name: "Bhavya",
+    image: "/images/alumni/k17/Bhavya_K17.png",
+    role: "Staff Engineer",
+    company: "Synopsys Inc",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/pantam-bhavya-harika-3a88a916b/"
+  },
+  {
+    name: "Dev Gupta",
+    image: "/images/alumni/k17/Dev Gupta_K17.png",
+    role: "Lead Design Engineer",
+    company: "NXP Semiconductors",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/dev-g-gupta"
+  },
+  {
+    name: "Himanshu Bhushan",
+    image: "/images/alumni/k17/Himanshu Bhushan_K17.png",
+    role: "Design Engineer",
+    company: "eInfochips",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/himanshu-bhushan-736a6b19b"
+  },
+  {
+    name: "Kushal Gella",
+    image: "/images/alumni/k17/Kushal Gella_K17.png",
+    role: "Senior SOC Verification Engineer",
+    company: "NXP Semiconductors",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/kushalgella/"
+  },
+  {
+    name: "Pradipta Ray",
+    image: "/images/alumni/k17/Pradipta Ray_K17.jpg",
+    role: "Staff Engineer",
+    company: "FermionIC Design",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/raypradipta/"
+  },
+  {
+    name: "Pratyush Agarwal",
+    image: "/images/alumni/k17/Pratyush Agarwal_K17.png",
+    role: "SSDE",
+    company: "AMD",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/pratyush-agarwal-998599161/"
+  },
+  {
+    name: "Raghav Charan",
+    image: "/images/alumni/k17/Raghav Charan_K17.jpg",
+    role: "Senior Consultant",
+    company: "Deloitte",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/raghavcharan/"
+  },
+  {
+    name: "Shreshth Gupta",
+    image: "/images/alumni/k17/Shreshth Gupta_K17.jpg",
+    role: "SBA",
+    company: "Wishlink",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/shreshthgupta5/"
+  },
+  {
+    name: "Tanmay Gupta",
+    image: "/images/alumni/k17/Tanmay Gupta_K17.jpg",
+    role: "Senior Project Engineer",
+    company: "Wipro",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/tantheta/"
+  },
+  {
+    name: "Vivek Basant",
+    image: "/images/alumni/k17/Vivek Basant_K17.jpg",
+    role: "Senior Lead Engineer",
+    company: "Logic Fruit Technologies",
+    year: "K17 Batch",
+    linkedin: "https://linkedin.com/in/vivek-b-09201817b/"
   }
 ];
 
 export function AlumniArchive() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(8);
 
   const filteredAlumni = alumniList.filter((alumni) =>
     alumni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     alumni.year.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const displayedAlumni = filteredAlumni.slice(0, visibleCount);
+
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 md:pt-32 md:pb-40">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-24">
       <motion.div
         animate="visible"
         variants={fadeUp}
@@ -103,7 +503,7 @@ export function AlumniArchive() {
         variants={staggerChildren}
         className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
       >
-        {filteredAlumni.map((alumni) => (
+        {displayedAlumni.map((alumni) => (
           <motion.div
             key={alumni.name}
             variants={fadeUp}
@@ -115,24 +515,30 @@ export function AlumniArchive() {
                 alt={alumni.name}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                className="object-cover lg:grayscale lg:mix-blend-luminosity lg:opacity-80 lg:group-hover:mix-blend-normal lg:group-hover:grayscale-0 lg:group-hover:opacity-100 lg:group-hover:scale-105 transition-all duration-700 ease-out"
+                className="object-cover lg:group-hover:scale-105 transition-all duration-700 ease-out"
               />
             </div>
             <div className="p-6 flex flex-col flex-grow">
-              <p className="text-[#2DD4BF] text-[10px] font-black tracking-[0.2em] uppercase mb-2">{alumni.role}</p>
-              <h3 className="text-xl font-black tracking-normal mb-3 text-white">{alumni.name}</h3>
-              <p className="text-sm text-neutral-400 mb-6 flex-grow leading-relaxed font-medium">
-                "{alumni.description}"
-              </p>
+              <div className="mb-4">
+                <p className="text-[#2DD4BF] text-[10px] font-black tracking-[0.2em] uppercase mb-1">{alumni.role}</p>
+                <p className="text-white/70 text-[10px] font-bold tracking-[0.1em] uppercase">{alumni.company}</p>
+              </div>
+              <h3 className="text-xl font-black tracking-normal mb-6 text-white flex-grow">{alumni.name}</h3>
 
               <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
                 <span className="text-sm text-neutral-500 font-medium">
                   {alumni.year}
                 </span>
                 <div className="flex items-center gap-3 px-3 py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 lg:opacity-0 lg:translate-y-1.5 lg:scale-95 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 transition-all duration-400 ease-out origin-right">
-                  <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                    <LinkedinIcon className="w-3.5 h-3.5" />
-                  </button>
+                  {alumni.linkedin ? (
+                    <a href={alumni.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors outline-none">
+                      <LinkedinIcon className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <button className="text-neutral-400 hover:text-white transition-colors outline-none">
+                      <LinkedinIcon className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                   <button className="text-neutral-400 hover:text-white transition-colors outline-none">
                     <Mail className="w-3.5 h-3.5" />
                   </button>
@@ -145,6 +551,21 @@ export function AlumniArchive() {
           </motion.div>
         ))}
       </motion.div>
+
+      {visibleCount < filteredAlumni.length && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-16 flex justify-center"
+        >
+          <button
+            onClick={() => setVisibleCount((prev) => prev + 8)}
+            className="px-8 py-4 rounded-full border-2 border-white/10 text-white font-black uppercase tracking-widest text-xs hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 transition-all duration-500 transform hover:-translate-y-1 backdrop-blur-sm"
+          >
+            Load More
+          </button>
+        </motion.div>
+      )}
     </section>
   );
 }
