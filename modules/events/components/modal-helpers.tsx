@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import Image from 'next/image';
 
 /* ── Shared modal keyboard + scroll-lock hook ── */
 export function useModalKeys(open: boolean, onClose: () => void) {
@@ -90,13 +91,17 @@ export function PhotoGrid({
                     className="group relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/50 cursor-zoom-in transition-all duration-300"
                     onClick={() => onSelect(photo.src)}
                 >
-                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70">
-                        <img
-                            src={photo.src}
-                            alt={photo.alt}
-                            className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-neutral-950/70 p-2">
+                        <div className="relative w-full h-full">
+                            <Image
+                                src={photo.src}
+                                alt={photo.alt}
+                                fill
+                                sizes="(max-width: 640px) 50vw, 33vw"
+                                className="object-contain transition-transform duration-500 group-hover:scale-105"
+                            />
+                        </div>
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none z-10">
                             <span className="px-3 py-1.5 rounded-full bg-black/60 text-[10px] font-black uppercase tracking-wider text-white border border-white/10">
                                 View Photo
                             </span>
