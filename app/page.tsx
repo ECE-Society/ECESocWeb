@@ -5,7 +5,7 @@ import { GallerySection } from "@/modules/home/components/gallery-section";
 import { EventsSection } from "@/modules/home/components/events-section";
 import { SocialSection } from "@/modules/home/components/social-section";
 import { FacultyTestimonials } from "@/modules/home/components/faculty-testimonials";
-import { getAllBlogs } from "@/modules/blogs/lib/data";
+import { getHomeBlogs } from "@/modules/blogs/lib/data";
 
 const shuffleArray = (array: string[]) => {
   const shuffled = [...array];
@@ -17,8 +17,7 @@ const shuffleArray = (array: string[]) => {
 };
 
 export default function Home() {
-  const allBlogs = getAllBlogs();
-  const latestBlogs = allBlogs.slice(0, 7);
+  const latestBlogs = getHomeBlogs();
   const galleryImages = shuffleArray([
     '/forgallery/IMG_9815.jpg',
     '/forgallery/IMG_9827.jpg',

@@ -11,15 +11,13 @@ const testimonials = [
         id: 1,
         name: "Dr. Sanjay Kumar",
         designation: "Head of ECE Department",
-        quote: "The ECE Society has consistently been at the forefront of technical excellence. Our students aren't just learning electronics; they are architecting the future of silicon and signal processing with unparalleled passion.",
-        image: "https://api.dicebear.com/7.x/avataaars/png?seed=John&backgroundColor=b6e3f4"
+        quote: "The ECE Society has become a cornerstone of our department’s growth, consistently pushing the boundaries of technical excellence. Through meticulously organized workshops and innovative projects, the society has significantly enriched our students' practical skills. Their unwavering commitment to fostering a culture of research, hardware prototyping, and professional development is truly commendable and vital for our future engineers.",
     },
     {
         id: 2,
         name: "Dr. Sanjaya Shankar Tripathy",
         designation: "Faculty Advisor, ECE SOC",
         quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
-        image: "https://api.dicebear.com/7.x/avataaars/png?seed=Jane&backgroundColor=ffdfbf"
     },
 ];
 
