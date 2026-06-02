@@ -140,6 +140,7 @@ export function AlumniHero() {
                   src={currentAlumnus.image}
                   alt={currentAlumnus.name}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover group-hover:scale-[1.05] transition-transform duration-1000 ease-out relative z-0"
                   priority
                 />
