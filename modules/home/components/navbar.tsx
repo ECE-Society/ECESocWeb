@@ -1,13 +1,24 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        // Trigger initially in case page is already scrolled on load
+        handleScroll();
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const navItems = [
         { label: 'Home', href: '/' },
@@ -18,9 +29,11 @@ export function Navbar() {
     ];
 
     return (
-        <nav className="glass-panel fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] z-50 rounded-2xl overflow-hidden transition-colors duration-300">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+            scrolled ? 'bg-gradient-to-b from-black/95 to-black/40 backdrop-blur-md py-4 shadow-2xl' : 'bg-transparent py-6'
+        }`}>
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+                <div className="flex justify-between items-center">
                     {/* Logo */}
                     <Link 
                         href="/"
@@ -30,26 +43,39 @@ export function Navbar() {
                                 window.scrollTo({ top: 0, behavior: 'smooth' });
                             }
                         }}
-                        className="flex-shrink-0 flex items-center gap-2"
+                        className="flex-shrink-0 flex items-center gap-3 group"
                     >
-                        <img src="/home/logo.png" alt="ECE SOC Logo" className="w-8 h-8 bg-white border-white rounded-full" />
-                        <span className="text-2xl font-bold text-white">
+                        <img 
+                            src="/home/logo.png" 
+                            alt="ECE SOC Logo" 
+                            className="w-9 h-9 bg-white border-2 border-white/20 rounded-full transition-all duration-500 group-hover:scale-110 group-hover:border-[#2DD4BF]/50 group-hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]" 
+                        />
+                        <span className="text-xl font-black text-white tracking-widest transition-all duration-500 group-hover:text-[#2DD4BF]">
                             ECESOC
                         </span>
                     </Link>
 
                     {/* Navigation Links */}
-                    <div className="hidden md:flex space-x-8">
+                    <div className="hidden md:flex space-x-2">
                         {navItems.map((item) => {
                             const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
                             return (
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className={`relative group ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'} font-medium transition duration-200 py-1`}
+                                    className="relative px-5 py-2.5 rounded-full transition-all duration-500 group"
                                 >
-                                    {item.label}
-                                    <span className={`absolute -bottom-1 h-[2px] bg-[#2DD4BF] transition-all duration-300 rounded-full shadow-[0_0_10px_#2DD4BF] ${isActive ? 'w-full left-0' : 'w-0 left-1/2 group-hover:w-full group-hover:left-0'}`}></span>
+                                    <span className={`relative z-10 font-bold tracking-wider text-sm transition-colors duration-300 ${isActive ? 'text-white' : 'text-neutral-400 group-hover:text-white'}`}>
+                                        {item.label}
+                                    </span>
+                                    {/* Luminous Underglow */}
+                                    <span 
+                                        className={`absolute inset-0 rounded-full transition-all duration-500 ${
+                                            isActive 
+                                            ? 'bg-[#2DD4BF]/15 shadow-[0_0_25px_rgba(45,212,191,0.25)] border border-[#2DD4BF]/20' 
+                                            : 'opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 group-hover:bg-[#2DD4BF]/10 group-hover:shadow-[0_0_20px_rgba(45,212,191,0.2)] border border-transparent group-hover:border-[#2DD4BF]/20'
+                                        }`}
+                                    ></span>
                                 </Link>
                             );
                         })}
@@ -59,7 +85,7 @@ export function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button 
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-gray-300 hover:text-[#2DD4BF] focus:outline-none transition-colors"
+                            className="text-neutral-400 hover:text-white focus:outline-none transition-colors relative z-50 p-2"
                         >
                             {isOpen ? (
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,10 +107,10 @@ export function Navbar() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="md:hidden overflow-hidden"
+                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            className="md:hidden overflow-hidden bg-[#0a0a0a]/95 backdrop-blur-xl rounded-3xl mt-6 border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.5)]"
                         >
-                            <div className="flex flex-col space-y-4 px-2 pb-6 pt-4 border-t border-white/10 mt-2">
+                            <div className="flex flex-col p-4 gap-2">
                                 {navItems.map((item) => {
                                     const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
                                     return (
@@ -92,7 +118,11 @@ export function Navbar() {
                                             key={item.label}
                                             href={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className={`${isActive ? 'text-[#2DD4BF]' : 'text-gray-300 hover:text-[#2DD4BF]'} font-medium text-lg transition duration-200 block`}
+                                            className={`px-6 py-4 rounded-2xl text-base font-bold tracking-wider transition-all duration-300 flex items-center ${
+                                                isActive 
+                                                ? 'text-[#2DD4BF] bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 shadow-[0_0_20px_rgba(45,212,191,0.1)]' 
+                                                : 'text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent'
+                                            }`}
                                         >
                                             {item.label}
                                         </Link>

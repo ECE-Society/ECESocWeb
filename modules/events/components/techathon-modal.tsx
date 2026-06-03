@@ -41,8 +41,8 @@ export function TechathonModal({ open, onClose }: { open: boolean; onClose: () =
                 <div className="flex flex-col gap-4 lg:gap-6">
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
                         {[
-                            { label: 'Participants', value: '500+', sub: 'Registered teams', color: ACCENT, rgb: '167,139,250' },
-                            { label: 'Prizes Worth', value: '₹15K', sub: 'Total prize pool', color: '#2DD4BF', rgb: '45,212,191' },
+                            { label: 'Participants', value: '2800+', sub: 'Registered participants', color: ACCENT, rgb: '167,139,250' },
+                            { label: 'Prizes Worth', value: '₹25K', sub: 'Total prize pool', color: '#2DD4BF', rgb: '45,212,191' },
                             { label: 'Platform', value: 'Unstop', sub: "Hosted on India's platform", color: '#fb923c', rgb: '251,146,60' },
                         ].map((stat) => (
                             <div

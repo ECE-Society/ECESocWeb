@@ -448,7 +448,7 @@ export const contributors: TeamMember[] = [
   },
   {
     name: "Arnav Srivastava",
-    role: "Tech Executive Member",
+    role: "Executive Member",
     photo: "/teams/Arnav Srivastava.jpg",
     social: {
       gmail: "btech10746.24@bitmesra.ac.in",
@@ -458,7 +458,7 @@ export const contributors: TeamMember[] = [
   },
   {
     name: "Sidhant Anweshi",
-    role: "Tech Executive Member",
+    role: "Executive Member",
     photo: "/teams/Sidhant Anweshi.jpg",
     social: {
       gmail: "btech10434.24@bitmesra.ac.in",
@@ -476,13 +476,25 @@ export const contributors: TeamMember[] = [
     },
   },
   {
-    name: "Keshav Raj",
-    role: "Tech Executive Member",
-    photo: "/teams/Keshav Raj.jpg",
-    zoom: 1.3,
+    name: "Abhinav Kumar Choudhary",
+    role: "Executive Member",
+    photo: "/teams/AKC.jpg",
     social: {
-      gmail: "btech10038.24@bitmesra.ac.in",
-      linkedin: "https://www.linkedin.com/in/keshav-raj-984722336"
+      gmail: "btech10139.23@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/poetry_aficionado",
+      linkedin: "https://www.linkedin.com/in/abhi1264"
+    },
+  },
+  {
+    name: "Pratham Periwal",
+    role: "Vice President",
+    photo: "/teams/PP.jpeg",
+    zoom: 1.2,
+    objectPosition: "center bottom",
+    social: {
+      gmail: "btech10141.23@bitmesra.ac.in",
+      instagram: "https://www.instagram.com/me_prathamperiwal/",
+      linkedin: "https://www.linkedin.com/in/prathamperiwal/"
     },
   }
 ];
@@ -530,13 +542,13 @@ export const hallOfFame: HallOfFameMember[] = [
       linkedin: "https://www.linkedin.com/in/shreyansh-kumar-49911b232/"
     }
   },
-  {
-    year: "2020",
-    name: "Hall of Fame Member",
-    pastPosition: "Position",
-    tenure: "2020",
-    photo: "/teams/default.jpg",
-    social: {}
-  }
+  // {
+  //   year: "2020",
+  //   name: "Hall of Fame Member",
+  //   pastPosition: "Position",
+  //   tenure: "2020",
+  //   photo: "/teams/default.jpg",
+  //   social: {}
+  // }
 ];
 
