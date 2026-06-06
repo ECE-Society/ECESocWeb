@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Audiowide } from 'next/font/google';
+import { Audiowide, Orbitron } from 'next/font/google';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
 
 const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
+const orbitron = Orbitron({ subsets: ['latin'], weight: '900' });
 
 export const Hero = () => {
     return (
@@ -30,7 +31,7 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="text-7xl md:text-[9.5rem] mb-12 flex flex-wrap justify-center gap-x-8 leading-[0.85] uppercase"
                 >
-                    <div className={`relative group cursor-default ${audiowide.className}`}>
+                    <div className={`relative group cursor-default ${orbitron.className}`}>
                         <span className="text-white relative z-10">ECE</span>
                         {/* Retro Glitch Layers */}
                         <span className="absolute inset-0 text-[#2DD4BF] opacity-40 -translate-x-1.5 translate-y-0.5 blur-[1px] pointer-events-none group-hover:animate-pulse">ECE</span>

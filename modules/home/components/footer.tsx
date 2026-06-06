@@ -66,7 +66,7 @@ export const Footer = () => {
                         <h3 className="text-white font-bold mb-4 md:mb-6 text-xl md:text-2xl tracking-wide">Student Portal</h3>
                         <ul className="space-y-4">
                             {[
-                                { label: 'Study Materials', href: '#' },
+                                { label: 'Study Materials', href: 'https://1drv.ms/x/c/f3b653cbab712390/IQAzwsPSRqkiQ61YzdUYkBAIAcbWSqa8q83bNjYsYstAhuc?e=B7nVCq' },
                                 { label: 'Previous Year Questions', href: 'https://bitmesra.ac.in/Other-Department-Pages/content/1/258/449' },
                                 { label: 'Academic Calendar', href: '/academic-calendar.pdf' },
                                 { label: 'Newsletter', href: 'https://www.linkedin.com/posts/richa-mishra-5ab12266_ece-dept-newsletter-activity-7433122222111674369-ZPPa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKoowoB0EUXnLQYmISh_qPguTgAxSMcFLQ' },
