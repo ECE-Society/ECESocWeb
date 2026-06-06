@@ -460,7 +460,7 @@ export const alumniList = [
 
 export function AlumniArchive() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [visibleCount, setVisibleCount] = useState(8);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   const filteredAlumni = alumniList.filter((alumni) =>
     alumni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -470,11 +470,11 @@ export function AlumniArchive() {
   const displayedAlumni = filteredAlumni.slice(0, visibleCount);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-24">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-24">
       <motion.div
         animate="visible"
         variants={fadeUp}
-        className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
+        className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
       >
         <div className="space-y-4 max-w-2xl">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight">
@@ -498,59 +498,77 @@ export function AlumniArchive() {
       </motion.div>
 
       {/* Alumni Cards Grid */}
-      <motion.div
-        animate="visible"
-        variants={staggerChildren}
-        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6"
-      >
-        {displayedAlumni.map((alumni) => (
-          <motion.div
-            key={alumni.name}
-            variants={fadeUp}
-            className="group relative bg-[#1A1A1A] rounded-2xl border border-white/5 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgb(0,0,0,0.6)] transition-all duration-300 flex flex-col"
-          >
-            <div className="relative w-full aspect-square overflow-hidden bg-[#121212]">
-              <Image
-                src={alumni.image}
-                alt={alumni.name}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                className="object-cover lg:group-hover:scale-105 transition-all duration-700 ease-out"
-              />
-            </div>
-            <div className="p-6 flex flex-col flex-grow">
-              <div className="mb-4">
-                <p className="text-[#2DD4BF] text-[10px] font-black tracking-[0.2em] uppercase mb-1">{alumni.role}</p>
-                <p className="text-white/70 text-[10px] font-bold tracking-[0.1em] uppercase">{alumni.company}</p>
+      {displayedAlumni.length > 0 ? (
+        <motion.div
+          animate="visible"
+          variants={staggerChildren}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5"
+        >
+          {displayedAlumni.map((alumni) => (
+            <motion.div
+              key={alumni.name}
+              variants={fadeUp}
+              className="group relative bg-[#1A1A1A] rounded-2xl border border-white/5 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgb(0,0,0,0.6)] transition-all duration-300 flex flex-col"
+            >
+              <div className="relative w-full aspect-[4/3] sm:aspect-[5/4] md:aspect-[4/3] overflow-hidden bg-[#121212]">
+                <Image
+                  src={alumni.image}
+                  alt={alumni.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  className="object-cover lg:group-hover:scale-105 transition-all duration-700 ease-out"
+                />
               </div>
-              <h3 className="text-xl font-black tracking-normal mb-6 text-white flex-grow">{alumni.name}</h3>
+              <div className="p-4 md:p-5 flex flex-col flex-grow">
+                <div className="mb-3">
+                  <p className="text-[#2DD4BF] text-[9px] md:text-[10px] font-black tracking-[0.2em] uppercase mb-0.5">{alumni.role}</p>
+                  <p className="text-white/70 text-[9px] md:text-[10px] font-bold tracking-[0.1em] uppercase">{alumni.company}</p>
+                </div>
+                <h3 className="text-lg md:text-xl font-black tracking-normal mb-4 text-white flex-grow">{alumni.name}</h3>
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
-                <span className="text-sm text-neutral-500 font-medium">
-                  {alumni.year}
-                </span>
-                <div className="flex items-center gap-3 px-3 py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 lg:opacity-0 lg:translate-y-1.5 lg:scale-95 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 transition-all duration-400 ease-out origin-right">
-                  {alumni.linkedin ? (
-                    <a href={alumni.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors outline-none">
-                      <LinkedinIcon className="w-3.5 h-3.5" />
-                    </a>
-                  ) : (
+                <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-auto">
+                  <span className="text-xs md:text-sm text-neutral-500 font-medium">
+                    {alumni.year}
+                  </span>
+                  <div className="flex items-center gap-2 md:gap-3 px-2 md:px-3 py-1 md:py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 lg:opacity-0 lg:translate-y-1.5 lg:scale-95 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 transition-all duration-400 ease-out origin-right">
+                    {alumni.linkedin ? (
+                      <a href={alumni.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors outline-none">
+                        <LinkedinIcon className="w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <button className="text-neutral-400 hover:text-white transition-colors outline-none">
+                        <LinkedinIcon className="w-3.5 h-3.5" />
+                      </button>
+                    )}
                     <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                      <LinkedinIcon className="w-3.5 h-3.5" />
+                      <Mail className="w-3.5 h-3.5" />
                     </button>
-                  )}
-                  <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                    <Mail className="w-3.5 h-3.5" />
-                  </button>
-                  <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                    <InstagramIcon className="w-3.5 h-3.5" />
-                  </button>
+                    <button className="text-neutral-400 hover:text-white transition-colors outline-none">
+                      <InstagramIcon className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex flex-col items-center justify-center py-20 text-center space-y-6"
+        >
+          <div className="w-20 h-20 rounded-full bg-[#1A1A1A] border border-white/5 flex items-center justify-center mb-2">
+            <Search className="w-8 h-8 text-neutral-500" />
+          </div>
+          <h3 className="text-2xl md:text-3xl font-black text-white">
+            Looks like we missed this alumni !
+          </h3>
+          <p className="text-neutral-400 text-lg max-w-2xl leading-relaxed">
+            Please fill in the form below with their details, and we will cross-check and be happy to include them in the network
+          </p>
+        </motion.div>
+      )}
 
       {visibleCount < filteredAlumni.length && (
         <motion.div
@@ -559,7 +577,7 @@ export function AlumniArchive() {
           className="mt-16 flex justify-center"
         >
           <button
-            onClick={() => setVisibleCount((prev) => prev + 8)}
+            onClick={() => setVisibleCount((prev) => prev + 12)}
             className="px-8 py-4 rounded-full border-2 border-white/10 text-white font-black uppercase tracking-widest text-xs hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 transition-all duration-500 transform hover:-translate-y-1 backdrop-blur-sm"
           >
             Load More
