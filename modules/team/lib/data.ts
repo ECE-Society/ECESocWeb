@@ -46,7 +46,7 @@ export const leadershipBody: TeamMember[] = [
   {
     name: "Pratham Periwal",
     role: "Vice President",
-    photo: "/teams/PP.jpeg",
+    photo: "/teams/pratham periwal.jpeg",
     zoom: 1.2,
     objectPosition: "center bottom",
     social: {
@@ -488,7 +488,7 @@ export const contributors: TeamMember[] = [
   {
     name: "Pratham Periwal",
     role: "Vice President",
-    photo: "/teams/PP.jpeg",
+    photo: "/teams/pratham periwal.jpeg",
     zoom: 1.2,
     objectPosition: "center bottom",
     social: {

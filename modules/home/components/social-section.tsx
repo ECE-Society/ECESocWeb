@@ -44,10 +44,10 @@ export const SocialSection = () => {
         },
         {
             name: 'GitHub',
-            handle: 'ECESOC-Mesra',
+            handle: 'ecesoc',
             icon: <FiGithub className="text-white text-2xl" />,
             color: 'bg-[#24292e]',
-            url: 'https://github.com/ecesoc-mesra'
+            url: 'https://github.com/ecesoc'
         },
         {
             name: 'Email',

@@ -33,7 +33,7 @@ export const Footer = () => {
                             <Link href="https://linkedin.com/company/ece-society-bit-mesra" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
                                 <FaLinkedin size={28} />
                             </Link>
-                            <Link href="https://github.com/ecesoc-mesra" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
+                            <Link href="https://github.com/ecesoc" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 rounded-full hover:bg-[#2DD4BF]/20 text-neutral-400 hover:text-[#2DD4BF] transition-colors">
                                 <FaGithub size={28} />
                             </Link>
                         </div>
@@ -61,19 +61,19 @@ export const Footer = () => {
                         </ul>
                     </div>
 
-                    {/* Resources */}
+                    {/* Student Portal */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 md:mb-6 text-xl md:text-2xl tracking-wide">Resources</h3>
+                        <h3 className="text-white font-bold mb-4 md:mb-6 text-xl md:text-2xl tracking-wide">Student Portal</h3>
                         <ul className="space-y-4">
                             {[
-                                { label: 'Study Materials', href: 'https://bitmesra.ac.in/Other-Department-Pages/content/1/258/449' },
-                                { label: 'Lab Manuals', href: 'https://bitmesra.ac.in/edudepartment/content/1/72/106' },
+                                { label: 'Study Materials', href: '#' },
                                 { label: 'Previous Year Questions', href: 'https://bitmesra.ac.in/Other-Department-Pages/content/1/258/449' },
-                                { label: 'Tech Blog', href: 'https://www.linkedin.com/company/ece-society-bit-mesra/posts/?feedView=all' },
+                                { label: 'Academic Calendar', href: '/academic-calendar.pdf' },
                                 { label: 'Newsletter', href: 'https://www.linkedin.com/posts/richa-mishra-5ab12266_ece-dept-newsletter-activity-7433122222111674369-ZPPa?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFKoowoB0EUXnLQYmISh_qPguTgAxSMcFLQ' },
+                                { label: 'BIT Mesra Official', href: 'https://www.bitmesra.ac.in/' },
                             ].map((item) => (
                                 <li key={item.label}>
-                                    <Link href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
+                                    <Link href={item.href} target={item.href.startsWith('http') || item.href.endsWith('.pdf') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="text-neutral-400 hover:text-[#2DD4BF] text-base md:text-lg transition-colors flex items-center gap-2 group py-1.5 md:py-0">
                                         <span className="h-1.5 w-1.5 rounded-full bg-[#2DD4BF] opacity-0 group-hover:opacity-100 transition-opacity" />
                                         {item.label}
                                     </Link>

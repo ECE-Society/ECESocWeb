@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Audiowide } from 'next/font/google';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
+
+const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 
 export const Hero = () => {
     return (
@@ -25,15 +28,15 @@ export const Hero = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-7xl md:text-[9.5rem] font-black mb-12 flex flex-wrap justify-center gap-x-8 leading-[0.85] tracking-tighter uppercase"
+                    className="text-7xl md:text-[9.5rem] mb-12 flex flex-wrap justify-center gap-x-8 leading-[0.85] uppercase"
                 >
-                    <div className="relative group cursor-default">
+                    <div className={`relative group cursor-default ${audiowide.className}`}>
                         <span className="text-white relative z-10">ECE</span>
                         {/* Retro Glitch Layers */}
                         <span className="absolute inset-0 text-[#2DD4BF] opacity-40 -translate-x-1.5 translate-y-0.5 blur-[1px] pointer-events-none group-hover:animate-pulse">ECE</span>
                         <span className="absolute inset-0 text-red-500/30 opacity-30 translate-x-1.5 -translate-y-0.5 blur-[1px] pointer-events-none">ECE</span>
                     </div>
-                    <span className="text-[#2DD4BF] drop-shadow-[0_0_30px_rgba(45,212,191,0.3)]">Society</span>
+                    <span className={`text-[#2DD4BF] drop-shadow-[0_0_30px_rgba(45,212,191,0.3)] ${audiowide.className}`}>Society</span>
                 </motion.h1>
 
                 <motion.p

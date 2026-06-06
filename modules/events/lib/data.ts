@@ -70,8 +70,8 @@ export const techathonPhotos = [
     { src: '/events/techathon/techathon inside1.jpg', alt: 'Certification receipt with teachers' },
     { src: '/events/techathon/techathon inside 2.jpg', alt: 'Arduino prototype and electronics setup' },
     { src: '/events/techathon/techathon inside 3.jpg', alt: 'Student presenting data visualization charts' },
-    { src: '/events/techathon/techathon inside 4.jpg', alt: 'Evaluators assessing submissions' },
-    { src: '/events/techathon/techathon inside 5.jpg', alt: 'Session view and presentation' },
+    { src: '/events/techathon/IMG_9795.jpg', alt: 'Tech-A-Thon event highlight' },
+    { src: '/events/techathon/IMG_9991.jpg', alt: 'Tech-A-Thon session highlight' },
 ];
 
 /* ══════════════════════════════════════════
