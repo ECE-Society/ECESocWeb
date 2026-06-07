@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Search, Mail } from "lucide-react";
+import { Search } from "lucide-react";
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -13,13 +13,6 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const InstagramIcon = ({ className }: { className?: string }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-  </svg>
-);
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -89,14 +82,14 @@ export const alumniList = [
     year: "K21 Batch",
     linkedin: "https://linkedin.com/in/shovic-dhar-992b66292"
   },
-  {
-    name: "Jhil Kumari",
-    image: "/images/alumni/Jhil Kumari_K21.jpg",
-    role: "SWE",
-    company: "Grid Dynamics",
-    year: "K21 Batch",
-    linkedin: "https://linkedin.com/in/jhil-kumari-347b0722b"
-  },
+  // {
+  //   name: "Jhil Kumari",
+  //   image: "/images/alumni/Jhil Kumari_K21.jpg",
+  //   role: "SWE",
+  //   company: "Grid Dynamics",
+  //   year: "K21 Batch",
+  //   linkedin: "https://linkedin.com/in/jhil-kumari-347b0722b"
+  // },
   {
     name: "Reyanul Abdin",
     image: "/images/alumni/Reyanul Abdin_K21.jpg",
@@ -470,7 +463,7 @@ export function AlumniArchive() {
   const displayedAlumni = filteredAlumni.slice(0, visibleCount);
 
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-16 md:pb-24">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-16 md:pt-8 md:pb-24">
       <motion.div
         animate="visible"
         variants={fadeUp}
@@ -508,7 +501,7 @@ export function AlumniArchive() {
             <motion.div
               key={alumni.name}
               variants={fadeUp}
-              className="group relative bg-[#1A1A1A] rounded-2xl border border-white/5 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_12px_40px_rgb(0,0,0,0.6)] transition-all duration-300 flex flex-col"
+              className="group relative bg-[#1A1A1A] rounded-2xl border border-white/5 overflow-hidden hover:border-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] transition-all duration-500 ease-out flex flex-col"
             >
               <div className="relative w-full aspect-[4/3] sm:aspect-[5/4] md:aspect-[4/3] overflow-hidden bg-[#121212]">
                 <Image
@@ -526,26 +519,24 @@ export function AlumniArchive() {
                 </div>
                 <h3 className="text-lg md:text-xl font-black tracking-normal mb-4 text-white flex-grow">{alumni.name}</h3>
 
-                <div className="flex items-center justify-between pt-3 border-t border-white/5 mt-auto">
-                  <span className="text-xs md:text-sm text-neutral-500 font-medium">
-                    {alumni.year}
-                  </span>
-                  <div className="flex items-center gap-2 md:gap-3 px-2 md:px-3 py-1 md:py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full opacity-100 lg:opacity-0 lg:translate-y-1.5 lg:scale-95 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:scale-100 transition-all duration-400 ease-out origin-right">
-                    {alumni.linkedin ? (
-                      <a href={alumni.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors outline-none">
-                        <LinkedinIcon className="w-3.5 h-3.5" />
-                      </a>
-                    ) : (
-                      <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                        <LinkedinIcon className="w-3.5 h-3.5" />
-                      </button>
-                    )}
-                    <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                      <Mail className="w-3.5 h-3.5" />
-                    </button>
-                    <button className="text-neutral-400 hover:text-white transition-colors outline-none">
-                      <InstagramIcon className="w-3.5 h-3.5" />
-                    </button>
+                <div className="mt-auto grid grid-rows-[1fr] lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] delay-150">
+                  <div className="overflow-hidden min-h-0">
+                    <div className="flex items-center justify-between pt-3 border-t border-white/5 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-400 delay-200">
+                      <span className="text-xs md:text-sm text-neutral-500 font-medium">
+                        {alumni.year}
+                      </span>
+                      <div className="flex items-center gap-2 md:gap-3 px-2 md:px-3 py-1 md:py-1.5 bg-[#080808]/80 backdrop-blur-md border border-white/5 rounded-full">
+                        {alumni.linkedin ? (
+                          <a href={alumni.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors outline-none">
+                            <LinkedinIcon className="w-3.5 h-3.5" />
+                          </a>
+                        ) : (
+                          <button className="text-neutral-400 hover:text-white transition-colors outline-none">
+                            <LinkedinIcon className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -11,46 +11,46 @@ export const featuredAlumni = [
     name: "Shree K",
     lastName: "Nayar",
     role: "T. C. Chang Professor of Computer Science, Columbia University",
-    description: "Shree K. Nayar is the T.C. Chang Professor of Computer Science at Columbia University and a global pioneer in computer vision and computational imaging. His groundbreaking innovations have transformed digital photography and smartphone imaging for billions of users worldwide. A member of the U.S. National Academy of Engineering, American Academy of Arts and Sciences, National Academy of Inventors, and Indian National Academy of Engineering, he is the recipient of the Okawa Prize, Funai Achievement Award, IEEE PAMI Distinguished Researcher Award, and the David Marr Prize.",
+    description: "Shree K. Nayar is the T.C. Chang Professor of Computer Science at Columbia University and a global pioneer in computer vision and computational imaging. His groundbreaking innovations have transformed digital photography and smartphone imaging for billions of users worldwide. A member of the U.S. National Academy of Engineering, American Academy of Arts and Sciences, National Academy of Inventors, and Indian National Academy of Engineering, he is the recipient of the Okawa Prize, Funai Achievement Award, IEEE PAMI Distinguished Researcher Award, and the David Marr Prize. Beyond his research, he has mentored generations of students and entrepreneurs, fostering innovation through academia and technology ventures, while advancing the practical impact of computer vision worldwide.",
     image: "/images/alumni/Hero/Shree%20K%20Nayar.jpg",
     year: "Batch of 1984",
     linkedin: "https://www.linkedin.com/in/shree-nayar-54877989/",
     readMore: "https://en.wikipedia.org/wiki/Shree_K._Nayar",
-    // email: "#"
   },
   {
     name: "Amit",
     lastName: "Chadha",
     role: "CEO and Managing Director, L&T Technology Services Limited",
-    description: "Amit Chadha is the Chief Executive Officer and Managing Director of L&T Technology Services (LTTS) and a globally respected leader in engineering and technology services. A BIT Mesra alumnus, he played a key role in LTTS's successful IPO and its emergence as a leading global ER&D company. Recognized for his transformative leadership and contributions to industry, he is the recipient of the BIT Mesra Distinguished Alumni Award (2022) and the Indo-American Chamber of Commerce Corporate Leader of the Year Award (2023), while also serving in prominent leadership roles within NASSCOM's global technology ecosystem.",
+    description: "Amit Chadha is the Chief Executive Officer and Managing Director of L&T Technology Services (LTTS) and a globally respected leader in engineering and technology services. A BIT Mesra alumnus, he played a key role in LTTS's successful IPO and its emergence as a leading global ER&D company. Recognized for his transformative leadership and contributions to industry, he is the recipient of the BIT Mesra Distinguished Alumni Award (2022) and the Indo-American Chamber of Commerce Corporate Leader of the Year Award (2023), while also serving in prominent leadership roles within NASSCOM's global technology ecosystem. Under his visionary guidance, LTTS continues to achieve critical milestones in digital engineering, AI-driven automation, and sustainability, driving technological innovation worldwide.",
     image: "/images/alumni/Hero/Amit%20Chadha.jpg",
     year: "Batch of 1996",
     linkedin: "https://www.linkedin.com/in/amit-chadha-1b6aa8/",
     readMore: " https://www.ltts.com/about-us/board-of-directors/mr-amit-chadha",
-    // email: "#"
   },
   {
     name: "Jaya Singh",
     lastName: "Panda",
     role: "Chief, Learning & Development and Chief Diversity Officer, Tata Steel",
-    description: "Jaya Singh Panda is the Chief Learning & Development Officer and Chief Diversity Officer at Tata Steel and a distinguished alumna of BIT Mesra. Over a career spanning more than three decades, she has led transformational initiatives across engineering, supply chain, quality management, and human resources. She currently drives Tata Steel's learning and inclusion agenda, shaping the development of thousands of employees while championing diversity and workplace excellence. As a member of the Board of Governors of the Board of Practical Training, Ministry of Education, and the driving force behind the J. N. Tata Vocational Training Institute, she has made significant contributions to skill development, vocational education, and workforce empowerment in India.",
+    description: "Jaya Singh Panda is the Chief Learning & Development Officer and Chief Diversity Officer at Tata Steel and a distinguished alumna of BIT Mesra. With over three decades of leadership experience, she has driven transformational initiatives across engineering, supply chain, quality management, and human resources. A champion of learning, inclusion, and workforce development, she leads Tata Steel’s talent and diversity agenda, impacting thousands of employees. As a member of the Board of Governors of the Board of Practical Training, Ministry of Education, and a key force behind the J. N. Tata Vocational Training Institute, she has made significant contributions to vocational education, skill development, and workforce empowerment in India.",
     image: "/images/alumni/Hero/Jaya%20Singh%20Panda.jpg",
     year: "Batch of 1989",
     linkedin: "https://www.linkedin.com/in/jaya-singh-panda-8084671/",
     readMore: " https://www.mjunction.in/jaya-singh-panda%20/",
-    // email: "#"
   }
 ];
 
 export function AlumniHero() {
   const [activeFeatured, setActiveFeatured] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    if (isHovered) return;
+
     const interval = setInterval(() => {
       setActiveFeatured((prev) => (prev + 1) % featuredAlumni.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [isHovered]);
 
   const nextProfile = () => {
     setActiveFeatured((prev) => (prev + 1) % featuredAlumni.length);
@@ -63,7 +63,7 @@ export function AlumniHero() {
   const currentAlumnus = featuredAlumni[activeFeatured];
 
   return (
-    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden">
+    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-4 md:pt-24 md:pb-4 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#2DD4BF]/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/4 pointer-events-none"></div>
@@ -81,8 +81,8 @@ export function AlumniHero() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-        <div className="flex flex-col justify-center order-2 lg:order-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center lg:items-start relative z-10">
+        <div className="flex flex-col justify-start order-2 lg:order-1 lg:min-h-[700px] xl:min-h-[650px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={`info-${activeFeatured}`}
@@ -114,6 +114,8 @@ export function AlumniHero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#080808] font-black uppercase tracking-widest text-xs hover:bg-[#2DD4BF] hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] transition-all duration-500 transform hover:-translate-y-1"
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                 >
                   Read More
                   <ArrowUpRight className="w-4 h-4 text-[#080808]" />
@@ -133,6 +135,8 @@ export function AlumniHero() {
                 exit={{ opacity: 0, scale: 0.9, rotate: 2 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080808]/80 to-transparent z-10 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 bg-[#1A1A1A]"></div>
