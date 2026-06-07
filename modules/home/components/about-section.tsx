@@ -58,7 +58,7 @@ export const AboutSection = () => {
                                 src="/home/batch.PNG"
                                 alt="ECESOC Team Representation"
                                 fill
-                                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                className="object-cover scale-[1.45] transition-transform duration-1000 group-hover:scale-[1.55]"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                             {/* Overlay Gradient */}

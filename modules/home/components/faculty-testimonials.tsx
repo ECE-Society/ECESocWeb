@@ -89,7 +89,7 @@ export const FacultyTestimonials = () => {
                 <div className="relative min-h-[500px] flex items-center justify-center mb-0">
                     {/* Testimonial Stage */}
                     <div
-                        className="relative w-full max-w-5xl h-[450px] cursor-grab active:cursor-grabbing"
+                        className="relative w-full max-w-5xl h-[550px] md:h-[450px] cursor-grab active:cursor-grabbing"
                         onMouseEnter={() => setIsPaused(true)}
                         onMouseLeave={() => setIsPaused(false)}
                     >
@@ -109,36 +109,37 @@ export const FacultyTestimonials = () => {
                                 }}
                                 className="absolute inset-0"
                             >
-                                <div className="h-full w-full bg-[#0A0A0A]/50 backdrop-blur-3xl rounded-[3rem] border border-white/10 p-8 md:p-16 pb-4 md:pb-8 flex flex-col items-center text-center relative overflow-hidden group">
+                                <div className="h-full w-full bg-[#0A0A0A]/50 backdrop-blur-3xl rounded-[3rem] border border-white/10 relative overflow-hidden group">
                                     {/* Decorative Quote Icon */}
-                                    <Quote className="absolute -top-10 -left-10 w-48 h-48 text-[#2DD4BF]/5 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110" />
-
+                                    <Quote className="absolute -top-10 -left-10 w-48 h-48 text-[#2DD4BF]/5 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" />
 
                                     {/* Quote Text */}
-                                    <p className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed italic my-auto max-w-3xl relative">
-                                        "{testimonials[currentIndex].quote}"
-                                    </p>
+                                    <div className="absolute top-0 left-0 right-0 bottom-[180px] flex flex-col justify-center px-8 md:px-16 pt-8 overflow-y-auto no-scrollbar">
+                                        <p className="text-lg md:text-2xl font-medium text-white/90 leading-relaxed italic max-w-3xl text-center my-auto mx-auto w-full">
+                                            "{testimonials[currentIndex].quote}"
+                                        </p>
+                                    </div>
 
                                     {/* Metadata & Navigation */}
-                                    <div className="flex flex-col items-center gap-6 w-full">
-                                        <div className="flex items-center justify-between w-full max-w-[28rem] pointer-events-auto">
+                                    <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center gap-6 w-full">
+                                        <div className="flex items-center justify-center w-full max-w-[32rem] pointer-events-auto relative px-4">
                                             {/* Left Arrow */}
                                             <button
                                                 onClick={(e) => {
                                                     e.stopPropagation();
                                                     prevSlide();
                                                 }}
-                                                className="w-12 h-12 md:w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group shrink-0"
+                                                className="absolute left-4 md:left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group z-10"
                                             >
                                                 <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
                                             </button>
 
                                             {/* Faculty Info */}
-                                            <div className="text-center px-4 flex-grow">
-                                                <h4 className="text-[#2DD4BF] font-black text-xl md:text-2xl uppercase tracking-tight mb-1">
+                                            <div className="text-center px-16 md:px-20 w-full h-[100px] flex flex-col justify-center items-center">
+                                                <h4 className="text-[#2DD4BF] font-black text-lg md:text-xl uppercase tracking-tight mb-1 line-clamp-2">
                                                     {testimonials[currentIndex].name}
                                                 </h4>
-                                                <span className="text-neutral-500 font-bold uppercase text-[10px] md:text-xs tracking-[0.2em]">
+                                                <span className="text-neutral-500 font-bold uppercase text-[10px] md:text-xs tracking-[0.2em] line-clamp-3">
                                                     {testimonials[currentIndex].designation}
                                                 </span>
                                             </div>
@@ -149,7 +150,7 @@ export const FacultyTestimonials = () => {
                                                     e.stopPropagation();
                                                     nextSlide();
                                                 }}
-                                                className="w-12 h-12 md:w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group shrink-0"
+                                                className="absolute right-4 md:right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 transition-all duration-300 backdrop-blur-md group z-10"
                                             >
                                                 <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
                                             </button>
