@@ -15,9 +15,9 @@ const testimonials = [
     },
     {
         id: 2,
-        name: "Dr. Sanjaya Shankar Tripathy",
-        designation: "Faculty Advisor, ECE SOC",
-        quote: "Witnessing the evolution of this society over the years has been truly inspiring. From building complex robotics to organizing international symposia, the leadership and technical depth shown here are world-class.",
+        name: "Dr. Richa Mishra",
+        designation: "Assistant Professor, ECE Department",
+        quote: "As a Teacher, I take immense pride in witnessing the enthusiasm, dedication, and technical spirit demonstrated by our students through the ECE Society. The society has provided an excellent platform for learning, innovation, and personal growth, encouraging students to explore their potential beyond academics. Their active participation in workshops, projects, and research activities reflects their commitment to excellence and continuous learning. I sincerely appreciate the efforts of every student involved and extend my best wishes for their future endeavors. May they continue to innovate, achieve new milestones, and make meaningful contributions to the field of engineering and society at large.",
     },
 ];
 
@@ -67,11 +67,11 @@ export const FacultyTestimonials = () => {
     };
 
     return (
-        <section className="relative py-10 lg:py-16 px-8 overflow-hidden bg-[#080808] section-glow-bottom">
-            <div className="max-w-[1800px] mx-auto px-14 md:px-12 lg:px-16">
+        <section className="relative py-10 lg:py-16 px-4 sm:px-8 overflow-hidden bg-[#080808] section-glow-bottom">
+            <div className="max-w-[1800px] mx-auto px-2 sm:px-14 md:px-12 lg:px-16">
                 {/* Section Header - Tiered Theme */}
-                <SectionReveal className="text-center md:text-left mb-12">
-                    <div className="flex flex-col gap-6 items-center md:items-start">
+                <SectionReveal className="text-center mb-12">
+                    <div className="flex flex-col gap-6 items-center">
                         <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
                             Faculty Insights
                         </span>
@@ -80,16 +80,16 @@ export const FacultyTestimonials = () => {
                             <span className="text-[#2DD4BF]">Our Mentors</span>
                         </h2>
                     </div>
-                    <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto md:mx-0">
+                    <p className="text-neutral-400 text-lg md:text-xl leading-relaxed mt-8 font-medium max-w-2xl mx-auto text-center">
                         Guidance and perspectives from the academic pillars supporting our technical journey.
                     </p>
                 </SectionReveal>
 
                 {/* Carousel Container */}
-                <div className="relative min-h-[500px] flex items-center justify-center mb-0">
+                <div className="relative min-h-[400px] lg:min-h-[500px] flex items-center justify-center mb-0">
                     {/* Testimonial Stage */}
                     <div
-                        className="relative w-full max-w-5xl h-[550px] md:h-[450px] cursor-grab active:cursor-grabbing"
+                        className="relative w-full max-w-5xl h-[540px] sm:h-[460px] md:h-[450px] lg:h-[460px] cursor-grab active:cursor-grabbing"
                         onMouseEnter={() => setIsPaused(true)}
                         onMouseLeave={() => setIsPaused(false)}
                     >
@@ -114,8 +114,8 @@ export const FacultyTestimonials = () => {
                                     <Quote className="absolute -top-10 -left-10 w-48 h-48 text-[#2DD4BF]/5 -rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110 pointer-events-none" />
 
                                     {/* Quote Text */}
-                                    <div className="absolute top-0 left-0 right-0 bottom-[180px] flex flex-col justify-center px-8 md:px-16 pt-8 overflow-y-auto no-scrollbar">
-                                        <p className="text-lg md:text-2xl font-medium text-white/90 leading-relaxed italic max-w-3xl text-left mx-auto md:mx-16 w-full md:-translate-x-2">
+                                    <div className="absolute top-0 left-0 right-0 bottom-[150px] sm:bottom-[160px] md:bottom-[180px] flex flex-col px-6 sm:px-10 md:px-16 pt-12 pb-4 overflow-y-auto no-scrollbar">
+                                        <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-white/90 leading-relaxed italic max-w-3xl text-left mx-auto w-full my-auto">
                                             "{testimonials[currentIndex].quote}"
                                         </p>
                                     </div>
@@ -129,13 +129,13 @@ export const FacultyTestimonials = () => {
                                                     e.stopPropagation();
                                                     prevSlide();
                                                 }}
-                                                className="absolute left-4 md:left-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 hover:cursor-pointer transition-all duration-300 backdrop-blur-md group z-10"
+                                                className="absolute left-2 sm:left-4 md:left-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 hover:cursor-pointer transition-all duration-300 backdrop-blur-md group z-10"
                                             >
                                                 <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 group-hover:-translate-x-1 transition-transform" />
                                             </button>
 
                                             {/* Faculty Info */}
-                                            <div className="text-center md:text-left px-16 md:px-20 w-full h-[100px] flex flex-col justify-center items-center md:items-start">
+                                            <div className="text-center px-12 sm:px-16 md:px-20 w-full h-[100px] flex flex-col justify-center items-center">
                                                 <h4 className="text-[#2DD4BF] font-black text-lg md:text-xl uppercase tracking-tight mb-1 line-clamp-2">
                                                     {testimonials[currentIndex].name}
                                                 </h4>
@@ -150,7 +150,7 @@ export const FacultyTestimonials = () => {
                                                     e.stopPropagation();
                                                     nextSlide();
                                                 }}
-                                                className="absolute right-4 md:right-0 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 hover:cursor-pointer transition-all duration-300 backdrop-blur-md group z-10"
+                                                className="absolute right-2 sm:right-4 md:right-0 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-[#2DD4BF] hover:border-[#2DD4BF]/50 hover:bg-[#2DD4BF]/5 hover:cursor-pointer transition-all duration-300 backdrop-blur-md group z-10"
                                             >
                                                 <ChevronRight className="w-6 h-6 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
                                             </button>
@@ -166,7 +166,7 @@ export const FacultyTestimonials = () => {
                                                         setCurrentIndex(i);
                                                     }}
                                                     className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? 'w-10 bg-[#2DD4BF]' : 'w-2 bg-white/10 hover:bg-white/30'
-                                                            } hover:cursor-pointer`}
+                                                        } hover:cursor-pointer`}
                                                 />
                                             ))}
                                         </div>

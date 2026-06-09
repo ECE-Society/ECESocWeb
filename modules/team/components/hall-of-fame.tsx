@@ -21,9 +21,10 @@ interface HallOfFameMember {
 
 interface HallOfFameCardProps {
   member: HallOfFameMember;
+  hideYearBadge?: boolean;
 }
 
-const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
+const HallOfFameCard = ({ member, hideYearBadge }: HallOfFameCardProps) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
@@ -44,19 +45,21 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
             <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent" />
 
             {/* Year Badge */}
-            <div className="absolute top-5 left-5 z-10 transition-transform duration-500 group-hover:-translate-y-1">
-              <span className="rounded-full bg-[#0a0a0a]/80 backdrop-blur-md px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2DD4BF] border border-[#2DD4BF]/20 shadow-[0_0_15px_rgba(45,212,191,0.15)] flex items-center justify-center">
-                {member.year}
-              </span>
-            </div>
-
-            <div className="absolute inset-x-0 bottom-0 px-5 pb-5 pt-20">
-              <div className="-translate-y-2 lg:translate-y-0 transition-transform duration-300 lg:group-hover:-translate-y-2">
-                <h3 className="text-xl md:text-2xl font-black text-white tracking-tight">{member.name}</h3>
-                <p className="text-sm md:text-base text-neutral-300 font-semibold mt-1">{member.pastPosition}</p>
-                <p className="text-[10px] md:text-xs text-neutral-400 font-medium">{member.tenure}</p>
+            {!hideYearBadge && (
+              <div className="absolute top-5 left-5 z-10 transition-transform duration-500 group-hover:-translate-y-1">
+                <span className="rounded-full bg-[#0a0a0a]/80 backdrop-blur-md px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2DD4BF] border border-[#2DD4BF]/20 shadow-[0_0_15px_rgba(45,212,191,0.15)] flex items-center justify-center">
+                  {member.year}
+                </span>
               </div>
-              <div className="mt-4 flex items-center gap-3 opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-300">
+            )}
+
+            <div className="absolute inset-x-0 bottom-0 px-3 md:px-5 pb-3 md:pb-5 pt-16 md:pt-20">
+              <div className="-translate-y-2 lg:translate-y-0 transition-transform duration-300 lg:group-hover:-translate-y-2">
+                <h3 className="text-base sm:text-xl md:text-2xl font-black text-white tracking-tight leading-tight">{member.name}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-neutral-300 font-semibold mt-0.5 md:mt-1">{member.pastPosition}</p>
+                <p className="text-[9px] sm:text-[10px] md:text-xs text-neutral-400 font-medium mt-0.5">{member.tenure}</p>
+              </div>
+              <div className="mt-3 md:mt-4 flex items-center gap-2 md:gap-3 opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 transition-all duration-300">
                 {member.social.instagram && (
                   <a
                     href={member.social.instagram}
@@ -89,28 +92,34 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
 export const HallOfFame = () => {
   const timelineMembers = [...hallOfFame].sort((a, b) => Number(b.year) - Number(a.year));
 
+  const membersByYear = timelineMembers.reduce((acc, m) => {
+    if (!acc[m.year]) acc[m.year] = [];
+    acc[m.year].push(m);
+    return acc;
+  }, {} as Record<string, typeof timelineMembers>);
+
+  const sortedYears = Object.keys(membersByYear).sort((a, b) => Number(b) - Number(a));
+
   return (
     <section className="relative py-20 px-4 sm:px-6 md:py-24 md:px-12 lg:px-16 bg-[#0a0a0a]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.05),transparent_70%)] pointer-events-none" />
 
       <SectionReveal className="relative z-10 max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs mb-4 block">
-            Hall of Fame
-          </span>
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
-            Past Leaders
-          </h2>
-          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            Pick a year to explore the interactive timeline of our past presidents and vice presidents.
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <div className="flex flex-col gap-6 items-center">
+            <span className="text-[#2DD4BF] font-black tracking-[0.3em] uppercase text-xs">
+              Hall of Fame
+            </span>
+            <motion.h2
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
+            >
+              Past <span className="text-[#2DD4BF]">Leaders</span>
+            </motion.h2>
+          </div>
+        </div>
 
         <div className="relative">
           <div className="mb-8 lg:mb-12">
@@ -191,19 +200,73 @@ export const HallOfFame = () => {
                   </div>
                 </div>
 
-                {/* Mobile / stacked layout */}
-                <div className="lg:hidden space-y-8">
-                  {timelineMembers.map((member, idx) => (
-                    <motion.div
-                      key={`${member.name}-${member.year}-${idx}`}
-                      className="w-full max-w-72 mx-auto"
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.25 }}
-                      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                    >
-                      <HallOfFameCard member={member} />
-                    </motion.div>
+                {/* Tablet Layout (640px to 1024px) */}
+                <div className="hidden sm:flex lg:hidden justify-center mt-12">
+                  <div className="relative pl-8 max-w-fit">
+                    {/* Vertical Timeline Line */}
+                    <div className="absolute left-[9px] top-6 bottom-6 w-1">
+                      <div className="absolute inset-0 mx-auto w-full rounded-full bg-linear-to-b from-[#2DD4BF]/70 via-[#2DD4BF]/50 to-[#10B981]/40 shadow-[0_0_30px_rgba(45,212,191,0.12)]" />
+                    </div>
+
+                    <div className="space-y-16">
+                      {sortedYears.map((year) => (
+                        <div key={year} className="relative">
+                          {/* Timeline Node */}
+                          <div className="absolute top-2 -left-[35px] z-10">
+                            <div className="h-5 w-5 rounded-full border-[4px] border-[#2DD4BF] bg-[#08110f] shadow-[0_0_15px_rgba(45,212,191,0.18)]" />
+                          </div>
+
+                          <div className="mb-6">
+                            <h3 className="text-2xl font-extrabold text-white">{year}</h3>
+                            <p className="text-sm text-neutral-400">Leadership roles from {year}</p>
+                          </div>
+
+                          {/* Flex container matching leadership card sizes */}
+                          <div className="flex gap-4 md:gap-6">
+                            {membersByYear[year].map((member, idx) => (
+                              <motion.div
+                                key={`${member.name}-${member.year}-${idx}`}
+                                className="w-[250px] md:w-[280px] shrink-0"
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.25 }}
+                                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                              >
+                                <HallOfFameCard member={member} hideYearBadge={true} />
+                              </motion.div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Layout (< 640px) */}
+                <div className="block sm:hidden space-y-10 mt-8">
+                  {sortedYears.map((year) => (
+                    <div key={year} className="w-full">
+                      {/* Year Heading as Button Shape */}
+                      <div className="mb-4 inline-flex items-center justify-center rounded-full bg-[#0a0a0a]/80 backdrop-blur-md px-4 py-2 text-sm font-bold uppercase tracking-[0.2em] text-[#2DD4BF] border border-[#2DD4BF]/20 shadow-[0_0_15px_rgba(45,212,191,0.15)]">
+                        {year}
+                      </div>
+
+                      {/* 2 per row Grid */}
+                      <div className="grid grid-cols-2 gap-3">
+                        {membersByYear[year].map((member, idx) => (
+                          <motion.div
+                            key={`${member.name}-${member.year}-${idx}`}
+                            className="w-full mx-auto"
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.25 }}
+                            transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                          >
+                            <HallOfFameCard member={member} hideYearBadge={true} />
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
