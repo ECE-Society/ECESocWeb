@@ -85,7 +85,7 @@ export function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button 
                             onClick={() => setIsOpen(!isOpen)}
-                            className="text-neutral-400 hover:text-white focus:outline-none transition-colors relative z-50 p-2"
+                            className="text-neutral-400 hover:text-white hover:cursor-pointer focus:outline-none transition-colors relative z-50 p-2"
                         >
                             {isOpen ? (
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">

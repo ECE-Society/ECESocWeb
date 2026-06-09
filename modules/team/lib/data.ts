@@ -468,6 +468,7 @@ export const contributors: TeamMember[] = [
   {
     name: "Anooz Kumar Burnwal",
     role: "Member",
+    zoom: 1.1,
     photo: "/teams/Anooz_Kumar.jpeg",
     social: {
       instagram: "https://www.instagram.com/kr_anooz/",

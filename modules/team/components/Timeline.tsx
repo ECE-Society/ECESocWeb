@@ -1,9 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef } from 'react';
 import { FiInstagram, FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const timelineData = [
   {
@@ -111,12 +110,8 @@ const socialIcon = (social: { instagram?: string; github?: string; gmail?: strin
 };
 
 export default function Timeline() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ['start end', 'end start'] });
-  const progress = useSpring(scrollYProgress, { damping: 30, stiffness: 120 });
-
   return (
-    <section className="relative py-24 px-6 md:px-12 lg:px-16 bg-[#080808] section-glow-bottom overflow-hidden" ref={containerRef}>
+    <section className="relative py-24 px-6 md:px-12 lg:px-16 bg-[#080808] section-glow-bottom overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(45,212,191,0.14),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.1),transparent_20%)]" />
       <div className="relative mx-auto max-w-6xl">
         <div className="mb-12 text-center">
@@ -128,71 +123,53 @@ export default function Timeline() {
         </div>
 
         <div className="relative">
-          <div className="absolute left-1/2 top-0 flex w-8 -translate-x-1/2 justify-center">
-            <div className="relative h-full w-1 overflow-hidden rounded-full bg-white/10 shadow-[0_0_80px_rgba(45,212,191,0.08)]">
-              <motion.div
-                className="absolute inset-x-0 top-0 h-full origin-top bg-linear-to-b from-[#2DD4BF] to-[#10B981]"
-                style={{ scaleY: progress }}
-              />
-            </div>
-          </div>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {['2022', '2021'].map((yr) => (
+              <div key={yr} className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-extrabold text-white">{yr}</h3>
+                  <p className="mt-1 text-sm text-neutral-400">Key leadership roles from {yr}.</p>
+                </div>
 
-          <div className="space-y-5">
-            {timelineData.map((item, index) => {
-              const isLeft = index % 2 === 0;
-              const sideClasses = isLeft ? 'lg:pr-6 lg:items-end' : 'lg:pl-6 lg:items-start';
+                <div className="flex flex-col gap-5">
+                  {timelineData
+                    .filter((t) => t.year === yr)
+                    .map((item) => (
+                      <motion.div
+                        key={`${item.year}-${item.role}`}
+                        className="relative"
+                        initial={{ opacity: 0, y: 28 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.25 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                      >
+                        <div className="rounded-[1.75rem] border border-white/10 bg-[#090909]/90 shadow-[0_18px_50px_-20px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_24px_60px_-18px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30 overflow-hidden">
+                          <div className="flex flex-col sm:flex-row">
+                            <div className="relative sm:w-40 sm:shrink-0 overflow-hidden aspect-4/3 sm:aspect-auto border-r border-white/5">
+                              <Image src={item.photo} alt={`${item.role} ${item.year}`} fill className="object-cover transition-transform duration-1000 hover:scale-105" />
+                              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.8),transparent)] sm:bg-[linear-gradient(to_right,rgba(0,0,0,0.8),transparent)]" />
+                              <div className="absolute inset-x-0 bottom-0 px-3 pb-3 sm:px-4 sm:pb-4">
+                                <span className="inline-flex rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.35em] text-[#2DD4BF] shadow-sm">
+                                  {item.year}
+                                </span>
+                              </div>
+                            </div>
 
-              return (
-                <motion.div
-                  key={`${item.year}-${item.role}`}
-                  className={`relative flex flex-col items-center ${sideClasses}`}
-                  initial={{ opacity: 0, y: 28 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.25 }}
-                  transition={{ duration: 0.6, ease: 'easeOut' }}
-                >
-                  <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#0f172a]/90 shadow-[0_0_24px_rgba(45,212,191,0.18)] backdrop-blur-xl">
-                    <motion.div
-                      whileInView={{ scale: 1.1 }}
-                      viewport={{ once: true, amount: 0.8 }}
-                      transition={{ duration: 0.28, ease: 'easeOut' }}
-                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2DD4BF] shadow-[0_0_18px_rgba(45,212,191,0.35)]"
-                    >
-                      {iconForRole(item.role)}
-                    </motion.div>
-                  </div>
-
-                  <div className={`mt-3 w-full max-w-md lg:max-w-none lg:w-[46%] ${isLeft ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className={`flex flex-col sm:flex-row ${isLeft ? 'sm:flex-row-reverse' : ''} rounded-[1.75rem] border border-white/10 bg-[#090909]/90 shadow-[0_18px_50px_-20px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_24px_60px_-18px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30`}>
-                      <div className={`relative sm:w-40 sm:shrink-0 overflow-hidden rounded-t-[1.75rem] sm:rounded-none aspect-4/3 sm:aspect-auto ${isLeft ? 'sm:rounded-r-[1.75rem] sm:border-l sm:border-white/5' : 'sm:rounded-l-[1.75rem] sm:border-r sm:border-white/5'}`}>
-                        <Image
-                          src={item.photo}
-                          alt={`${item.role} ${item.year}`}
-                          fill
-                          className="object-cover transition-transform duration-1000 hover:scale-105"
-                        />
-                        <div className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.8),transparent)] sm:bg-[linear-gradient(to_right,rgba(0,0,0,0.8),transparent)] ${isLeft ? 'sm:bg-[linear-gradient(to_left,rgba(0,0,0,0.8),transparent)]' : ''}`} />
-                        <div className="absolute inset-x-0 bottom-0 px-3 pb-3 sm:px-4 sm:pb-4">
-                          <span className="inline-flex rounded-full bg-white/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.35em] text-[#2DD4BF] shadow-sm">
-                            {item.year}
-                          </span>
+                            <div className="flex flex-col justify-center flex-1 p-5 lg:p-6">
+                              <div className="mb-2">
+                                <h3 className="text-lg sm:text-xl font-black tracking-tight text-white">{item.role}</h3>
+                                <p className="mt-1 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#2DD4BF]/90">{item.title}</p>
+                              </div>
+                              <p className="text-sm leading-6 text-neutral-300">{item.description}</p>
+                              <div className="w-full mt-3">{socialIcon(item.social)}</div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <div className={`flex flex-col justify-center flex-1 p-5 lg:p-6 ${isLeft ? 'items-start sm:items-end' : 'items-start'}`}>
-                        <div className="mb-2">
-                          <h3 className="text-lg sm:text-xl font-black tracking-tight text-white">{item.role}</h3>
-                          <p className="mt-1 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] text-[#2DD4BF]/90">{item.title}</p>
-                        </div>
-                        <p className="text-sm leading-6 text-neutral-300">{item.description}</p>
-                        <div className="w-full">
-                          {socialIcon(item.social, isLeft)}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
