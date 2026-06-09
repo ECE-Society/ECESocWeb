@@ -56,12 +56,12 @@ export const Hero = () => {
                     className="flex flex-wrap justify-center gap-8"
                 >
                     <Link href="/events">
-                        <button className="px-12 py-6 border-2 border-transparent bg-white text-black font-black uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] hover:text-black hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] transition-all duration-500 transform hover:-translate-y-1 text-xs">
+                        <button className="px-12 py-6 border-2 border-transparent bg-white text-black font-black uppercase tracking-widest rounded-full hover:bg-[#2DD4BF] hover:text-black hover:shadow-[0_0_30px_rgba(45,212,191,0.5)] hover:cursor-pointer transition-all duration-500 transform hover:-translate-y-1 text-xs">
                             Explore Our Events
                         </button>
                     </Link>
                     <Link href="/alumni">
-                        <button className="px-12 py-6 border-2 border-white/10 text-white font-black uppercase tracking-widest rounded-full hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 transition-all duration-500 transform hover:-translate-y-1 text-xs backdrop-blur-sm">
+                        <button className="px-12 py-6 border-2 border-white/10 text-white font-black uppercase tracking-widest rounded-full hover:border-[#2DD4BF] hover:bg-[#2DD4BF]/5 hover:cursor-pointer transition-all duration-500 transform hover:-translate-y-1 text-xs backdrop-blur-sm">
                             Meet Our Alumni
                         </button>
                     </Link>

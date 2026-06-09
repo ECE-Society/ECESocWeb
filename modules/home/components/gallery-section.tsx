@@ -59,7 +59,7 @@ export const GallerySection = ({ images }: { images: string[] }) => {
                         animate={{ x: [-5, 0, -5] }}
                         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                         whileHover={{ x: 0, scale: 1.1, backgroundColor: "rgba(45,212,191,0.2)" }}
-                        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-colors hover:border-[#2DD4BF]/50 hover:text-[#2DD4BF]"
+                        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-colors hover:border-[#2DD4BF]/50 hover:text-[#2DD4BF] hover:cursor-pointer"
                     >
                         <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
                     </motion.button>
@@ -70,7 +70,7 @@ export const GallerySection = ({ images }: { images: string[] }) => {
                         animate={{ x: [5, 0, 5] }}
                         transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                         whileHover={{ x: 0, scale: 1.1, backgroundColor: "rgba(45,212,191,0.2)" }}
-                        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-colors hover:border-[#2DD4BF]/50 hover:text-[#2DD4BF]"
+                        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full border border-white/10 bg-black/60 text-white backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-colors hover:border-[#2DD4BF]/50 hover:text-[#2DD4BF] hover:cursor-pointer"
                     >
                         <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
                     </motion.button>

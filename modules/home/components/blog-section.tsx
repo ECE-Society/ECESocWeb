@@ -175,7 +175,7 @@ export const BlogSection = ({ posts = [] }: { posts?: BlogPost[] }) => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group relative px-14 py-6 overflow-hidden rounded-full bg-[#111] border border-white/10 text-white font-black uppercase text-xs tracking-[0.4em] transition-all duration-300 hover:border-[#2DD4BF]/50 hover:shadow-[0_0_40px_-10px_rgba(45,212,191,0.5)]"
+                            className="group relative px-14 py-6 overflow-hidden rounded-full bg-[#111] border border-white/10 text-white font-black uppercase text-xs tracking-[0.4em] transition-all duration-300 hover:border-[#2DD4BF]/50 hover:shadow-[0_0_40px_-10px_rgba(45,212,191,0.5)] hover:cursor-pointer"
                         >
                             <span className="relative z-10 group-hover:text-[#2DD4BF] transition-colors">View More Blogs</span>
                             {/* Magnetic Glow Effect */}

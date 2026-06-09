@@ -1,9 +1,7 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useMemo, useState, useRef } from 'react';
-import { FiInstagram, FiMail, FiLinkedin, FiGithub } from 'react-icons/fi';
-import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { FiInstagram, FiLinkedin } from 'react-icons/fi';
 import Image from 'next/image';
 import { SectionReveal } from '@/modules/home/components/section-reveal';
 import { hallOfFame } from '../lib/data';
@@ -32,7 +30,7 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
       transition={{ type: 'spring', stiffness: 280, damping: 24 }}
       className="group h-full"
     >
-      <div className="relative h-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#090909]/90 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_35px_90px_-20px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30">
+      <div className="relative h-full overflow-hidden rounded-2xl border border-white/10 bg-[#090909]/90 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)] transition-all duration-500 hover:shadow-[0_35px_90px_-20px_rgba(45,212,191,0.28)] hover:border-[#2DD4BF]/30">
         <div className="relative h-full overflow-hidden">
           <div className="relative aspect-4/5 overflow-hidden">
             <Image
@@ -40,11 +38,11 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
               alt={member.name}
               fill
               priority={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 520px"
               className="object-cover transition-transform duration-1000 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent" />
-            
+
             {/* Year Badge */}
             <div className="absolute top-5 left-5 z-10 transition-transform duration-500 group-hover:-translate-y-1">
               <span className="rounded-full bg-[#0a0a0a]/80 backdrop-blur-md px-3 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#2DD4BF] border border-[#2DD4BF]/20 shadow-[0_0_15px_rgba(45,212,191,0.15)] flex items-center justify-center">
@@ -89,17 +87,7 @@ const HallOfFameCard = ({ member }: HallOfFameCardProps) => {
 };
 
 export const HallOfFame = () => {
-  const years = useMemo(
-    () =>
-      Array.from(new Set(hallOfFame.map((member) => member.year)))
-        .filter((year) => year === '2022' || year === '2021')
-        .sort((a, b) => Number(b) - Number(a)),
-    []
-  );
-  const [selectedYear, setSelectedYear] = useState(years[0] ?? '');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  const selectedMembers = hallOfFame.filter((member) => member.year === selectedYear);
+  const timelineMembers = [...hallOfFame].sort((a, b) => Number(b.year) - Number(a.year));
 
   return (
     <section className="relative py-20 px-4 sm:px-6 md:py-24 md:px-12 lg:px-16 bg-[#0a0a0a]">
@@ -124,73 +112,102 @@ export const HallOfFame = () => {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-[200px_minmax(0,1fr)] lg:items-start">
-          <div className="relative">
-            <div className="lg:sticky lg:top-32 rounded-3xl border border-white/10 bg-[#070707]/90 p-4 sm:p-5 shadow-[0_30px_90px_-40px_rgba(0,0,0,0.6)] backdrop-blur-xl flex flex-col items-center max-w-md mx-auto lg:max-w-none lg:mx-0">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[#2DD4BF] mb-4 font-black">Timeline</p>
-              
-              <div className="relative w-full z-50">
-                <button
-                  type="button"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="group w-full px-4 py-3 rounded-2xl border border-white/20 bg-[#0f0f0f]/90 text-white font-bold flex items-center justify-between shadow-[0_5px_15px_-5px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/60 hover:bg-[#2DD4BF]/5 hover:text-[#2DD4BF] transition-all duration-300"
-                >
-                  <span className="tracking-widest text-xs sm:text-sm uppercase">{selectedYear}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? "rotate-180 text-[#2DD4BF]" : "text-white/50 group-hover:text-[#2DD4BF]"}`} />
-                </button>
-                <AnimatePresence>
-                  {isDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      className="relative mt-2 p-2 bg-[#090909]/95 border border-white/10 rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.9)] backdrop-blur-3xl z-50 lg:absolute lg:top-full lg:left-0 lg:right-0"
-                    >
-                      <div className="max-h-62.5 overflow-y-auto custom-scrollbar flex flex-col gap-1">
-                        {years.map(year => (
-                          <button
-                            key={year}
-                            type="button"
-                            onClick={() => { setSelectedYear(year); setIsDropdownOpen(false); }}
-                            className={`w-full text-center px-2 py-2 rounded-xl transition-all duration-300 font-bold tracking-widest text-sm ${selectedYear === year ? 'text-[#2DD4BF] bg-[#2DD4BF]/10 border border-[#2DD4BF]/20 shadow-[0_0_10px_-2px_rgba(45,212,191,0.2)]' : 'text-neutral-400 border border-transparent hover:text-white hover:bg-white/5'}`}
-                          >
-                            {year}
-                          </button>
+        <div className="relative">
+          <div className="mb-8 lg:mb-12">
+            <div className="relative mx-auto max-w-7xl">
+              {/* Center glowing vertical line (lg+) */}
+              <div className="hidden lg:block absolute left-1/2 top-24 bottom-16 -translate-x-1/2 pointer-events-none z-0">
+                <div className="relative h-full w-1">
+                  <div className="absolute inset-0 mx-auto w-1 rounded-full bg-linear-to-b from-[#2DD4BF]/70 via-[#2DD4BF]/50 to-[#10B981]/40 shadow-[0_0_60px_rgba(45,212,191,0.12)]" />
+                  <div className="absolute inset-0 mx-auto w-1 rounded-full bg-white/5 blur-sm opacity-30" />
+                </div>
+              </div>
+
+              <div className="relative z-10">
+                {/* Desktop grid: balanced left and right groups around the center divider */}
+                <div className="hidden lg:grid grid-cols-2 items-start gap-x-16">
+                  {/* LEFT group (upper-left) */}
+                  <div className="flex justify-end pr-6 xl:pr-10">
+                    <div className="w-full max-w-160">
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-extrabold text-white">2022</h3>
+                        <p className="text-sm text-neutral-400">Leadership roles from 2022</p>
+                      </div>
+
+                      <div className="flex flex-nowrap justify-end gap-6">
+                        {timelineMembers.filter((m) => m.year === '2022').map((member, idx, arr) => (
+                          <div key={member.name} className="relative w-64 xl:w-72">
+                            {/* connector to center - only show for the rightmost card (closest to timeline) */}
+                            {idx === arr.length - 1 && (
+                              <>
+                                <div className="hidden lg:block absolute top-6 -right-12 z-10">
+                                  <div className="h-5 w-5 rounded-full border-4 border-[#2DD4BF] bg-[#08110f] shadow-[0_0_28px_rgba(45,212,191,0.18)] flex items-center justify-center">
+                                    <div className="h-2 w-2 rounded-full bg-[#2DD4BF]" />
+                                  </div>
+                                </div>
+                                <div className="hidden lg:block absolute top-8 -right-12 w-12 z-0">
+                                  <div className="w-full h-0.5 rounded-full bg-linear-to-r from-white/8 to-[#2DD4BF]/30" />
+                                </div>
+                              </>
+                            )}
+
+                            <HallOfFameCard member={member} />
+                          </div>
                         ))}
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
+                    </div>
+                  </div>
 
-          <div className="space-y-6 min-w-0">
-            <motion.div
-              key={selectedYear}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-6"
-            >
-              <div className="relative mt-6 flex flex-col items-center gap-6 sm:flex-row sm:flex-wrap sm:gap-8 sm:items-start sm:justify-start">
-                {selectedMembers.map((member, index) => {
-                  return (
+                  {/* RIGHT group (lower-right) */}
+                  <div className="flex justify-start pl-6 xl:pl-10 pt-56 xl:pt-64">
+                    <div className="w-full max-w-160">
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-extrabold text-white">2021</h3>
+                        <p className="text-sm text-neutral-400">Leadership roles from 2021</p>
+                      </div>
+
+                      <div className="flex flex-nowrap gap-6 justify-start">
+                        {timelineMembers.filter((m) => m.year === '2021').map((member, idx) => (
+                          <div key={member.name} className="relative w-64 xl:w-72">
+                            {/* connector to center - only show for the leftmost card (closest to timeline) */}
+                            {idx === 0 && (
+                              <>
+                                <div className="hidden lg:block absolute top-6 -left-12 z-10">
+                                  <div className="h-5 w-5 rounded-full border-4 border-[#2DD4BF] bg-[#08110f] shadow-[0_0_28px_rgba(45,212,191,0.18)] flex items-center justify-center">
+                                    <div className="h-2 w-2 rounded-full bg-[#2DD4BF]" />
+                                  </div>
+                                </div>
+                                <div className="hidden lg:block absolute top-8 -left-12 w-12 z-0">
+                                  <div className="w-full h-0.5 rounded-full bg-linear-to-r from-[#2DD4BF]/30 to-white/8" />
+                                </div>
+                              </>
+                            )}
+
+                            <HallOfFameCard member={member} />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile / stacked layout */}
+                <div className="lg:hidden space-y-8">
+                  {timelineMembers.map((member, idx) => (
                     <motion.div
-                      key={`${member.name}-${member.year}`}
-                      initial={{ opacity: 0, y: 20 }}
+                      key={`${member.name}-${member.year}-${idx}`}
+                      className="w-full max-w-72 mx-auto"
+                      initial={{ opacity: 0, y: 24 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-15% 0px -15% 0px' }}
-                      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                      className="relative z-10 w-full max-w-[min(100%,20rem)] sm:max-w-70"
+                      viewport={{ once: true, amount: 0.25 }}
+                      transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                     >
                       <HallOfFameCard member={member} />
                     </motion.div>
-                  );
-                })}
+                  ))}
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </SectionReveal>
