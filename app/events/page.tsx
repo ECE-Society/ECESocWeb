@@ -21,7 +21,7 @@ export default function EventsPage() {
             <EventsHero />
 
             {/* Flagship */}
-            <section className="relative px-6 md:px-12 lg:px-20 pb-16 max-w-[1600px] mx-auto">
+            <section className="relative px-6 md:px-12 lg:px-20 pt-10 md:pt-16 lg:pt-20 pb-16 max-w-[1600px] mx-auto">
                 <FlagshipCard />
             </section>
 

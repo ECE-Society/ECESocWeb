@@ -248,10 +248,18 @@ export const alumniList = [
   {
     name: "Harsh Ranjan",
     image: "/images/alumni/k22/Harsh Ranjan_k22.jpg",
-    role: "Intern",
-    company: "Truemeds",
+    role: "Design and Verification Intern",
+    company: "Semifront Technologies",
     year: "K22 Batch",
-    linkedin: "https://linkedin.com/in/harsh-ranjan-34a5531b7"
+    linkedin: "https://www.linkedin.com/in/harsh-ranjan-65a16528a/"
+  },
+  {
+    name: "Sahil Kumar",
+    image: "/images/alumni/k22/Sahil Kumar_k22.jpg",
+    role: "Graduate Engineer Trainee",
+    company: "Reliance Industries Limited",
+    year: "K22 Batch",
+    linkedin: "https://www.linkedin.com/in/sahil-kumar-641220267/"
   },
 
 
