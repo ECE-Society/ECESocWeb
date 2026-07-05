@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ecesocbitm.in';
+  const baseUrl = 'https://www.ecesocbitm.in';
 
   // These are your core pages. If you have dynamic pages (like individual blog posts),
   // you would fetch them from your data source and map them here as well.

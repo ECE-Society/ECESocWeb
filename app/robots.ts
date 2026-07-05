@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://ecesocbitm.in/sitemap.xml',
+    sitemap: 'https://www.ecesocbitm.in/sitemap.xml',
   };
 }

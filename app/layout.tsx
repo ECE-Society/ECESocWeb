@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ecesocbitm.in'),
+  metadataBase: new URL('https://www.ecesocbitm.in'),
   title: {
     default: "ECE Society | BIT Mesra",
     template: "%s | ECE Society",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ECE Society | BIT Mesra",
     description: "Empowering the next generation of engineers through neural-interfaced design, technical excellence, and hardware innovation.",
-    url: "https://ecesocbitm.in",
+    url: "https://www.ecesocbitm.in",
     siteName: "ECE Society BIT Mesra",
     locale: "en_US",
     type: "website",
