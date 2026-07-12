@@ -11,7 +11,8 @@ const events = [
         date: "July-August 2025",
         location: "Hybrid",
         description: "A month-long, hybrid inter-college innovation sprint that brings together students from across India to build impactful solutions.",
-        side: "left"
+        side: "left",
+        isLive: true
     },
     {
         title: "Electropoly",
@@ -71,18 +72,29 @@ export const EventsSection = () => {
                                 <SectionReveal
                                     key={index}
                                     delay={index * 0.1}
-                                    className={`w-full ${widths[index % 4]} p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border border-white/5 relative group hover:border-[#2DD4BF]/40 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] overflow-hidden cursor-pointer`}
+                                    className={`w-full ${widths[index % 4]} p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border ${event.isLive ? 'border-[#2DD4BF]/50 shadow-[0_0_40px_-10px_rgba(45,212,191,0.2)]' : 'border-white/5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]'} relative group hover:border-[#2DD4BF]/40 transition-all duration-500 overflow-hidden cursor-pointer`}
                                 >
                                     <Link href="/events" className="absolute inset-0 z-20" />
                                     {/* Animated background glow */}
-                                    <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none" />
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[3rem] pointer-events-none" />
+                                    <div className={`absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 transition-opacity duration-500 blur-2xl pointer-events-none ${event.isLive ? 'opacity-50' : 'opacity-0 group-hover:opacity-100'}`} />
+                                    <div className={`absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent transition-opacity rounded-[3rem] pointer-events-none ${event.isLive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
 
                                     <div className="relative z-10 text-left h-full flex flex-col">
                                         <div className="flex flex-col gap-4 mb-6">
-                                            <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 w-fit border border-[#2DD4BF]/20 transition-all duration-300 group-hover:bg-[#2DD4BF]/20 group-hover:border-[#2DD4BF]/30">
-                                                <Calendar className="w-4 h-4 text-[#2DD4BF]" />
-                                                <span className="text-[#2DD4BF] font-black text-[10px] uppercase tracking-[0.2em]">{event.date}</span>
+                                            <div className="flex items-center justify-between gap-4">
+                                                <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 w-fit border border-[#2DD4BF]/20 transition-all duration-300 group-hover:bg-[#2DD4BF]/20 group-hover:border-[#2DD4BF]/30">
+                                                    <Calendar className="w-4 h-4 text-[#2DD4BF]" />
+                                                    <span className="text-[#2DD4BF] font-black text-[10px] uppercase tracking-[0.2em]">{event.date}</span>
+                                                </div>
+                                                {event.isLive && (
+                                                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 backdrop-blur-md z-30">
+                                                        <span className="relative flex h-2 w-2">
+                                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                                                        </span>
+                                                        <span className="text-red-500 font-bold text-[10px] uppercase tracking-wider">Live Now</span>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
 

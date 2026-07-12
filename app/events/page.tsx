@@ -2,6 +2,8 @@ import { EventsHero } from '@/modules/events/components/events-hero';
 import { FlagshipCard } from '@/modules/events/components/flagship-card';
 import { EventGrid } from '@/modules/events/components/event-grid';
 
+import { LiveEventSpotlight } from '@/modules/events/components/live-event-spotlight';
+
 export const metadata = {
     title: 'Events | ECE Society – BIT Mesra',
     description:
@@ -19,6 +21,9 @@ export default function EventsPage() {
 
             {/* Hero */}
             <EventsHero />
+
+            {/* Live Event Section */}
+            <LiveEventSpotlight />
 
             {/* Flagship */}
             <section className="relative px-6 md:px-12 lg:px-20 pt-10 md:pt-16 lg:pt-20 pb-16 max-w-[1600px] mx-auto">

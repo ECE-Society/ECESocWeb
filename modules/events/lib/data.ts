@@ -17,6 +17,7 @@ export const flagshipEvent = {
     badgeLabel: 'Flagship',
     badgeIcon: Star,
     image: '/events/techathon/ece soc front.jpg',
+    isLive: true,
 } as const;
 
 /* ── Techathon rounds ── */
@@ -407,3 +408,86 @@ export const workshopEvents: EventItem[] = [
 
 /* ── Combined 3×3 grid ── */
 export const allGridEvents: EventItem[] = [...genericEvents, ...workshopEvents];
+
+/* ══════════════════════════════════════════
+   LIVE EVENT (Techathon 2026)
+══════════════════════════════════════════ */
+export const liveEvent = {
+    id: 'techathon2026',
+    title: 'Tech-A-Thon 5.0',
+    tagline: 'GreenGrid: Agro-Tech and Rural Development',
+    date: '18 July - 23 Aug 2026',
+    deadline: 'Register by: 19 July 2026',
+    prizePool: '₹25,000',
+    unstopLink: 'https://unstop.com/hackathons/tech-a-thon-50-bit-mesra-ranchi-1699177',
+    location: 'Hybrid',
+    description: 'ECE Society proudly presents its flagship innovation event. This month-long hybrid inter-college innovation sprint brings together students from across India to develop impactful solutions for Smart Agriculture, Rural Development, and Sustainable Energy.',
+    icon: Zap,
+    color: '#34d399',
+    badgeLabel: 'Live Now',
+    badgeIcon: Zap,
+    image: '/events/live-event/TECH-A-THON (5).png',
+} as const;
+
+/* ── Techathon 2026 Details ── */
+export const techathon2026Rounds = [
+    {
+        number: 1,
+        name: 'Quiz-A-Bit',
+        icon: Award,
+        color: '#2DD4BF',
+        points: [
+            'A 60-question multiple-choice assessment covering aptitude, technology, electronics, and general awareness.',
+            'Any one team member may attempt the quiz, and the score obtained will represent the team\'s total for Round 1.',
+            'You can attempt the assessment once the round is live - Friday, July 24, 2026, at 12:00 PM till Sunday, July 26, 2026, at 11:59 AM.',
+            'Each team is allowed only one attempt.',
+            'The assessment must be completed in a single sitting i.e., you must finish the task before the timer runs out.',
+            'There is no negative marking. In case of a tie, completion time will be considered first, followed by accuracy.',
+        ],
+    },
+    {
+        number: 2,
+        name: 'Tech-A-Bit',
+        icon: GitBranch,
+        color: '#f472b6',
+        points: [
+            'All shortlisted teams will gain access to the detailed problem statement once the round goes live on 29th July 2026.',
+            'The document will clearly outline the challenge, steps to follow, and the evaluation process.',
+            'Once completed, team leaders will be required to submit their solution as per the instructions provided in the problem statement.',
+            'This may include a private GitHub repository link and any other assets or documentation needed for evaluation.',
+            'Further submission instructions and access credentials will be shared closer to the round launch.',
+            'The Submission window is from Wednesday, July 29, 2026, to Wednesday, August 12, 2026, 11:59 PM.',
+            'Teams can change their submissions until 11:50 PM on Wednesday, August 12, 2026.',
+            'Only the team leader can make the submission.',
+            'Participants can choose a topic from the provided list or propose their own ideas based on the theme. If we select your topic, you and others can work on projects related to it.',
+        ],
+    },
+    {
+        number: 3,
+        name: 'Presentation of Solutions',
+        icon: Users,
+        color: '#38bdf8',
+        points: [
+            'Top teams will present their solutions before the panel of Team ECESoc.',
+            'Presentations may be conducted in online or offline mode based on the feasibility of the participants and event requirements.',
+            'Final schedules and presentation guidelines will be communicated to shortlisted teams.',
+        ],
+    },
+    {
+        number: 4,
+        name: 'Grand Finale',
+        icon: Trophy,
+        color: '#facc15',
+        points: [
+            'Top Teams from the Presentation Round will finally present the solutions on the final Day where the winners will be decided.',
+            'This presentation may be conducted in online or offline mode based on the feasibility of the participants and the event requirements.',
+        ],
+    },
+];
+
+export const techathon2026Features: FeatureBlock[] = [
+    { title: 'Theme', desc: 'GreenGrid: Agro-Tech and Rural Development', emoji: '🌱', color: '#34d399' },
+    { title: 'Eligibility', desc: 'Open to students pursuing full-time B.Tech/B.E., M.Tech/M.E., BCA/MCA or Dual Degree programs from engineering colleges across India.', emoji: '🎓', color: '#38bdf8' },
+    { title: 'Team Size', desc: 'Participants must register in teams of 1–3 members. Cross-college, cross-year, and cross-specialization teams are allowed.', emoji: '👥', color: '#a78bfa' },
+    { title: 'Rewards', desc: 'Winning teams will receive exclusive goodies worth ₹25k, certificates for Round 2 qualifiers, and 10% Unstop Pro discount for all.', emoji: '🏆', color: '#facc15' },
+];

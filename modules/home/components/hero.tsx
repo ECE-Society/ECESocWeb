@@ -3,8 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Audiowide, Orbitron } from 'next/font/google';
+import { ArrowRight } from 'lucide-react';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
+import { liveEvent } from '@/modules/events/lib/data';
 
 const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 const orbitron = Orbitron({ subsets: ['latin'], weight: '900' });
@@ -24,6 +26,27 @@ export const Hero = () => {
                 >
                     Welcome to Electronics & Communication
                 </motion.span>
+
+                {/* Live Event Hero Injection */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-10 z-20"
+                >
+                    <Link href="/events">
+                        <div className="flex items-center gap-4 px-8 py-3 md:py-4 rounded-full bg-emerald-500/15 border border-emerald-500/40 hover:border-emerald-500/80 hover:bg-emerald-500/25 hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.6)] transition-all duration-300 cursor-pointer shadow-[0_0_40px_-5px_rgba(16,185,129,0.4)] group backdrop-blur-md">
+                            <span className="relative flex h-3 w-3">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-emerald-300 mt-[1px]">
+                                {liveEvent.title} is Live! <span className="text-white/30 mx-2">|</span> Prize Pool {liveEvent.prizePool}
+                            </span>
+                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-emerald-400 group-hover:translate-x-1.5 transition-transform" />
+                        </div>
+                    </Link>
+                </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, scale: 0.95 }}
