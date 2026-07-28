@@ -34,16 +34,16 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-10 z-20"
                 >
-                    <Link href="/events">
-                        <div className="flex items-center gap-4 px-8 py-3 md:py-4 rounded-full bg-emerald-500/15 border border-emerald-500/40 hover:border-emerald-500/80 hover:bg-emerald-500/25 hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.6)] transition-all duration-300 cursor-pointer shadow-[0_0_40px_-5px_rgba(16,185,129,0.4)] group backdrop-blur-md">
+                    <Link href="/events/techathon/results">
+                        <div className="flex items-center gap-4 px-8 py-3 md:py-4 rounded-full bg-[#a78bfa]/15 border border-[#a78bfa]/40 hover:border-[#a78bfa]/80 hover:bg-[#a78bfa]/25 hover:shadow-[0_0_60px_-10px_rgba(167,139,250,0.6)] transition-all duration-300 cursor-pointer shadow-[0_0_40px_-5px_rgba(167,139,250,0.4)] group backdrop-blur-md">
                             <span className="relative flex h-3 w-3">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#a78bfa]"></span>
                             </span>
-                            <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-emerald-300 mt-[1px]">
-                                {liveEvent.title} is Live! <span className="text-white/30 mx-2">|</span> Prize Pool {liveEvent.prizePool}
+                            <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-[#c4b5fd] mt-[1px]">
+                                {liveEvent.title} Round 1 Results Are Out!
                             </span>
-                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-emerald-400 group-hover:translate-x-1.5 transition-transform" />
+                            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-[#a78bfa] group-hover:translate-x-1.5 transition-transform" />
                         </div>
                     </Link>
                 </motion.div>

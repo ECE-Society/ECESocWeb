@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Trophy, Clock, Users, Link2, Zap } from 'lucide-react';
+import { ArrowRight, Trophy, Clock, Users, Link2, Zap, Medal } from 'lucide-react';
 import { liveEvent } from '../lib/data';
 import { useState } from 'react';
+import Link from 'next/link';
 import { SectionReveal } from '@/modules/home/components/section-reveal';
 import { Techathon2026Modal } from './techathon-2026-modal';
 
@@ -74,6 +75,16 @@ export function LiveEventSpotlight() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                            <Link 
+                                href="/events/techathon/results" 
+                                className="flex-1 sm:flex-none"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-[#a78bfa] text-[#080808] hover:bg-[#c4b5fd] hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.5)] transition-all duration-300 w-full h-full">
+                                    <Medal className="w-4 h-4" />
+                                    Round 1 Results
+                                </div>
+                            </Link>
                             <a 
                                 href={event.unstopLink}
                                 target="_blank"
@@ -82,7 +93,7 @@ export function LiveEventSpotlight() {
                                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] transition-all duration-300 flex-1 sm:flex-none"
                             >
                                 <Link2 className="w-4 h-4" />
-                                Register on Unstop
+                                Unstop
                             </a>
                             <button
                                 onClick={(e) => {
@@ -91,7 +102,7 @@ export function LiveEventSpotlight() {
                                 }}
                                 className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-white/5 text-white border border-white/10 hover:bg-white/10 transition-all duration-300 flex-1 sm:flex-none"
                             >
-                                How it Works
+                                Details
                             </button>
                         </div>
                     </div>
