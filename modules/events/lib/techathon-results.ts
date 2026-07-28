@@ -165,4 +165,5 @@ export const techathonRound1Results: TechathonResult[] = [
     { id: "158", teamName: "ZeroDayLegends", teamLeader: "Indranil Garai" },
     { id: "159", teamName: "ZION", teamLeader: "Rahul Wakhale" },
     { id: "160", teamName: "Zyntax", teamLeader: "Vanka Satyanarayana Murthy" },
+    { id: "161", teamName: "Root", teamLeader: "Swayam Mohta" },
 ];
