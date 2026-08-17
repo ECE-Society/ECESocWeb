@@ -76,13 +76,13 @@ export function LiveEventSpotlight() {
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-4">
                             <Link 
-                                href="/events/techathon/results" 
+                                href="/events/techathon/results/round-3" 
                                 className="flex-1 sm:flex-none"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-[#a78bfa] text-[#080808] hover:bg-[#c4b5fd] hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.5)] transition-all duration-300 w-full h-full">
                                     <Medal className="w-4 h-4" />
-                                    Round 1 Results
+                                    Round 3 Results
                                 </div>
                             </Link>
                             <a 

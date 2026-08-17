@@ -36,10 +36,10 @@ export function Techathon2026Modal({ open, onClose }: { open: boolean; onClose: 
 
                 {/* Registration Button */}
                 <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                    <Link href="/events/techathon/results" className="w-full sm:flex-1" onClick={onClose}>
+                    <Link href="/events/techathon/results/round-3" className="w-full sm:flex-1" onClick={onClose}>
                         <div className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-[#a78bfa] text-[#080808] hover:bg-[#c4b5fd] hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.5)] transition-all duration-300 w-full">
                             <Medal className="w-4 h-4" />
-                            Round 1 Results
+                            Round 3 Results
                         </div>
                     </Link>
                     <a 

@@ -34,14 +34,14 @@ export const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                     className="mb-10 z-20"
                 >
-                    <Link href="/events/techathon/results">
+                    <Link href="/events/techathon/results/round-3">
                         <div className="flex items-center gap-4 px-8 py-3 md:py-4 rounded-full bg-[#a78bfa]/15 border border-[#a78bfa]/40 hover:border-[#a78bfa]/80 hover:bg-[#a78bfa]/25 hover:shadow-[0_0_60px_-10px_rgba(167,139,250,0.6)] transition-all duration-300 cursor-pointer shadow-[0_0_40px_-5px_rgba(167,139,250,0.4)] group backdrop-blur-md">
                             <span className="relative flex h-3 w-3">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#a78bfa]"></span>
                             </span>
                             <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-[#c4b5fd] mt-[1px]">
-                                {liveEvent.title} Round 1 Results Are Out!
+                                {liveEvent.title} Round 3 Results Are Out!
                             </span>
                             <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-[#a78bfa] group-hover:translate-x-1.5 transition-transform" />
                         </div>

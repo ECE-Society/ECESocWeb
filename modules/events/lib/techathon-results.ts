@@ -165,5 +165,19 @@ export const techathonRound1Results: TechathonResult[] = [
     { id: "158", teamName: "ZeroDayLegends", teamLeader: "Indranil Garai" },
     { id: "159", teamName: "ZION", teamLeader: "Rahul Wakhale" },
     { id: "160", teamName: "Zyntax", teamLeader: "Vanka Satyanarayana Murthy" },
-    { id: "161", teamName: "Root", teamLeader: "Swayam Mohta" },
+    { id: "161", teamName: "Root", teamLeader: "Swayam Mohta" }
+
+];
+
+export const techathonRound3Results: TechathonResult[] = [
+    { id: "1", teamName: "AstraByte", teamLeader: "Melster Jesu Jegan" },
+    { id: "2", teamName: "Binaries", teamLeader: "Pratham Raj" },
+    { id: "3", teamName: "BitMap", teamLeader: "Kaushal Baghel" },
+    { id: "4", teamName: "claude paglu", teamLeader: "Kishlay Tejeswi" },
+    { id: "5", teamName: "CTRL+Z", teamLeader: "Aryan Singh" },
+    { id: "6", teamName: "guhapriyan0625", teamLeader: "Guhapriyan KA" },
+    { id: "7", teamName: "Innovation Insurgents", teamLeader: "Sudiksha Shailesh Sawant" },
+    { id: "8", teamName: "Nova", teamLeader: "Indrajit Dutta" },
+    { id: "9", teamName: "Serious Summer", teamLeader: "Vanshika Vanya" },
+    { id: "10", teamName: "THE TRIODES", teamLeader: "RAAVISH K S" }
 ];
