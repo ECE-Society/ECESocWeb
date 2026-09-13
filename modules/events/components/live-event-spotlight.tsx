@@ -27,7 +27,7 @@ export function LiveEventSpotlight() {
                     </span>
                 </div>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mt-2">
-                    {event.title} is <span className="text-emerald-400">Here.</span>
+                    {event.title} has <span className="text-emerald-400">Concluded.</span>
                 </h2>
                 <p className="text-neutral-400 max-w-xl mx-auto font-medium">
                     {event.tagline}
@@ -62,27 +62,18 @@ export function LiveEventSpotlight() {
                                         <div className="text-xl font-bold text-white">{event.prizePool}</div>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4">
-                                    <div className="p-3 bg-emerald-500/10 rounded-xl">
-                                        <Clock className="w-6 h-6 text-emerald-500" />
-                                    </div>
-                                    <div>
-                                        <div className="text-xs text-neutral-400 font-semibold uppercase tracking-wider">Deadline</div>
-                                        <div className="text-lg font-bold text-white">{event.deadline}</div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-4">
                             <Link 
-                                href="/events/techathon/results/round-3" 
+                                href="/events/techathon/results/final" 
                                 className="flex-1 sm:flex-none"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 <div className="flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm font-black uppercase tracking-[0.2em] bg-[#a78bfa] text-[#080808] hover:bg-[#c4b5fd] hover:shadow-[0_0_30px_-5px_rgba(167,139,250,0.5)] transition-all duration-300 w-full h-full">
                                     <Medal className="w-4 h-4" />
-                                    Round 3 Results
+                                    Final Results
                                 </div>
                             </Link>
                             <a 
