@@ -19,10 +19,10 @@ export function EventCard({
     const [hovered, setHovered] = useState(false);
 
     return (
-        <SectionReveal delay={delay} className="h-full">
+        <SectionReveal delay={delay} className="">
             <motion.div
                 onClick={onCardClick}
-                className="group relative overflow-hidden cursor-pointer rounded-[3rem] border border-white/5 bg-[#111]/80 backdrop-blur-md transition-all duration-500 h-full flex flex-col shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40"
+                className="group relative overflow-hidden cursor-pointer rounded-[3rem] border border-white/5 bg-[#111]/80 backdrop-blur-md transition-all duration-500 flex flex-col shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40"
                 whileHover={{ y: -5, scale: 1.015 }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 onHoverStart={() => setHovered(true)}
@@ -49,7 +49,7 @@ export function EventCard({
                 )}
 
                 {/* Card content */}
-                <div className="relative z-10 p-8 md:p-10 flex flex-col gap-5 h-full flex-1">
+                <div className="relative z-10 p-8 md:p-10 flex flex-col gap-5 flex-1">
                     {/* Icon */}
                     <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/10 transition-all duration-300 group-hover:border-[#2DD4BF]/40 group-hover:scale-110 group-hover:rotate-3 flex-shrink-0">
                         <Icon className="w-6 h-6 text-[#2DD4BF]" />
