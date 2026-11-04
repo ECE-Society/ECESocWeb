@@ -6,7 +6,6 @@ import { LeadershipBody } from "@/modules/team/components/leadership-body";
 import { Executives } from "@/modules/team/components/executives";
 import { Contributors } from "@/modules/team/components/contributors";
 import { HallOfFame } from "@/modules/team/components/hall-of-fame";
-import { RecruitmentSection } from "@/modules/team/components/recruitment-section";
 import { SectionReveal } from '@/modules/home/components/section-reveal';
 
 export default function Team() {
@@ -41,11 +40,6 @@ export default function Team() {
           >
             Different minds, one frequency — connected by curiosity and driven to create.
           </motion.p>
-
-          {/* Small Recruitment Section right below the main heading */}
-          <div className="mt-12">
-            <RecruitmentSection />
-          </div>
         </SectionReveal>
       </section>
 

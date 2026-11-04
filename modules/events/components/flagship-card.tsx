@@ -33,9 +33,7 @@ export function FlagshipCard() {
             {/* Full-width flagship card */}
             <motion.div
                 onClick={() => setModalOpen(true)}
-                whileHover={{ y: -5, scale: 1.01 }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative w-full bg-[#111]/80 backdrop-blur-md rounded-[3rem] overflow-hidden cursor-pointer transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40 hover:shadow-[0_0_60px_-10px_rgba(45,212,191,0.25)]"
+                className="group relative w-full bg-[#111]/80 backdrop-blur-md rounded-[3rem] overflow-hidden cursor-pointer transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40 hover:shadow-[0_0_60px_-10px_rgba(45,212,191,0.2)]"
                 style={{
                     border: `1px solid rgba(255,255,255,0.05)`,
                 }}
@@ -43,9 +41,6 @@ export function FlagshipCard() {
                 {/* Glow layers — matching home page card pattern */}
                 <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[3rem] pointer-events-none" />
-
-                {/* Top shimmer line */}
-                <div className="absolute top-0 left-10 right-10 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-transparent via-[#2DD4BF]/60 to-transparent" />
 
                 {/* Flagship badge */}
                 <div className="absolute top-6 right-6 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full backdrop-blur-sm border border-[#2DD4BF]/20 bg-[#2DD4BF]/10">

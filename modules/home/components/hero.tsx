@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Audiowide, Orbitron } from 'next/font/google';
-import { ArrowUpRight } from 'lucide-react';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
 
@@ -17,32 +16,6 @@ export const Hero = () => {
             <MouseParticles />
 
             <SectionReveal className="relative z-10 flex flex-col items-center px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto w-full">
-                {/* Recruitment Top Button */}
-                <motion.a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeCBTs2TN0WyfGVufZ_ewloCjWYmldzsqTLghH8nGdfFSl2Zw/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: -12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    whileHover={{ scale: 1.04, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-[#111]/85 hover:bg-[#161616] border border-[#2DD4BF]/40 hover:border-[#2DD4BF] backdrop-blur-xl shadow-[0_0_25px_rgba(45,212,191,0.25)] hover:shadow-[0_0_40px_rgba(45,212,191,0.5)] transition-all duration-300 mb-8 cursor-pointer z-30"
-                >
-                    <span className="relative flex h-2.5 w-2.5">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2DD4BF] opacity-75" />
-                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2DD4BF]" />
-                    </span>
-                    <span className="text-xs md:text-sm font-black tracking-[0.2em] uppercase text-white group-hover:text-[#2DD4BF] transition-colors">
-                        EceSoc Is Recruiting
-                    </span>
-                    <span className="text-[#2DD4BF] font-mono text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#2DD4BF]/15 border border-[#2DD4BF]/30">
-                        Apply Now
-                    </span>
-                    <ArrowUpRight className="w-4 h-4 text-[#2DD4BF] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    <div className="absolute top-0 left-6 right-6 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-r from-transparent via-[#2DD4BF]/70 to-transparent" />
-                </motion.a>
-
                 <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}

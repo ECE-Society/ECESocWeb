@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { SectionReveal } from './section-reveal';
 import Link from 'next/link';
 
@@ -71,48 +71,33 @@ export const EventsSection = () => {
                                 <SectionReveal
                                     key={index}
                                     delay={index * 0.1}
-                                    className={`w-full ${widths[index % 4]} flex flex-col`}
+                                    className={`w-full ${widths[index % 4]} p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border border-white/5 relative group hover:border-[#2DD4BF]/40 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] overflow-hidden cursor-pointer`}
                                 >
-                                    <motion.div
-                                        whileHover={{ y: -6, scale: 1.015 }}
-                                        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                                        className="w-full h-full p-10 md:p-12 bg-[#111]/80 backdrop-blur-md rounded-[3rem] border border-white/5 relative group hover:border-[#2DD4BF]/40 transition-all duration-500 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_60px_-10px_rgba(45,212,191,0.25)] overflow-hidden cursor-pointer flex flex-col"
-                                    >
-                                        <Link href="/events" className="absolute inset-0 z-20" />
-                                        {/* Animated background glow */}
-                                        <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none" />
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3rem] pointer-events-none" />
+                                    <Link href="/events" className="absolute inset-0 z-20" />
+                                    {/* Animated background glow */}
+                                    <div className="absolute -inset-1 bg-gradient-to-br from-[#2DD4BF]/20 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl pointer-events-none" />
+                                    <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-[3rem] pointer-events-none" />
 
-                                        {/* Top shimmer line — matching events page */}
-                                        <div className="absolute top-0 left-10 right-10 h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-r from-transparent via-[#2DD4BF]/60 to-transparent" />
-
-                                        <div className="relative z-10 text-left h-full flex flex-col">
-                                            <div className="flex flex-col gap-4 mb-6">
-                                                <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 w-fit border border-[#2DD4BF]/20 transition-all duration-300 group-hover:bg-[#2DD4BF]/20 group-hover:border-[#2DD4BF]/40 group-hover:scale-105">
-                                                    <Calendar className="w-4 h-4 text-[#2DD4BF]" />
-                                                    <span className="text-[#2DD4BF] font-black text-[10px] uppercase tracking-[0.2em]">{event.date}</span>
-                                                </div>
-                                            </div>
-
-                                            <h3 className="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#2DD4BF] transition-colors leading-tight uppercase tracking-tight">{event.title}</h3>
-
-                                            <p className="text-neutral-400 font-medium leading-relaxed mb-8 text-base md:text-lg group-hover:text-neutral-200 transition-colors max-w-xl">
-                                                {event.description}
-                                            </p>
-
-                                            <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5 group-hover:border-white/10 transition-colors duration-300">
-                                                <div className="flex items-center gap-3 text-white/40 text-xs font-bold uppercase tracking-widest group-hover:text-white/70 transition-colors">
-                                                    <div className="w-8 h-[1px] bg-white/10 group-hover:w-12 group-hover:bg-[#2DD4BF]/40 transition-all duration-500" />
-                                                    <MapPin className="w-4 h-4 text-[#2DD4BF]" />
-                                                    <span className="font-mono">{event.location}</span>
-                                                </div>
-                                                <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.15em] text-[#2DD4BF]">
-                                                    <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-300">Explore</span>
-                                                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                                                </div>
+                                    <div className="relative z-10 text-left h-full flex flex-col">
+                                        <div className="flex flex-col gap-4 mb-6">
+                                            <div className="flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#2DD4BF]/10 w-fit border border-[#2DD4BF]/20 transition-all duration-300 group-hover:bg-[#2DD4BF]/20 group-hover:border-[#2DD4BF]/30">
+                                                <Calendar className="w-4 h-4 text-[#2DD4BF]" />
+                                                <span className="text-[#2DD4BF] font-black text-[10px] uppercase tracking-[0.2em]">{event.date}</span>
                                             </div>
                                         </div>
-                                    </motion.div>
+
+                                        <h3 className="text-3xl md:text-4xl font-black text-white mb-4 group-hover:text-[#2DD4BF] transition-colors leading-tight uppercase tracking-tight">{event.title}</h3>
+
+                                        <p className="text-neutral-400 font-medium leading-relaxed mb-8 text-base md:text-lg group-hover:text-neutral-200 transition-colors max-w-xl">
+                                            {event.description}
+                                        </p>
+
+                                        <div className="mt-auto flex items-center gap-3 text-white/30 text-xs font-bold uppercase tracking-widest group-hover:text-white/60 transition-colors">
+                                            <div className="w-8 h-[1px] bg-white/10 group-hover:w-12 group-hover:bg-[#2DD4BF]/40 transition-all duration-500" />
+                                            <MapPin className="w-4 h-4 text-[#2DD4BF]/50" />
+                                            <span className="font-mono">{event.location}</span>
+                                        </div>
+                                    </div>
                                 </SectionReveal>
                             );
                         })}
