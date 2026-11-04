@@ -19,18 +19,18 @@ export function EventCard({
     const [hovered, setHovered] = useState(false);
 
     return (
-        <SectionReveal delay={delay} className="h-full">
+        <SectionReveal delay={delay} className="w-full">
             <motion.div
                 onClick={onCardClick}
-                className="group relative overflow-hidden cursor-pointer rounded-[3rem] border border-white/5 bg-[#111]/80 backdrop-blur-md transition-all duration-500 h-full flex flex-col shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40"
-                whileHover={{ y: -5, scale: 1.015 }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                onHoverStart={() => setHovered(true)}
-                onHoverEnd={() => setHovered(false)}
+                className="group relative overflow-hidden cursor-pointer rounded-[3rem] border border-white/5 bg-[#111]/80 backdrop-blur-md transition-all duration-500 w-full min-h-[580px] flex flex-col shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] hover:border-[#2DD4BF]/40 hover:shadow-[0_0_60px_-10px_rgba(45,212,191,0.25)] hover:z-20"
+                whileHover={{ y: -8, scale: 1.025 }}
+                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = '0 0 60px -10px rgba(45,212,191,0.2)';
+                    setHovered(true);
+                    (e.currentTarget as HTMLElement).style.boxShadow = '0 0 60px -10px rgba(45,212,191,0.25)';
                 }}
                 onMouseLeave={(e) => {
+                    setHovered(false);
                     (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 50px -20px rgba(0,0,0,0.8)';
                 }}
             >
@@ -49,32 +49,32 @@ export function EventCard({
                 )}
 
                 {/* Card content */}
-                <div className="relative z-10 p-8 md:p-10 flex flex-col gap-5 h-full flex-1">
+                <div className="relative z-10 p-8 md:p-10 flex flex-col gap-5 flex-1 h-full">
                     {/* Icon */}
                     <div className="flex items-center justify-center w-14 h-14 rounded-2xl border border-[#2DD4BF]/20 bg-[#2DD4BF]/10 transition-all duration-300 group-hover:border-[#2DD4BF]/40 group-hover:scale-110 group-hover:rotate-3 flex-shrink-0">
                         <Icon className="w-6 h-6 text-[#2DD4BF]" />
                     </div>
 
-                    {/* Title — home page h3 style */}
-                    <div className="flex flex-col gap-1">
+                    {/* Title — fixed minimum height for row uniformity */}
+                    <div className="flex flex-col gap-1 min-h-[4.75rem] justify-start">
                         <h3 className="text-3xl md:text-4xl font-black uppercase tracking-tight leading-none text-white transition-colors duration-300 group-hover:text-[#2DD4BF]">
                             {event.title}
                         </h3>
                         <span className="text-xs font-semibold uppercase tracking-widest text-neutral-500">{event.tagline}</span>
                     </div>
 
-                    {/* Cover image — object-contain so posters show in full */}
+                    {/* Cover image — fixed height container ensures clean horizontal alignment across columns */}
                     {event.image && (
-                        <div className="rounded-xl bg-neutral-950/80 p-1.5 overflow-hidden">
+                        <div className="rounded-xl bg-neutral-950/80 p-2 overflow-hidden flex items-center justify-center h-72 w-full flex-shrink-0">
                             <img
                                 src={event.image}
                                 alt={event.title}
-                                className="w-full h-80 object-contain object-center rounded-lg transition-transform duration-500"
+                                className="w-full h-full object-contain object-center rounded-lg transition-transform duration-500 group-hover:scale-105"
                             />
                         </div>
                     )}
 
-                    {/* Hover-reveal description */}
+                    {/* Hover-reveal description — only expands for this individual hovered card */}
                     <AnimatePresence>
                         {hovered && (
                             <motion.div
@@ -109,7 +109,7 @@ export function EventCard({
                             style={{ color: `${event.color}70` }}
                         >
                             <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-300">View</span>
-                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                         </div>
                     </div>
                 </div>
