@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Audiowide, Orbitron } from 'next/font/google';
+import { ArrowRight } from 'lucide-react';
 import { MouseParticles } from './mouse-particles';
 import { SectionReveal } from './section-reveal';
 
@@ -15,15 +16,43 @@ export const Hero = () => {
             {/* Background interactive particles */}
             <MouseParticles />
 
-            <SectionReveal className="relative z-10 flex flex-col items-center px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto w-full">
+            <SectionReveal className="relative z-10 flex flex-col items-center px-6 md:px-12 lg:px-16 max-w-[1800px] mx-auto w-full pt-20 pb-12">
                 <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="text-[#2DD4BF] font-black tracking-[0.4em] uppercase text-xs mb-10 text-center"
+                    className="text-[#2DD4BF] font-black tracking-[0.4em] uppercase text-xs mb-6 text-center"
                 >
                     Welcome to Electronics & Communication
                 </motion.span>
+
+                {/* Ecesoc Recruitment'26 Results Live Announcement Button */}
+                <motion.div
+                    initial={{ opacity: 0, y: 14 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="mb-10"
+                >
+                    <Link
+                        href="/recruitment/results"
+                        className="group relative inline-flex items-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#111]/90 border border-[#2DD4BF]/40 hover:border-[#2DD4BF] text-xs font-black uppercase tracking-wider text-white shadow-[0_0_30px_rgba(45,212,191,0.2)] hover:shadow-[0_0_50px_rgba(45,212,191,0.45)] transition-all duration-500 transform hover:-translate-y-1 backdrop-blur-xl cursor-pointer whitespace-nowrap"
+                    >
+                        {/* Shimmer sweep effect */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-[#2DD4BF]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                        {/* Pulsing live beacon */}
+                        <span className="relative flex h-2.5 w-2.5 shrink-0">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2DD4BF] opacity-75" />
+                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#2DD4BF]" />
+                        </span>
+
+                        <span className="text-white tracking-wider sm:tracking-widest text-[11px] sm:text-xs whitespace-nowrap">
+                            Ecesoc <span className="whitespace-nowrap">Recruitment&apos;26</span> Results are Out
+                        </span>
+
+                        <ArrowRight className="w-3.5 h-3.5 text-[#2DD4BF] transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
+                    </Link>
+                </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, scale: 0.95 }}
