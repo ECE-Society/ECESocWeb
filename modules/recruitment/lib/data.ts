@@ -469,7 +469,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
         domainPreference: 'Core, Tech, Video Editing',
     },
     {
-        id: 'k26-design-3',
+        id: 'k26-design-9',
         name: 'Sai Chetan',
         rollNumber: 'BTECH/10155/26',
         batch: 'K26',
