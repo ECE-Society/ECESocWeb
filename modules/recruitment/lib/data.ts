@@ -193,7 +193,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     {
         id: 'k26-core-10',
         name: 'Ridhi Agarwal',
-        rollNumber: 'BTECH/11154/26',
+        rollNumber: 'BTECH/11153/26',
         batch: 'K26',
         branch: 'CHE',
         subteam: 'Core',
@@ -362,7 +362,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     },
     {
         id: 'k26-tech-13',
-        name: 'Soustrik Banerjee',
+        name: 'Soutrik Banerjee',
         rollNumber: 'BTECH/10918/26',
         batch: 'K26',
         branch: 'ECE',
