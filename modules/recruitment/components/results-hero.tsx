@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Orbitron, Audiowide } from 'next/font/google';
 
-const orbitron = Orbitron({ subsets: ['latin'], weight: ['700', '900'] });
+const orbitron = Orbitron({ subsets: ['latin'], weight: '900' });
 const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
 
 export function ResultsHero() {
