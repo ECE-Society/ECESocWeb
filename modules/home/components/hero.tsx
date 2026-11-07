@@ -35,7 +35,7 @@ export const Hero = () => {
                 >
                     <Link
                         href="/recruitment/results"
-                        className="group relative inline-flex items-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#111]/90 border border-[#2DD4BF]/40 hover:border-[#2DD4BF] text-xs font-black uppercase tracking-wider text-white shadow-[0_0_30px_rgba(45,212,191,0.2)] hover:shadow-[0_0_50px_rgba(45,212,191,0.45)] transition-all duration-500 transform hover:-translate-y-1 backdrop-blur-xl cursor-pointer whitespace-nowrap"
+                        className="group relative inline-flex items-center gap-2.5 sm:gap-3 px-5 sm:px-8 py-3 sm:py-3.5 rounded-full bg-[#111]/90 border border-[#2DD4BF]/40 hover:border-[#2DD4BF] text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_30px_rgba(45,212,191,0.2)] hover:shadow-[0_0_50px_rgba(45,212,191,0.45)] transition-all duration-500 transform hover:-translate-y-1 backdrop-blur-xl cursor-pointer whitespace-nowrap font-headline"
                     >
                         {/* Shimmer sweep effect */}
                         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-[#2DD4BF]/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
