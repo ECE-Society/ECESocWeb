@@ -392,15 +392,6 @@ export const recruitedCandidates: RecruitedCandidate[] = [
         subteam: 'Design & Content',
         domainPreference: 'Core, Video Editing',
     },
-    {
-        id: 'k25-design-3',
-        name: 'Sai Chetan',
-        rollNumber: 'BTECH/10155/25',
-        batch: 'K25',
-        branch: 'ECE',
-        subteam: 'Design & Content',
-        domainPreference: 'Core, Design & Video Editing',
-    },
 
     // ==========================================
     // DESIGN & CONTENT SUBTEAM - K26
@@ -476,6 +467,15 @@ export const recruitedCandidates: RecruitedCandidate[] = [
         branch: 'ECE',
         subteam: 'Design & Content',
         domainPreference: 'Core, Tech, Video Editing',
+    },
+    {
+        id: 'k26-design-3',
+        name: 'Sai Chetan',
+        rollNumber: 'BTECH/10155/26',
+        batch: 'K26',
+        branch: 'ECE',
+        subteam: 'Design & Content',
+        domainPreference: 'Core, Design & Video Editing',
     },
 
     // ==========================================
