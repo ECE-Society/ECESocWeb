@@ -52,7 +52,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     },
     {
         id: 'k25-core-2',
-        name: 'Jatin bhawsinka',
+        name: 'Jatin Bhawsinka',
         rollNumber: 'BTECH/10190/25',
         batch: 'K25',
         branch: 'EEE',
@@ -353,7 +353,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     },
     {
         id: 'k26-tech-13',
-        name: 'Soustrik banarjee',
+        name: 'Soustrik Banerjee',
         rollNumber: 'BTECH/10918/26',
         batch: 'K26',
         branch: 'ECE',
@@ -375,7 +375,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     // ==========================================
     {
         id: 'k25-design-1',
-        name: 'Anushka Sharma',
+        name: 'Anushka Sharma (BIT PATNA)',
         rollNumber: 'BTECH/15148/25',
         batch: 'K25',
         branch: 'ECE',
@@ -443,7 +443,7 @@ export const recruitedCandidates: RecruitedCandidate[] = [
     },
     {
         id: 'k26-design-5',
-        name: 'Dhruvi gandhi',
+        name: 'Dhruvi Gandhi',
         rollNumber: 'BTECH/11062/26',
         batch: 'K26',
         branch: 'ECE',
