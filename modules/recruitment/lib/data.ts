@@ -96,6 +96,15 @@ export const recruitedCandidates: RecruitedCandidate[] = [
         subteam: 'Core',
         domainPreference: 'Core, Tech',
     },
+    {
+        id: 'k25-core-7',
+        name: 'Bisesh Rajak',
+        rollNumber: 'BTECH/10474/25',
+        batch: 'K25',
+        branch: 'ECE',
+        subteam: 'Core',
+        domainPreference: 'Core',
+    },
 
     // ==========================================
     // CORE SUBTEAM - K26
