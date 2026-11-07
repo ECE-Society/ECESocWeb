@@ -226,6 +226,15 @@ export const recruitedCandidates: RecruitedCandidate[] = [
         subteam: 'Core',
         domainPreference: 'Core and Tech',
     },
+    {
+        id: 'k26-core-14',
+        name: 'Pari Singhai',
+        rollNumber: 'BTECH/10221/26',
+        batch: 'K26',
+        branch: 'ECE',
+        subteam: 'Core',
+        domainPreference: 'Core and Tech',
+    },
 
     // ==========================================
     // TECH SUBTEAM - K25

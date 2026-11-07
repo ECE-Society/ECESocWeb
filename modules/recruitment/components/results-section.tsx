@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { ArrowUpRight, Calendar, MapPin } from 'lucide-react';
+import { ArrowUpRight, MapPin } from 'lucide-react';
 import { Orbitron } from 'next/font/google';
 import {
     recruitedCandidates,
@@ -245,17 +245,11 @@ export function ResultsSection() {
                                 // Induction Notice
                             </span>
                             <p className="text-neutral-300 text-sm sm:text-[15px] max-w-lg leading-relaxed">
-                                Selected inductees will receive orientation schedules through official channels. Attendance at the introductory meeting is mandatory.
+                                Selected inductees will receive orientation schedules through official channels.
                             </p>
-                            <div className="flex flex-wrap gap-4 pt-1 font-mono text-xs sm:text-sm text-neutral-400">
-                                <span className="flex items-center gap-1.5">
-                                    <Calendar className="w-4 h-4 text-[#2DD4BF]" />
-                                    Date: To Be Announced Soon
-                                </span>
-                                <span className="flex items-center gap-1.5">
-                                    <MapPin className="w-4 h-4 text-[#2DD4BF]" />
-                                    Venue: {recruitmentStats.orientationVenue}
-                                </span>
+                            <div className="flex items-center gap-2 pt-0.5 font-mono text-xs sm:text-sm text-neutral-400">
+                                <MapPin className="w-4 h-4 text-[#2DD4BF] shrink-0" />
+                                <span>Venue for 1st General Body Meet will be announced Soon</span>
                             </div>
                         </div>
 
